@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace sushi_set.API
+namespace SushiSet.API
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace sushi_set.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "sushi_set.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SushiSet.API", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace sushi_set.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "sushi_set.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SushiSet.API v1"));
             }
 
             app.UseHttpsRedirection();
