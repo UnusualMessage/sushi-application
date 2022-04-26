@@ -7,7 +7,8 @@ namespace SushiSet.Infrastructure.Context
     {
         public ApplicationContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            DbContextOptionsBuilder optionsBuilder = new();
+
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SUSHI_SET;Username=postgres;Password=20102001");
 
             return new ApplicationContext(optionsBuilder.Options);

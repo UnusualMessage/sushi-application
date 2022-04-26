@@ -13,4 +13,8 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SushiSet.Application\SushiSet.Application.csproj" />
+  </ItemGroup>
+
 </Project>
