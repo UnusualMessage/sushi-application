@@ -9,6 +9,7 @@ namespace SushiSet.Core.Entities
     public class Order : Entity
     {
         public string Title { get; set; }
+        public bool Active { get; set; }
 
         public ICollection<Item> Items { get; set; }
 

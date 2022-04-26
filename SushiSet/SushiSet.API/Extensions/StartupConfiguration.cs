@@ -6,6 +6,8 @@ using Microsoft.OpenApi.Models;
 
 using System;
 
+using SushiSet.Infrastructure.Extensions;
+
 namespace SushiSet.API.Extensions
 {
     public static class StartupConfiguration
@@ -54,8 +56,8 @@ namespace SushiSet.API.Extensions
 
         public static void ConfigureInfrastructureLayer(this IServiceCollection services)
         {
-/*            services.AddRepositories();
-            services.AddInfrastructureServices();*/
+            services.AddRepositories();
+            services.AddInfrastructureServices();
         }
     }
 }

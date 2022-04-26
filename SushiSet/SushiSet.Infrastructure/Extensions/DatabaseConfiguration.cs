@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using SushiSet.Core.Interfaces.Repositories;
 using SushiSet.Infrastructure.Context;
+using SushiSet.Infrastructure.Repositories;
 
 namespace SushiSet.Infrastructure.Extensions
 {
@@ -16,7 +18,15 @@ namespace SushiSet.Infrastructure.Extensions
 
         public static void AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<IAboutRepository, AboutRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICourierRepository, CourierRepository>();
+            services.AddScoped<IAdministratorRepository, AdministratorRepository>();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace SushiSet.Core.Entities
 {
-    public class Information : Entity
+    public class About : Entity
     {
         public string Description { get; set; }
     }
