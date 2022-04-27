@@ -18,15 +18,16 @@ namespace SushiSet.Infrastructure.Extensions
 
         public static void AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
+            services.AddScoped<IAboutRepository, AboutRepository>();
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICourierRepository, CourierRepository>();
             services.AddScoped<IAdministratorRepository, AdministratorRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         }
     }
 }

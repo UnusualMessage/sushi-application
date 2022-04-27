@@ -11,7 +11,7 @@ namespace SushiSet.Core.Entities
         public string Title { get; set; }
         public bool Active { get; set; }
 
-        public ICollection<Item> Items { get; set; }
+        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
 
         public Guid? CustomerId { get; set; }
         public Customer Customer { get; set; }
