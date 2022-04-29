@@ -23,13 +23,13 @@ $medium: 768px;
 
 @media screen and (min-width: $big) {
     .nav {
-        width: 100vw;
         @include flexible-row;
+
+        width: 100vw;
 
         .nav-wrapper {
             @include flexible-row;
 
-            margin-top: 5px;
             width: $big;
 
             .nav-content {
@@ -65,11 +65,13 @@ $medium: 768px;
 
 @media screen and (max-width: $big) {
     .nav {
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        @include flexible-row;
+
+        position: sticky;
+        top: 0;
+        background-color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         .nav-wrapper {
             display: flex;
