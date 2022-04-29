@@ -1,8 +1,10 @@
+@use './Components/Styles/Constants.scss' as *;
+
 #root {
-    min-width: 320px;
+    min-width: $mini;
     font-family: "AT Open Sans", sans-serif;
 }
 
 body {
-    min-width: 320px;
+    min-width: $mini;
 }

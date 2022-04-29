@@ -43,7 +43,7 @@
 @media screen and (max-width: $medium) {
     .header {
         @include flexible-row(center, flex-start);
-        
+
         .header-wrapper {
             @include flexible-row(center, center);
 

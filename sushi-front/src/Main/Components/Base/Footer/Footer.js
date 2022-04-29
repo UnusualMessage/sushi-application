@@ -1,24 +1,15 @@
+import FooterInfo from './Components/FooterInfo';
+import FooterLinksContainer from './Components/FooterLinkContainer';
+
 import './Footer.scss';
-import FooterLinksContainer from './FooterLinkContainer';
+import './Styles/FooterLinks.scss';
 
 const Footer = (props) => {
     return (
         <footer className="footer">
             <div className="footer-wrapper">
                 <div className="footer-content">
-                    <div className='footer-content-info'>
-                        <div className='footer-logo'>
-                            <img src="/logo_light.png" alt="" />
-                        </div>
-
-                        <div className='footer-copyright'>
-                            <span className='copyright-text'>Сеть магазинов "СушиСет"</span>
-
-                            <a className='copyright-link' href="/">
-                                <span className='copyright-policy'>Политика конфиденциальности</span>
-                            </a>
-                        </div>
-                    </div>
+                    <FooterInfo/>
 
                     <div className='footer-links'>
                         <FooterLinksContainer/>

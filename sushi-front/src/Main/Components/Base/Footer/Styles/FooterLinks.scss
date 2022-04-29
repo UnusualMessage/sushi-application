@@ -1,0 +1,86 @@
+@use '../../../Styles/Constants.scss' as *;
+
+@media screen and (min-width: $big) {
+    .footer-links {
+        @include flexible-row(center, space-between);
+
+        column-gap: 50px;
+
+        .links-container {
+            @include flexible-column(stretch, flex-start);
+            
+            row-gap: 10px;
+
+            .footer-link {
+                text-decoration: none;
+                
+                .footer-link-text {
+                    color: $aux-color;
+                    font-size: 12px;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $medium) and (max-width: $big) {
+    .footer-links {
+        @include flexible-row(center, space-between);
+
+        column-gap: 50px;
+
+        .links-container {
+            @include flexible-column(stretch, flex-start);
+            
+            row-gap: 10px;
+
+            .footer-link {
+                text-decoration: none;
+                
+                .footer-link-text {
+                    color: $aux-color;
+                    font-size: 12px;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .footer-links {
+        @include flexible-row(center, center);
+        flex-wrap: wrap;
+
+        column-gap: 50px;
+
+        .links-container {
+            @include flexible-column(center, center);
+            
+            row-gap: 10px;
+
+            .footer-link {
+                text-decoration: none;
+                
+                .footer-link-text {
+                    color: $aux-color;
+                    font-size: 12px;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

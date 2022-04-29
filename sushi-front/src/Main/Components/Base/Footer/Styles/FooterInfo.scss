@@ -1,0 +1,101 @@
+@use '../../../Styles/Constants.scss' as *;
+
+@media screen and (min-width: $big) {
+    .footer-content-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .footer-copyright {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .copyright-text {
+                font-size: 12px;
+                color: white;
+            }
+
+            .copyright-link {
+                text-decoration: none;
+                
+                .copyright-policy {
+                    font-size: 12px;
+                    color: $aux-color;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $medium) and (max-width: $big) {
+    .footer-content-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .footer-copyright {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .copyright-text {
+                font-size: 12px;
+                color: white;
+            }
+
+            .copyright-link {
+                text-decoration: none;
+                
+                .copyright-policy {
+                    font-size: 12px;
+                    color: $aux-color;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .footer-content-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .footer-copyright {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .copyright-text {
+                font-size: 12px;
+                color: white;
+            }
+
+            .copyright-link {
+                text-decoration: none;
+                
+                .copyright-policy {
+                    font-size: 12px;
+                    color: $aux-color;
+                    transition: color 0.5s;
+
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
