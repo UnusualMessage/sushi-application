@@ -273,8 +273,12 @@ $medium: 768px;
 
 @media screen and (max-width: $medium) {
     .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
         width: 100vw;
-        @include flexible-row;
         
         .header-wrapper {
             @include flexible-row;
