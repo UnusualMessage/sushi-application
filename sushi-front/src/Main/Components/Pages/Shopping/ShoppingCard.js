@@ -1,6 +1,9 @@
+import CartPrice from "../../Store/CartPrice";
+
 const ShoppingCard = (props) => {
     const onMouseDown = (e) => {
         e.preventDefault();
+        CartPrice.add(props.price);
     }
     
     return (

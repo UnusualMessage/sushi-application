@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
-const HeaderCart = (props) => {
-    const [price, setPrice] = useState(0);
+import CartPrice from "../../Store/CartPrice";
 
+const HeaderCart = observer((props) => {
     return (
         <div className='header-cart'>
             <Link className='cart-link' to="/">
@@ -16,11 +16,11 @@ const HeaderCart = (props) => {
                 </span>
 
                 <span className='cart-price'>
-                    {props.price}
+                    {CartPrice.price}
                 </span>
             </Link>
         </div>
     );
-}
+})
 
 export default HeaderCart;
