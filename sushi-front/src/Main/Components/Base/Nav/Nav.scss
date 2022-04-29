@@ -1,63 +1,22 @@
-$text-color: #393939;
-$title-color: #333333;
-$aux-color: #707070;
-
-$hover-color: #ed1c24;
-$red-color: #c81f40;
-
-$big: 1200px;
-$medium: 768px;
-
-@mixin flexible-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin flexible-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+@use '../../Styles/Constants.scss' as *;
 
 @media screen and (min-width: $big) {
     .nav {
-        @include flexible-row;
+        @include flexible-row(center, center);
 
         width: 100vw;
 
         .nav-wrapper {
-            @include flexible-row;
+            @include flexible-row(center, center);
 
             width: $big;
 
             .nav-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
+                @include flexible-row(center, space-between);
 
                 width: 100%;
                 padding-left: 30px;
                 padding-right: 30px;
-
-                .nav-link {
-                    text-decoration: none;
-
-                    .link-text {
-                        color: $title-color;
-                        font-size: 16px;
-                        transition: color 0.5s;
-                        font-weight: 600;
-                    }
-
-                    &:hover {
-                        .link-text {
-                            color: $hover-color;
-                        }
-                    }
-                }
             }
         }
     }
@@ -65,7 +24,7 @@ $medium: 768px;
 
 @media screen and (max-width: $big) {
     .nav {
-        @include flexible-row;
+        @include flexible-row(center, center);
 
         position: sticky;
         top: 0;
@@ -74,10 +33,7 @@ $medium: 768px;
         padding-bottom: 10px;
 
         .nav-wrapper {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            @include flexible-row(center, center);
 
             box-sizing: border-box;
 
@@ -91,32 +47,11 @@ $medium: 768px;
             margin-left: 15px;
             
             .nav-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
+                @include flexible-row(center, flex-start);
 
                 width: 100%;
 
                 column-gap: 30px;
-
-                .nav-link {
-                    text-decoration: none;
-
-                    .link-text {
-                        color: $title-color;
-                        font-size: 14px;
-                        transition: color 0.5s;
-                        font-weight: 600;
-                        white-space: nowrap;
-                    }
-
-                    &:hover {
-                        .link-text {
-                            color: $hover-color;
-                        }
-                    }
-                }
             }
         }
     }
