@@ -26,7 +26,7 @@ $medium: 768px;
         @include flexible-row;
 
         background-color: #f9f9f9;
-        margin-top: 50px;
+        margin-top: 30px;
         width: 100vw;
 
         .main-wrapper {
@@ -113,8 +113,7 @@ $medium: 768px;
         @include flexible-row;
 
         background-color: #f9f9f9;
-        margin-top: 50px;
-        width: 100vw;
+        margin-top: 30px;
 
         .main-wrapper {
             display: flex;
