@@ -1,4 +1,5 @@
 import './Footer.scss';
+import FooterLinksContainer from './FooterLinkContainer';
 
 const Footer = (props) => {
     return (
@@ -20,71 +21,9 @@ const Footer = (props) => {
                     </div>
 
                     <div className='footer-links'>
-                        <div className='links-container'>
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СЕТЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ПОКЕ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>РОЛЛЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СУШИ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ЗАПЕЧЕННЫЕ РОЛЛЫ</span>
-                            </a>
-                        </div>
-
-                        <div className='links-container'>
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СЕТЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ПОКЕ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>РОЛЛЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СУШИ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ЗАПЕЧЕННЫЕ РОЛЛЫ</span>
-                            </a>
-                        </div>
-
-                        <div className='links-container'>
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СЕТЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ПОКЕ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>РОЛЛЫ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>СУШИ</span>
-                            </a>
-
-                            <a className='footer-link' href="/">
-                                <span className='footer-link-text'>ЗАПЕЧЕННЫЕ РОЛЛЫ</span>
-                            </a>
-                        </div>
+                        <FooterLinksContainer/>
+                        <FooterLinksContainer/>
+                        <FooterLinksContainer/>
                     </div>
 
                     <div className='footer-socials'>

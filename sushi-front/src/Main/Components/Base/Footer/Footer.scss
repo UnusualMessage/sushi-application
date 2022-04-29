@@ -219,7 +219,6 @@ $mini: 768px;
     .footer {
         @include flexible-row;
 
-        width: 100vw;
         background-color: $title-color;
 
         margin-top: 100px;
