@@ -1,5 +1,7 @@
 import CartPrice from "../../Store/CartPrice";
 
+import "./ShoppingCard.scss";
+
 const ShoppingCard = (props) => {
     const onMouseDown = (e) => {
         e.preventDefault();

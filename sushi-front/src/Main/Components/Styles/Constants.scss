@@ -1,0 +1,26 @@
+$text-color: #393939;
+$title-color: #333333;
+$aux-color: #707070;
+
+$hover-color: #ed1c24;
+$red-color: #c81f40;
+
+$big: 1200px;
+$pre-big: 992px;
+$medium: 768px;
+$pre-medium: 576px;
+$mini: 320px;
+
+@mixin flexible-row($align, $justify) {
+    display: flex;
+    flex-direction: row;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin flexible-column($align, $justify) {
+    display: flex;
+    flex-direction: column;
+    align-items: $align;
+    justify-content: $justify;
+}

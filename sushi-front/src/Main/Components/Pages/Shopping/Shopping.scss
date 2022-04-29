@@ -1,108 +1,25 @@
-$text-color: #393939;
-$title-color: #333333;
-$aux-color: #707070;
-
-$hover-color: #ed1c24;
-$red-color: #c81f40;
-
-$big: 1200px;
-$medium: 768px;
-
-@mixin flexible-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin flexible-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+@use '../../Styles/Constants.scss' as *;
 
 @media screen and (min-width: $big) {
     .main {
-        @include flexible-row;
+        @include flexible-row(center, center);
 
         background-color: #f9f9f9;
         margin-top: 30px;
         width: 100vw;
 
         .main-wrapper {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
+            @include flexible-row(center, flex-start);
 
             width: $big;
             
             .main-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
+                @include flexible-row(center, space-around);
                 flex-wrap: wrap;
 
                 padding: 30px;
                 width: 100%;
                 gap: 50px;
-
-                .shopping-card {
-                    background-color: white;
-
-                    .card-image {
-                        cursor: pointer;
-                        border-radius: 20px 20px 0 0;
-
-                        img {
-                            border-radius: 20px 20px 0 0;
-                        }
-                    }
-
-                    .card-description {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-
-                        gap: 20px;
-                        padding: 15px;
-
-                        .card-description-title {
-                            font-size: 16px;
-                            font-weight: 600;
-                            color: $title-color;
-                            text-transform: uppercase;
-                        }
-
-                        .card-description-order {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: space-between;
-
-                            .order-price {
-                                font-size: 20px;
-                                color: $title-color;
-                                font-weight: 600;
-
-                                &::after {
-                                    margin-left: 2px;
-                                    content: "\20BD";
-                                }
-                            }
-
-                            .order-button {
-                                border: 1px solid $red-color;
-                                border-radius: 20px;
-                                padding-left: 15px;
-                                padding-right: 15px;
-                                padding-top: 10px;
-                                padding-bottom: 10px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -110,85 +27,23 @@ $medium: 768px;
 
 @media screen and (max-width: $big) {
     .main {
-        @include flexible-row;
+        @include flexible-row(center, center);
 
         background-color: #f9f9f9;
         margin-top: 30px;
 
         .main-wrapper {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
+            @include flexible-row(center, flex-start);
 
             width: $big;
             
             .main-content {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
+                @include flexible-row(center, space-around);
                 flex-wrap: wrap;
 
                 padding: 30px;
                 width: 100%;
                 gap: 50px;
-
-                .shopping-card {
-                    background-color: white;
-
-                    .card-image {
-                        cursor: pointer;
-                        border-radius: 20px 20px 0 0;
-
-                        img {
-                            border-radius: 20px 20px 0 0;
-                        }
-                    }
-
-                    .card-description {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-
-                        gap: 20px;
-                        padding: 15px;
-
-                        .card-description-title {
-                            font-size: 16px;
-                            font-weight: 600;
-                            color: $title-color;
-                            text-transform: uppercase;
-                        }
-
-                        .card-description-order {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            justify-content: space-between;
-
-                            .order-price {
-                                font-size: 20px;
-                                color: $title-color;
-                                font-weight: 600;
-
-                                &::after {
-                                    margin-left: 2px;
-                                    content: "\20BD";
-                                }
-                            }
-
-                            .order-button {
-                                border: 1px solid $red-color;
-                                border-radius: 20px;
-                                padding-left: 15px;
-                                padding-right: 15px;
-                                padding-top: 10px;
-                                padding-bottom: 10px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
