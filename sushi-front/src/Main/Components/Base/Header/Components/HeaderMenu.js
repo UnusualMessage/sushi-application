@@ -1,3 +1,5 @@
+import '../Styles/HeaderMenu.scss';
+
 const HeaderMenu = (props) => {
     return (
         <div className='header-menu'>

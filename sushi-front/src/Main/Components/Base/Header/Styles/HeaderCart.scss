@@ -1,0 +1,118 @@
+@use '../../../Styles/Constants.scss' as *;
+
+@media screen and (min-width: $big) {
+    .header-cart {
+        @include flexible-row(center, center);
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            text-decoration: none;
+            border: 1px solid $red-color;
+            border-radius: 50px;
+            column-gap: 25px;
+
+            .cart-picture {
+                border-right: 1px solid $red-color;
+
+                padding: 5px 10px 5px 20px;
+
+                svg {
+                    fill: $red-color;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .cart-price {
+                font-size: 18px;
+                color: $text-color;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $big) {
+    .header-cart {
+        @include flexible-row(center, center);
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            text-decoration: none;
+            border: 1px solid $red-color;
+            border-radius: 50px;
+            column-gap: 25px;
+
+            .cart-picture {
+                border-right: 1px solid $red-color;
+
+                padding: 5px 10px 5px 20px;
+
+                svg {
+                    fill: $red-color;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .cart-price {
+                font-size: 18px;
+                color: $text-color;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .header-cart {
+        display: none;
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            text-decoration: none;
+            border: 1px solid $red-color;
+            border-radius: 50px;
+            column-gap: 25px;
+
+            .cart-picture {
+                border-right: 1px solid $red-color;
+
+                padding: 5px 10px 5px 20px;
+
+                svg {
+                    fill: $red-color;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .cart-price {
+                font-size: 18px;
+                color: $text-color;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+}

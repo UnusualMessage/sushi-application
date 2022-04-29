@@ -1,9 +1,10 @@
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
-import CartPrice from "../../Store/CartPrice";
+import CartPrice from "../../../Store/CartPrice";
+import '../Styles/HeaderCart.scss';
 
-const HeaderCart = observer((props) => {
+const HeaderCart = observer(() => {
     return (
         <div className='header-cart'>
             <Link className='cart-link' to="/">
