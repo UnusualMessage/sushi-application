@@ -6,7 +6,7 @@
 
         background-color: $title-color;
 
-        margin-top: 100px;
+        margin-top: 50px;
 
         .footer-wrapper {
             @include flexible-row(center, flex-start);
@@ -34,7 +34,7 @@
 
         background-color: $title-color;
 
-        margin-top: 100px;
+        margin-top: 50px;
 
         .footer-wrapper {
             @include flexible-row(center, flex-start);
@@ -61,7 +61,7 @@
 
         background-color: $title-color;
 
-        margin-top: 100px;
+        margin-top: 50px;
 
         .footer-wrapper {
             @include flexible-row(center, flex-start);
@@ -69,10 +69,7 @@
             width: $medium;
 
             .footer-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
+                @include flexible-column(center, flex-start);
 
                 row-gap: 30px;
 

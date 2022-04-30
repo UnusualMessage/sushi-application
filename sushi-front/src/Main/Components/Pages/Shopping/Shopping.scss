@@ -8,17 +8,31 @@
         margin-top: 30px;
 
         .main-wrapper {
-            @include flexible-row(center, flex-start);
+            @include flexible-column(center, center);
 
             width: $big;
             
             .main-content {
-                @include flexible-row(center, space-around);
+                @include flexible-row(center, flex-start);
                 flex-wrap: wrap;
 
+                box-sizing: border-box;
                 padding: 30px;
                 width: 100%;
                 gap: 50px;
+            }
+
+            .main-title {
+                @include flexible-row(center, flex-start);
+
+                box-sizing: border-box;
+                padding: 30px;
+                padding-bottom: 0px;
+                width: 100%;
+                color: $title-color;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-weight: bold;
             }
         }
     }
@@ -32,15 +46,63 @@
         margin-top: 30px;
 
         .main-wrapper {
-            @include flexible-row(center, flex-start);
+            @include flexible-column(center, center);
 
             .main-content {
-                @include flexible-row(center, space-around);
+                @include flexible-row(center, flex-start);
                 flex-wrap: wrap;
 
-                padding: 10px;
+                box-sizing: border-box;
+                padding: 15px;
                 width: 100%;
                 gap: 50px;
+            }
+
+            .main-title {
+                @include flexible-row(center, flex-start);
+
+                box-sizing: border-box;
+                padding: 15px;
+                width: 100%;
+                color: $title-color;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $pre-medium) {
+    .main {
+        @include flexible-row(center, center);
+
+        background-color: #f9f9f9;
+        margin-top: 30px;
+
+        .main-wrapper {
+            @include flexible-column(center, center);
+
+            .main-content {
+                @include flexible-row(center, flex-start);
+                flex-wrap: wrap;
+
+                box-sizing: border-box;
+                padding: 15px;
+                width: 100%;
+                gap: 20px;
+            }
+
+            .main-title {
+                @include flexible-row(center, flex-start);
+
+                box-sizing: border-box;
+                padding: 15px;
+                width: 100%;
+                color: $title-color;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-weight: bold;
             }
         }
     }

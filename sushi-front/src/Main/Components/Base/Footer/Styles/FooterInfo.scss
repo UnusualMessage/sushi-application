@@ -68,13 +68,13 @@
 
 @media screen and (max-width: $medium) {
     .footer-content-info {
-        display: flex;
-        flex-direction: column;
+        @include flexible-column(center, center);
+
         row-gap: 20px;
 
         .footer-copyright {
-            display: flex;
-            flex-direction: column;
+            @include flexible-column(center, center);
+            
             row-gap: 10px;
 
             .copyright-text {

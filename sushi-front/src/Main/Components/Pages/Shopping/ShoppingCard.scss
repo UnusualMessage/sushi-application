@@ -1,14 +1,93 @@
-@use '../../Styles/Constants.scss' as *;
+@use '../../Styles/Constants.scss'as *;
 
 @media screen and (min-width: $big) {
     .shopping-card {
         background-color: white;
+        border-radius: 20px 20px 0 0;
+        -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        flex-basis: 21.5%;
 
         .card-image {
+            width: 100%;
+            height: 100%;
             cursor: pointer;
-            border-radius: 20px 20px 0 0;
 
             img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+
+        .card-description {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 30px;
+            padding: 15px;
+
+            .card-description-title {
+                font-size: 16px;
+                font-weight: 600;
+                color: $title-color;
+                text-transform: uppercase;
+            }
+
+            .card-description-order {
+                @include flexible-row(center, space-between);
+
+                .order-price {
+                    font-size: 20px;
+                    color: $title-color;
+                    font-weight: 600;
+
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+
+                .order-button {
+                    cursor: pointer;
+
+                    border: 1px solid $red-color;
+                    border-radius: 20px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 14px;
+
+                    &:hover {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $pre-big) and (max-width: $big) {
+    .shopping-card {
+        background-color: white;
+        border-radius: 20px 20px 0 0;
+        -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        flex-basis: 21%;
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
                 border-radius: 20px 20px 0 0;
             }
         }
@@ -61,15 +140,23 @@
     }
 }
 
-@media screen and (max-width: $big) {
+@media screen and (max-width: $pre-big) and (min-width: $medium) {
     .shopping-card {
         background-color: white;
+        border-radius: 20px 20px 0 0;
+        -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        flex-basis: 28.5%;
 
         .card-image {
+            width: 100%;
             cursor: pointer;
             border-radius: 20px 20px 0 0;
 
             img {
+                width: 100%;
                 border-radius: 20px 20px 0 0;
             }
         }
@@ -103,13 +190,160 @@
 
                 .order-button {
                     cursor: pointer;
-                    
+
                     border: 1px solid $red-color;
                     border-radius: 20px;
                     padding-left: 15px;
                     padding-right: 15px;
                     padding-top: 10px;
                     padding-bottom: 10px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+
+                    &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) and (min-width: $pre-medium) {
+    .shopping-card {
+        background-color: white;
+        border-radius: 20px 20px 0 0;
+        -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        flex-basis: 45%;
+
+        .card-image {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 20px 20px 0 0;
+
+            img {
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+
+        .card-description {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 20px;
+            padding: 15px;
+
+            .card-description-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: $title-color;
+                text-transform: uppercase;
+            }
+
+            .card-description-order {
+                @include flexible-row(center, space-between);
+
+                .order-price {
+                    font-size: 18px;
+                    color: $title-color;
+                    font-weight: 600;
+
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+
+                .order-button {
+                    cursor: pointer;
+
+                    border: 1px solid $red-color;
+                    border-radius: 20px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+
+                    &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $pre-medium) {
+    .shopping-card {
+        @include flexible-row(center, flex-start);
+
+        background-color: white;
+        border-radius: 5px 5px 5px 5px;
+        -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        flex-basis: 100%;
+
+        .card-image {
+            margin-left: 5px;
+            width: 120px;
+            cursor: pointer;
+            border-radius: 5px 5px 5px 5px;
+
+            img {
+                width: 120px;
+                border-radius: 5px 5px 5px 5px;
+            }
+        }
+
+        .card-description {
+            @include flexible-column(stretch, space-between);
+
+            width: 100%;
+
+            gap: 20px;
+            padding: 10px;
+
+            .card-description-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: $title-color;
+                text-transform: uppercase;
+            }
+
+            .card-description-order {
+                @include flexible-row(center, space-between);
+
+                .order-price {
+                    font-size: 16px;
+                    color: $title-color;
+                    font-weight: 600;
+
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+
+                .order-button {
+                    cursor: pointer;
+
+                    border: 1px solid $red-color;
+                    border-radius: 20px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 10px;
+                    text-transform: uppercase;
 
                     &:active {
                         background-color: $red-color;

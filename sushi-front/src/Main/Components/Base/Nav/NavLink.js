@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CurrentCategory from "../../Store/CurrentCategory";
 
 import './NavLink.scss';
 
 const NavLink = (props) => {
+    const navigate = useNavigate();
+
+    const onMouseDown = (e) => {
+        e.preventDefault();
+        CurrentCategory.set(props.text);
+    };
+
     return (
-        <Link className="nav-link" to={props.to}>
+        <Link className="nav-link" to={props.to} onMouseDown={onMouseDown}>
             <span className="link-text">{props.text}</span>
         </Link>
     )
