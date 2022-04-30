@@ -4,8 +4,6 @@
     .nav {
         @include flexible-row(center, center);
 
-        width: 100vw;
-
         .nav-wrapper {
             @include flexible-row(center, center);
 

@@ -6,7 +6,6 @@
 
         background-color: #f9f9f9;
         margin-top: 30px;
-        width: 100vw;
 
         .main-wrapper {
             @include flexible-row(center, flex-start);

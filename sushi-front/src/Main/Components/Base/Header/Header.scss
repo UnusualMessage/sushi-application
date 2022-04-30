@@ -2,9 +2,8 @@
 
 @media screen and (min-width: $big) {
     .header {
-        width: 100vw;
         @include flexible-row(center, center);
-    
+
         .header-wrapper {
             @include flexible-row(center, center);
     
@@ -22,13 +21,12 @@
 
 @media screen and (max-width: $big) {
     .header {
-        width: 100vw;
         @include flexible-row(center, center);
-    
+
         .header-wrapper {
             @include flexible-row(center, center);
     
-            width: $big;
+            width: 100%;
     
             .header-content {
                 @include flexible-row(center, space-between);
@@ -47,7 +45,7 @@
         .header-wrapper {
             @include flexible-row(center, center);
 
-            max-width: $medium;
+            max-width: 100%;
 
             .header-content {
                 @include flexible-row(center, space-between);
