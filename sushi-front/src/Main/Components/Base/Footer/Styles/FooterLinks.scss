@@ -15,7 +15,7 @@
                 text-decoration: none;
                 
                 .footer-link-text {
-                    color: $aux-color;
+                    color: $footer-aux-color;
                     font-size: 12px;
                     transition: color 0.5s;
 
@@ -43,7 +43,7 @@
                 text-decoration: none;
                 
                 .footer-link-text {
-                    color: $aux-color;
+                    color: $footer-aux-color;
                     font-size: 12px;
                     transition: color 0.5s;
 
@@ -59,12 +59,15 @@
 @media screen and (max-width: $medium) {
     .footer-links {
         @include flexible-row(center, center);
-        flex-wrap: wrap;
 
-        column-gap: 50px;
+        max-width: $medium;
 
         .links-container {
             @include flexible-column(center, center);
+
+            &:nth-last-child(-n + 2) {
+                display:none;
+            }
             
             row-gap: 10px;
 
@@ -72,7 +75,7 @@
                 text-decoration: none;
                 
                 .footer-link-text {
-                    color: $aux-color;
+                    color: $footer-aux-color;
                     font-size: 12px;
                     transition: color 0.5s;
 

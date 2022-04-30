@@ -1,6 +1,7 @@
 $text-color: #393939;
 $title-color: #333333;
 $aux-color: #707070;
+$footer-aux-color: #a9a9a9;
 
 $hover-color: #ed1c24;
 $red-color: #c81f40;
@@ -9,7 +10,7 @@ $big: 1200px;
 $pre-big: 992px;
 $medium: 768px;
 $pre-medium: 576px;
-$mini: 350px;
+$mini: 320px;
 
 @mixin flexible-row($align, $justify) {
     display: flex;

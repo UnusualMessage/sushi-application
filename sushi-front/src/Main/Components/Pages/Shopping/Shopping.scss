@@ -35,13 +35,11 @@
         .main-wrapper {
             @include flexible-row(center, flex-start);
 
-            width: $big;
-            
             .main-content {
                 @include flexible-row(center, space-around);
                 flex-wrap: wrap;
 
-                padding: 30px;
+                padding: 10px;
                 width: 100%;
                 gap: 50px;
             }
