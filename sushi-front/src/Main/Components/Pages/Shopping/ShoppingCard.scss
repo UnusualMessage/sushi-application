@@ -102,6 +102,8 @@
                 }
 
                 .order-button {
+                    cursor: pointer;
+                    
                     border: 1px solid $red-color;
                     border-radius: 20px;
                     padding-left: 15px;

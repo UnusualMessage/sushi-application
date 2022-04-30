@@ -1,7 +1,45 @@
 @use '../../../Styles/Constants.scss' as *;
 
 @media screen and (min-width: $big) {
-    .header-cart {
+    .header-cart-inactive {
+        @include flexible-row(center, center);
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 50px;
+            background-color: $red-color;
+            column-gap: 25px;
+
+            .cart-picture {
+                border-right: 1px solid white;
+
+                padding: 5px 10px 5px 20px;
+
+                svg {
+                    fill: white;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .cart-price {
+                font-size: 18px;
+                color: white;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+
+    .header-cart-active {
         @include flexible-row(center, center);
 
         .cart-link {
@@ -11,6 +49,40 @@
             border: 1px solid $red-color;
             border-radius: 50px;
             column-gap: 25px;
+
+            &:hover {
+                @include flexible-row(center, center);
+
+                text-decoration: none;
+                border: 1px solid white;
+                border-radius: 50px;
+                background-color: $red-color;
+                column-gap: 25px;
+    
+                .cart-picture {
+                    border-right: 1px solid white;
+    
+                    padding: 5px 10px 5px 20px;
+    
+                    svg {
+                        fill: white;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+    
+                .cart-price {
+                    font-size: 18px;
+                    color: white;
+                    margin-right: 20px;
+    
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+    
+                }
+            }
 
             .cart-picture {
                 border-right: 1px solid $red-color;
@@ -40,7 +112,45 @@
 }
 
 @media screen and (max-width: $big) {
-    .header-cart {
+    .header-cart-inactive {
+        @include flexible-row(center, center);
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            text-decoration: none;
+            border: 1px solid white;
+            background-color: $red-color;
+            border-radius: 50px;
+            column-gap: 25px;
+
+            .cart-picture {
+                border-right: 1px solid $red-color;
+
+                padding: 5px 10px 5px 20px;
+
+                svg {
+                    fill: white;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .cart-price {
+                font-size: 18px;
+                color: white;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+
+    .header-cart-active {
         @include flexible-row(center, center);
 
         .cart-link {
@@ -50,6 +160,39 @@
             border: 1px solid $red-color;
             border-radius: 50px;
             column-gap: 25px;
+
+            &:active {
+                @include flexible-row(center, center);
+
+                text-decoration: none;
+                border: 1px solid white;
+                background-color: $red-color;
+                border-radius: 50px;
+                column-gap: 25px;
+    
+                .cart-picture {
+                    border-right: 1px solid white;
+    
+                    padding: 5px 10px 5px 20px;
+    
+                    svg {
+                        fill: white;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+    
+                .cart-price {
+                    font-size: 18px;
+                    color: white;
+                    margin-right: 20px;
+    
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+            }
 
             .cart-picture {
                 border-right: 1px solid $red-color;
@@ -79,14 +222,15 @@
 }
 
 @media screen and (max-width: $medium) {
-    .header-cart {
+    .header-cart-inactive {
         display: none;
 
         .cart-link {
             @include flexible-row(center, center);
 
             text-decoration: none;
-            border: 1px solid $red-color;
+            border: 1px solid white;
+            background-color: $red-color;
             border-radius: 50px;
             column-gap: 25px;
 
@@ -96,13 +240,62 @@
                 padding: 5px 10px 5px 20px;
 
                 svg {
-                    fill: $red-color;
+                    fill: white;
                     width: 24px;
                     height: 24px;
                 }
             }
 
             .cart-price {
+                font-size: 18px;
+                color: white;
+                margin-right: 20px;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+
+            }
+        }
+    }
+
+    .header-cart-active {
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+
+        .cart-link {
+            @include flexible-row(center, center);
+
+            box-sizing: border-box;
+
+            width: 60px;
+            height: 60px;
+
+            text-decoration: none;
+            border: 0px solid $red-color;
+            background-color: $hover-color;
+            border-radius: 30px;
+            column-gap: 0px;
+
+            padding: 15px;
+
+            .cart-picture {
+                margin-right: 4px;
+                border-right: 0px solid $red-color;
+
+                padding: 0px;
+
+                svg {
+                    fill: white;
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+
+            .cart-price {
+                display: none;
                 font-size: 18px;
                 color: $text-color;
                 margin-right: 20px;
