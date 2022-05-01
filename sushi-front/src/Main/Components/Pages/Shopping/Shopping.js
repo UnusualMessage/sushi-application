@@ -8,8 +8,10 @@ const Shopping = () => {
         <>
             <main className='main'>
                 <div className='main-wrapper'>
-                    <ShoppingTitle/>
-                    <ShoppingCards/>
+                    <div className='main-content'>
+                        <ShoppingTitle/>
+                        <ShoppingCards/>
+                    </div>
                 </div>
             </main>
         </>

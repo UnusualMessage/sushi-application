@@ -2,7 +2,7 @@ import ShoppingCard from "./ShoppingCard";
 
 const ShoppingCards = () => {
     return (
-        <section className='main-content'>
+        <section className='shopping-cards-container'>
             <ShoppingCard imageSource="/1.jfif" title="Пивожное 1" price="100" />
             <ShoppingCard imageSource="/2.jfif" title="Пивожное 2" price="200" />
             <ShoppingCard imageSource="/3.jfif" title="Пивожное 3" price="300" />
