@@ -1,0 +1,132 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.cart-order-form {
+    @include flexible-column(stretch, flex-start);
+
+    width: 100%;
+    
+    gap: 50px;
+
+    .cart-order-form-result {
+        @include flexible-column(stretch, flex-start);
+        gap: 10px;
+
+        .cart-order-form-result-text {
+            font-size: 16px;
+            color: $aux-color;
+        }
+
+        .cart-order-form-result-price {
+            font-size: 30px;
+            font-weight: bold;
+            color: $title-color;
+
+            &::after {
+                margin-left: 5px;
+                content: "\20BD";
+            }
+        }
+    }
+
+    .cart-order-form-who {
+        @include flexible-column(stretch, flex-start);
+        gap: 20px;
+
+        .cart-order-form-who-title {
+            font-size: 18px;
+            color: $title-color;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cart-order-form-who-phone {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 10px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .cart-order-form-who-name {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+    }
+
+    .cart-order-form-address {
+        @include flexible-column(stretch, flex-start);
+        
+        gap: 20px;
+
+        .cart-order-form-address-title {
+            font-size: 18px;
+            color: $title-color;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cart-order-form-address-street {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .cart-order-form-address-home {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .cart-order-form-address-part {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .cart-order-form-address-floor {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .cart-order-form-address-flat {
+            @include flexible-column(stretch, flex-start);
+
+            gap: 7px;
+
+            span {
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+    }
+}
