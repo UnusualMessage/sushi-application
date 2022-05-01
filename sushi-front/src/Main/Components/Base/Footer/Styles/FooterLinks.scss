@@ -1,55 +1,25 @@
-@use '../../../Styles/Constants.scss' as *;
+@use '../../../Styles/Constants.scss'as *;
 
-@media screen and (min-width: $big) {
-    .footer-links {
-        @include flexible-row(center, space-between);
+.footer-links {
+    @include flexible-row(center, space-between);
 
-        column-gap: 50px;
+    column-gap: 50px;
 
-        .links-container {
-            @include flexible-column(stretch, flex-start);
-            
-            row-gap: 10px;
+    .links-container {
+        @include flexible-column(stretch, flex-start);
 
-            .footer-link {
-                text-decoration: none;
-                
-                .footer-link-text {
-                    color: $footer-aux-color;
-                    font-size: 12px;
-                    transition: color 0.5s;
+        row-gap: 10px;
 
-                    &:hover {
-                        color: $hover-color;
-                    }
-                }
-            }
-        }
-    }
-}
+        .footer-link {
+            text-decoration: none;
 
-@media screen and (min-width: $medium) and (max-width: $big) {
-    .footer-links {
-        @include flexible-row(center, space-between);
+            .footer-link-text {
+                color: $footer-aux-color;
+                font-size: 12px;
+                transition: color 0.5s;
 
-        column-gap: 50px;
-
-        .links-container {
-            @include flexible-column(stretch, flex-start);
-            
-            row-gap: 10px;
-
-            .footer-link {
-                text-decoration: none;
-                
-                .footer-link-text {
-                    color: $footer-aux-color;
-                    font-size: 12px;
-                    transition: color 0.5s;
-
-                    &:hover {
-                        color: $hover-color;
-                    }
+                &:hover {
+                    color: $hover-color;
                 }
             }
         }
@@ -66,23 +36,7 @@
             @include flexible-column(center, center);
 
             &:nth-last-child(-n + 2) {
-                display:none;
-            }
-            
-            row-gap: 10px;
-
-            .footer-link {
-                text-decoration: none;
-                
-                .footer-link-text {
-                    color: $footer-aux-color;
-                    font-size: 12px;
-                    transition: color 0.5s;
-
-                    &:hover {
-                        color: $hover-color;
-                    }
-                }
+                display: none;
             }
         }
     }
