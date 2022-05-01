@@ -1,266 +1,99 @@
 @use '../../../Styles/Constants.scss' as *;
 
-@media screen and (min-width: $big) {
-    .header-cart-inactive {
+.header-cart {
+    @include flexible-row(center, center);
+
+    .cart-link {
         @include flexible-row(center, center);
 
-        .cart-link {
-            @include flexible-row(center, center);
+        text-decoration: none;
+        border: 1px solid white;
+        background-color: $red-color;
+        border-radius: 50px;
+        column-gap: 25px;
 
-            text-decoration: none;
-            border: 1px solid white;
-            border-radius: 50px;
-            background-color: $red-color;
-            column-gap: 25px;
+        .cart-picture {
+            border-right: 1px solid white;
 
-            .cart-picture {
-                border-right: 1px solid white;
+            padding: 5px 10px 5px 20px;
 
-                padding: 5px 10px 5px 20px;
+            svg {
+                fill: white;
+                width: 24px;
+                height: 24px;
+            }
+        }
 
-                svg {
-                    fill: white;
-                    width: 24px;
-                    height: 24px;
-                }
+        .cart-price {
+            font-size: 18px;
+            color: white;
+            margin-right: 20px;
+
+            &::after {
+                margin-left: 2px;
+                content: "\20BD";
             }
 
-            .cart-price {
-                font-size: 18px;
-                color: white;
-                margin-right: 20px;
+        }
+    }
+}
 
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
+.active {
+    .cart-link {
+        border: 1px solid $red-color;
+        background-color: white;
+        
+        .cart-picture {
+            border-right: 1px solid $red-color;
 
+            svg {
+                fill: $red-color;
             }
+        }
+
+        .cart-price {
+            color: $title-color;
         }
     }
 
-    .header-cart-active {
-        @include flexible-row(center, center);
-
+    &:hover {
         .cart-link {
-            @include flexible-row(center, center);
-
-            text-decoration: none;
-            border: 1px solid $red-color;
-            border-radius: 50px;
-            column-gap: 25px;
-
-            &:hover {
-                @include flexible-row(center, center);
-
-                text-decoration: none;
-                border: 1px solid white;
-                border-radius: 50px;
-                background-color: $red-color;
-                column-gap: 25px;
-    
-                .cart-picture {
-                    border-right: 1px solid white;
-    
-                    padding: 5px 10px 5px 20px;
-    
-                    svg {
-                        fill: white;
-                        width: 24px;
-                        height: 24px;
-                    }
-                }
-    
-                .cart-price {
-                    font-size: 18px;
-                    color: white;
-                    margin-right: 20px;
-    
-                    &::after {
-                        margin-left: 2px;
-                        content: "\20BD";
-                    }
-    
-                }
-            }
-
+            background-color: $red-color;
+            
             .cart-picture {
-                border-right: 1px solid $red-color;
-
-                padding: 5px 10px 5px 20px;
-
+                border-right: 1px solid white;
+    
                 svg {
-                    fill: $red-color;
-                    width: 24px;
-                    height: 24px;
+                    fill: white;
                 }
             }
-
+    
             .cart-price {
-                font-size: 18px;
-                color: $text-color;
-                margin-right: 20px;
-
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
-
+                color: white;
             }
         }
     }
 }
 
 @media screen and (max-width: $big) {
-    .header-cart-inactive {
-        @include flexible-row(center, center);
-
+    .header-cart {
         .cart-link {
-            @include flexible-row(center, center);
-
-            text-decoration: none;
-            border: 1px solid white;
-            background-color: $red-color;
-            border-radius: 50px;
-            column-gap: 25px;
-
             .cart-picture {
-                border-right: 1px solid white;
-
-                padding: 5px 10px 5px 20px;
-
                 svg {
-                    fill: white;
                     width: 20px;
                     height: 20px;
                 }
             }
-
+    
             .cart-price {
                 font-size: 14px;
-                color: white;
-                margin-right: 20px;
-
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
-
-            }
-        }
-    }
-
-    .header-cart-active {
-        @include flexible-row(center, center);
-
-        .cart-link {
-            @include flexible-row(center, center);
-
-            text-decoration: none;
-            border: 1px solid $red-color;
-            border-radius: 50px;
-            column-gap: 25px;
-
-            &:active {
-                @include flexible-row(center, center);
-
-                text-decoration: none;
-                border: 1px solid white;
-                background-color: $red-color;
-                border-radius: 50px;
-                column-gap: 25px;
-    
-                .cart-picture {
-                    border-right: 1px solid white;
-    
-                    padding: 5px 10px 5px 20px;
-    
-                    svg {
-                        fill: white;
-                        width: 24px;
-                        height: 24px;
-                    }
-                }
-    
-                .cart-price {
-                    font-size: 18px;
-                    color: white;
-                    margin-right: 20px;
-    
-                    &::after {
-                        margin-left: 2px;
-                        content: "\20BD";
-                    }
-                }
-            }
-
-            .cart-picture {
-                border-right: 1px solid $red-color;
-
-                padding: 5px 10px 5px 20px;
-
-                svg {
-                    fill: $red-color;
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-
-            .cart-price {
-                font-size: 14px;
-                color: $text-color;
-                margin-right: 20px;
-
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
-
             }
         }
     }
 }
 
 @media screen and (max-width: $medium) {
-    .header-cart-inactive {
-        display: none;
-
-        .cart-link {
-            @include flexible-row(center, center);
-
-            text-decoration: none;
-            border: 1px solid white;
-            background-color: $red-color;
-            border-radius: 50px;
-            column-gap: 25px;
-
-            .cart-picture {
-                border-right: 1px solid $red-color;
-
-                padding: 5px 10px 5px 20px;
-
-                svg {
-                    fill: white;
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-
-            .cart-price {
-                font-size: 18px;
-                color: white;
-                margin-right: 20px;
-
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
-
-            }
-        }
-    }
-
-    .header-cart-active {
+    .active {
         z-index: 10;
         position: fixed;
         bottom: 10px;
@@ -297,15 +130,6 @@
 
             .cart-price {
                 display: none;
-                font-size: 18px;
-                color: $text-color;
-                margin-right: 20px;
-
-                &::after {
-                    margin-left: 2px;
-                    content: "\20BD";
-                }
-
             }
         }
     }

@@ -6,7 +6,7 @@ import '../Styles/HeaderCart.scss';
 
 const HeaderCart = observer(() => {
     return (
-        <div className={(CartPrice.price === "0") ? 'header-cart-inactive' : "header-cart-active"}>
+        <div className={(CartPrice.price === "0") ? 'header-cart' : "header-cart active"}>
             <Link className='cart-link' to={(CartPrice.price !== "0") ? "/cart" : "/"}>
                 <span className='cart-picture'>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512">
