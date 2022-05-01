@@ -1,0 +1,375 @@
+@use "../../../Styles/Constants.scss"as *;
+
+.cart-order-unit {
+    @include flexible-row(center, flex-start);
+
+    background-color: white;
+    -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+    background-color: white;
+    width: 100%;
+    gap: 15px;
+
+    .order-unit-image {
+        border-radius: 10px 0px 0px 10px;
+        width: 150px;
+
+        img {
+            border-radius: 10px 0px 0px 10px;
+
+            width: 100%;
+        }
+    }
+
+    .order-unit-description {
+        @include flexible-row(center, space-between);
+
+        flex-basis: 85%;
+        gap: 10px;
+
+        .order-unit-description-text-container {
+            @include flexible-column(stretch, flex-start);
+
+            flex-basis: 500px;
+            gap: 10px;
+
+            .order-unit-description-title {
+                font-size: 18px;
+                color: $title-color;
+                font-weight: bold;
+            }
+
+            .order-unit-description-text {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .order-unit-buttons {
+            @include flexible-row(center, center);
+            gap: 50px;
+
+            .order-unit-count {
+                @include flexible-row(center, space-around);
+
+                gap: 15px;
+
+                .order-unit-count-minus {
+                    padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border: 1px solid $red-color;
+                    border-radius: 30px;
+                    font-size: 16px;
+                    color: $red-color;
+
+                    &:hover {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .order-unit-count-plus {
+                    padding: 5px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    border: 1px solid $red-color;
+                    border-radius: 30px;
+                    font-size: 16px;
+                    color: $red-color;
+
+                    &:hover {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .order-unit-count-current {
+                    font-size: 14px;
+                    color: $title-color;
+                }
+            }
+
+            .order-unit-price {
+                .order-unit-count-price-text {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $title-color;
+
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+            }
+
+            .order-unit-remove-button {
+                cursor: pointer;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: $aux-color;
+
+                    &:hover {
+                        fill: $hover-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) and (min-width: $pre-medium) {
+    .cart-order-unit {
+        @include flexible-row(center, space-between);
+    
+        background-color: white;
+        width: auto;
+        gap: 15px;
+        padding: 10px;
+    
+        .order-unit-image {
+            flex-basis: 30%;
+            border-radius: 10px;
+    
+            img {
+                border-radius: 10px;
+    
+                width: 100%;
+            }
+        }
+    
+        .order-unit-description {
+            @include flexible-column(stretch, flex-start);
+            
+            gap: 10px;
+            flex-basis: 70%;
+    
+            .order-unit-description-text-container {
+                @include flexible-column(stretch, flex-start);
+                
+                flex-basis: auto;
+                width: auto;
+                gap: 10px;
+    
+                .order-unit-description-title {
+                    font-size: 16px;
+                    color: $title-color;
+                    font-weight: bold;
+                }
+    
+                .order-unit-description-text {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 12px;
+                    color: $aux-color;
+                }
+            }
+    
+            .order-unit-buttons {
+                @include flexible-row(center, space-between);
+                gap: 50px;
+    
+                .order-unit-count {
+                    @include flexible-row(center, space-around);
+    
+                    gap: 15px;
+    
+                    .order-unit-count-minus {
+                        padding: 5px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        border: 1px solid $red-color;
+                        border-radius: 30px;
+                        font-size: 16px;
+                        color: $red-color;
+    
+                        &:hover {
+                            background-color: $red-color;
+                            color: white;
+                        }
+                    }
+    
+                    .order-unit-count-plus {
+                        padding: 5px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        border: 1px solid $red-color;
+                        border-radius: 30px;
+                        font-size: 16px;
+                        color: $red-color;
+    
+                        &:hover {
+                            background-color: $red-color;
+                            color: white;
+                        }
+                    }
+    
+                    .order-unit-count-current {
+                        font-size: 14px;
+                        color: $title-color;
+                    }
+                }
+    
+                .order-unit-price {
+                    .order-unit-count-price-text {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: $title-color;
+    
+                        &::after {
+                            margin-left: 2px;
+                            content: "\20BD";
+                        }
+                    }
+                }
+    
+                .order-unit-remove-button {
+                    cursor: pointer;
+    
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        fill: $aux-color;
+    
+                        &:hover {
+                            fill: $hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $pre-medium) {
+    .cart-order-unit {
+        @include flexible-column(center, center);
+    
+        background-color: white;
+        width: auto;
+        gap: 15px;
+        padding: 10px;
+    
+        .order-unit-image {
+            border-radius: 10px;
+            width: 200px;
+            img {
+                border-radius: 10px;
+    
+                width: 100%;
+            }
+        }
+    
+        .order-unit-description {
+            @include flexible-column(stretch, flex-start);
+            
+            gap: 10px;
+    
+            .order-unit-description-text-container {
+                @include flexible-column(stretch, flex-start);
+                
+                flex-basis: auto;
+                width: auto;
+                gap: 10px;
+    
+                .order-unit-description-title {
+                    font-size: 16px;
+                    color: $title-color;
+                    font-weight: bold;
+                }
+    
+                .order-unit-description-text {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 12px;
+                    color: $aux-color;
+                }
+            }
+    
+            .order-unit-buttons {
+                @include flexible-row(center, space-between);
+                gap: 0px;
+    
+                .order-unit-count {
+                    @include flexible-row(center, space-around);
+    
+                    gap: 15px;
+    
+                    .order-unit-count-minus {
+                        padding: 5px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        border: 1px solid $red-color;
+                        border-radius: 30px;
+                        font-size: 16px;
+                        color: $red-color;
+    
+                        &:hover {
+                            background-color: $red-color;
+                            color: white;
+                        }
+                    }
+    
+                    .order-unit-count-plus {
+                        padding: 5px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        border: 1px solid $red-color;
+                        border-radius: 30px;
+                        font-size: 16px;
+                        color: $red-color;
+    
+                        &:hover {
+                            background-color: $red-color;
+                            color: white;
+                        }
+                    }
+    
+                    .order-unit-count-current {
+                        font-size: 14px;
+                        color: $title-color;
+                    }
+                }
+    
+                .order-unit-price {
+                    .order-unit-count-price-text {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: $title-color;
+    
+                        &::after {
+                            margin-left: 2px;
+                            content: "\20BD";
+                        }
+                    }
+                }
+    
+                .order-unit-remove-button {
+                    cursor: pointer;
+    
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        fill: $aux-color;
+    
+                        &:hover {
+                            fill: $hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

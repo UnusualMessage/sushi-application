@@ -10,7 +10,7 @@ const NavLink = (props) => {
     };
 
     return (
-        <Link className="nav-link" to={props.to} onMouseDown={onMouseDown}>
+        <Link className="nav-link" to={"/shopping/" + props.to} onMouseDown={onMouseDown}>
             <span className="link-text">{props.text}</span>
         </Link>
     )

@@ -33,7 +33,6 @@
                 margin-left: 2px;
                 content: "\20BD";
             }
-
         }
     }
 }
@@ -93,7 +92,12 @@
 }
 
 @media screen and (max-width: $medium) {
+    .header-cart {
+        display: none;
+    }
+
     .active {
+        display: flex;
         z-index: 10;
         position: fixed;
         bottom: 10px;

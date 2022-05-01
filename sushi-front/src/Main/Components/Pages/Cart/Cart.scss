@@ -1,0 +1,40 @@
+@use "../../Styles/Constants.scss" as *;
+
+.cart {
+    @include flexible-row(center, center);
+
+    margin-top: 10px;
+    background-color: #f9f9f9;
+
+    .cart-wrapper {
+        @include flexible-row(center, center);
+
+        width: $big;
+
+        .cart-content {
+            @include flexible-column(center, center);
+
+            width: 100%;
+            padding: 30px;
+
+            .cart-order-units {
+                @include flexible-column(center, center);
+
+                width: 100%;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $big) {
+    .cart {
+        .cart-wrapper {
+            width: $big;
+    
+            .cart-content {
+                padding: 15px;
+            }
+        }
+    }
+}

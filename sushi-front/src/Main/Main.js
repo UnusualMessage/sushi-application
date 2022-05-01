@@ -1,14 +1,16 @@
-import Wrapper from "./Components/Base/Wrapper";
-import Shopping from "./Components/Pages/Shopping/Shopping";
+import { Route, Routes } from "react-router-dom";
 
-import './Main.scss';
+import Wrapper from "./Components/Base/Wrapper";
+import Cart from "./Components/Pages/Cart/Cart";
+import Shopping from "./Components/Pages/Shopping/Shopping";
 
 const Main = () => {
     return (
-        <Wrapper>
-            <Shopping />
-        </Wrapper>
-    )
+        <Routes>
+            <Route exact path="/shopping" element={<> <Wrapper> <Shopping /> </Wrapper></>} />
+            <Route exact path="/cart" element={<> <Wrapper> <Cart /> </Wrapper></>} />
+        </Routes>
+    );
 }
 
 export default Main;
