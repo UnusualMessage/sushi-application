@@ -1,24 +1,16 @@
 import FooterInfo from './Components/FooterInfo';
-import FooterLinksContainer from './Components/FooterLinkContainer';
+import FooterLinks from './Components/FooterLinks';
 
 import './Footer.scss';
 import './Styles/FooterLinks.scss';
 
-const Footer = (props) => {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-wrapper">
                 <div className="footer-content">
                     <FooterInfo/>
-
-                    <div className='footer-links'>
-                        <FooterLinksContainer/>
-                        <FooterLinksContainer/>
-                        <FooterLinksContainer/>
-                    </div>
-
-                    <div className='footer-socials'>
-                    </div>
+                    <FooterLinks/>
                 </div>
             </div>
         </footer>

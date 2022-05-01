@@ -1,55 +1,34 @@
 @use '../../Styles/Constants.scss' as *;
 
-@media screen and (min-width: $big) {
-    .footer {
-        @include flexible-row(center, center);
+.footer {
+    @include flexible-row(center, center);
 
-        background-color: $title-color;
+    background-color: $title-color;
 
-        margin-top: 50px;
+    margin-top: 50px;
 
-        .footer-wrapper {
-            @include flexible-row(center, flex-start);
+    .footer-wrapper {
+        @include flexible-row(center, flex-start);
 
-            width: $big;
+        width: $big;
 
-            .footer-content {
-                @include flexible-row(center, center);
+        .footer-content {
+            @include flexible-row(center, center);
 
-                padding: 30px;
-                width: 100%;
-                column-gap: 100px;
-                
-                .footer-socials {
-
-                }
-            }
+            padding: 30px;
+            width: 100%;
+            column-gap: 100px;
         }
     }
 }
 
 @media screen and (min-width: $medium) and (max-width: $big) {
     .footer {
-        @include flexible-row(center, center);
-
-        background-color: $title-color;
-
-        margin-top: 50px;
-
         .footer-wrapper {
-            @include flexible-row(center, flex-start);
-
-            width: $big;
-
             .footer-content {
-                @include flexible-row(center, space-between);
+                @include flexible-row(center, space-around);
 
                 padding: 15px;
-                width: 100%;
-
-                .footer-socials {
-
-                }
             }
         }
     }
@@ -57,28 +36,14 @@
 
 @media screen and (max-width: $medium) {
     .footer {
-        @include flexible-row(center, center);
-
-        background-color: $title-color;
-
-        margin-top: 50px;
-
         .footer-wrapper {
-            @include flexible-row(center, flex-start);
-
             width: $medium;
 
             .footer-content {
                 @include flexible-column(center, flex-start);
 
                 row-gap: 30px;
-
                 padding: 15px;
-                width: 100%;
-
-                .footer-socials {
-
-                }
             }
         }
     }
