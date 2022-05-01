@@ -1,37 +1,28 @@
 @use '../../Styles/Constants.scss' as *;
 
-@media screen and (min-width: $big) {
-    .header {
+.header {
+    @include flexible-row(center, center);
+
+    .header-wrapper {
         @include flexible-row(center, center);
 
-        .header-wrapper {
-            @include flexible-row(center, center);
-    
-            width: $big;
-    
-            .header-content {
-                @include flexible-row(center, space-between);
-    
-                width: 100%;
-                padding: 30px;
-            }
+        width: $big;
+
+        .header-content {
+            @include flexible-row(center, space-between);
+
+            width: 100%;
+            padding: 30px;
         }
     }
 }
 
 @media screen and (max-width: $big) {
     .header {
-        @include flexible-row(center, center);
-
         .header-wrapper {
-            @include flexible-row(center, center);
-    
             width: 100%;
     
             .header-content {
-                @include flexible-row(center, space-between);
-    
-                width: 100%;
                 padding: 15px;
             }
         }
@@ -43,16 +34,7 @@
         @include flexible-row(center, flex-start);
 
         .header-wrapper {
-            @include flexible-row(center, center);
-
-            max-width: 100%;
-
-            .header-content {
-                @include flexible-row(center, space-between);
-
-                width: 100%;
-                padding: 15px;
-            }
+            width: 100%;
         }
     }
 }

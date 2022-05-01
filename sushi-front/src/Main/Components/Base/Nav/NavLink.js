@@ -1,11 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CurrentCategory from "../../Store/CurrentCategory";
 
 import './NavLink.scss';
 
 const NavLink = (props) => {
-    const navigate = useNavigate();
-
     const onMouseDown = (e) => {
         e.preventDefault();
         CurrentCategory.set(props.text);

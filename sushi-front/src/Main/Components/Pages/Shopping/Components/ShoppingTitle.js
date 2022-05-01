@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import CurrentCategory from "../../Store/CurrentCategory";
+import CurrentCategory from "../../../Store/CurrentCategory";
 
 const ShoppingTitle = observer(() => {
     return (

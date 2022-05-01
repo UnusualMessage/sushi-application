@@ -1,0 +1,91 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.shopping-card-modal-inactive {
+    @include flexible-row(center, center);
+
+    transform: scale(0);
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .shopping-card-modal-content {
+        margin: 5%;
+        padding: 20px;
+        border-radius: 12px;
+        background-color: white;
+        height: 300px;
+        width: 400px;
+        transform: scale(0);
+        transition: 0.5s all;
+    }
+}
+
+.shopping-card-modal-active {
+    @include flexible-row(center, center);
+
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .shopping-card-modal-content {
+        margin: 5%;
+        padding: 20px;
+        border-radius: 12px;
+        background-color: white;
+        width: 400px;
+        transform: scale(1);
+        transition: 0.5s all;
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .shopping-card-modal-inactive {
+        @include flexible-row(center, center);
+    
+        transform: scale(0);
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+    
+        .shopping-card-modal-content {
+            margin: 5%;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: white;
+            height: 300px;
+            width: 400px;
+            transform: scale(0);
+            transition: 0.5s all;
+        }
+    }
+
+    .shopping-card-modal-active {
+        @include flexible-row(stretch, center);
+    
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+    
+        .shopping-card-modal-content {
+            margin: 2%;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: white;
+            width: 100%;
+            transform: scale(1);
+            transition: 0.5s all;
+        }
+    }
+}

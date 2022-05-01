@@ -1,7 +1,7 @@
-import ShoppingTitle from './ShoppingTitle';
+import ShoppingTitle from './Components/ShoppingTitle';
 
 import './Shopping.scss';
-import ShoppingCards from './ShoppingCards';
+import ShoppingCards from './Components/ShoppingCards';
 
 const Shopping = () => {
     return(

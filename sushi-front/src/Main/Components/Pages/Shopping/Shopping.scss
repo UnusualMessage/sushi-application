@@ -5,7 +5,7 @@
         @include flexible-row(center, center);
 
         background-color: #f9f9f9;
-        margin-top: 30px;
+        margin-top: 10px;
 
         .main-wrapper {
             @include flexible-column(center, center);
@@ -43,7 +43,7 @@
         @include flexible-row(center, center);
 
         background-color: #f9f9f9;
-        margin-top: 30px;
+        margin-top: 10px;
 
         .main-wrapper {
             @include flexible-column(center, center);
@@ -78,7 +78,7 @@
         @include flexible-row(center, center);
 
         background-color: #f9f9f9;
-        margin-top: 30px;
+        margin-top: 10px;
 
         .main-wrapper {
             @include flexible-column(center, center);
