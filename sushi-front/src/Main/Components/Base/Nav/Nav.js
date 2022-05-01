@@ -8,15 +8,15 @@ const Nav = (props) => {
             <nav className="nav">
                 <div className="nav-wrapper">
                     <div className="nav-content">
-                        <NavLink text="СЕТЫ" to="/"/>
-                        <NavLink text="ПОКЕ" to="/"/>
-                        <NavLink text="РОЛЛЫ" to="/"/>
-                        <NavLink text="СУШИ" to="/"/>
-                        <NavLink text="ЗАПЕЧЕННЫЕ РОЛЛЫ" to="/"/>
-                        <NavLink text="НАПИТКИ" to="/"/>
-                        <NavLink text="ДЕСЕРТЫ" to="/"/>
-                        <NavLink text="ДОПОЛНИТЕЛЬНО" to="/"/>
-                        <NavLink text="КОМПАНИЯ" to="/"/>
+                        <NavLink text="СЕТЫ" to="/СЕТЫ"/>
+                        <NavLink text="ПОКЕ" to="/ПОКЕ"/>
+                        <NavLink text="РОЛЛЫ" to="/РОЛЛЫ"/>
+                        <NavLink text="СУШИ" to="/СУШИ"/>
+                        <NavLink text="ЗАПЕЧЕННЫЕ РОЛЛЫ" to="/ЗАПЕЧЕННЫЕ РОЛЛЫ"/>
+                        <NavLink text="НАПИТКИ" to="/НАПИТКИ"/>
+                        <NavLink text="ДЕСЕРТЫ" to="/ДЕСЕРТЫ"/>
+                        <NavLink text="ДОПОЛНИТЕЛЬНО" to="/ДОПОЛНИТЕЛЬНО"/>
+                        <NavLink text="КОМПАНИЯ" to="/КОМПАНИЯ"/>
                     </div>
                 </div>
             </nav>

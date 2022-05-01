@@ -7,7 +7,7 @@ import Shopping from "./Components/Pages/Shopping/Shopping";
 const Main = () => {
     return (
         <Routes>
-            <Route exact path="/shopping" element={<> <Wrapper> <Shopping /> </Wrapper></>} />
+            <Route exact path="/shopping/:category" element={<> <Wrapper> <Shopping /> </Wrapper></>}/>
             <Route exact path="/cart" element={<> <Wrapper> <Cart /> </Wrapper></>} />
         </Routes>
     );
