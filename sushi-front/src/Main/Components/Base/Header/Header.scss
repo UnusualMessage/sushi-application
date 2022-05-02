@@ -13,11 +13,12 @@
 
             width: 100%;
             padding: 30px;
+            gap: 10px;
         }
     }
 }
 
-@media screen and (max-width: $big) {
+@media screen and (max-width: $big) and (min-width: $medium) {
     .header {
         .header-wrapper {
             width: 100%;
@@ -35,6 +36,11 @@
 
         .header-wrapper {
             width: 100%;
+
+            .header-content {
+                padding: 15px;
+                gap: 0px;
+            }
         }
     }
 }
