@@ -8,12 +8,10 @@ const Header = () => {
     return (
         <>
             <header className='header'>
-                <div className='header-wrapper'>
-                    <div className='header-content'>        
-                        <HeaderInfo/>
-                        <HeaderMenu/>
-                        <HeaderCart />
-                    </div>
+                <div className='header-content'>
+                    <HeaderInfo />
+                    <HeaderMenu />
+                    <HeaderCart />
                 </div>
             </header>
         </>

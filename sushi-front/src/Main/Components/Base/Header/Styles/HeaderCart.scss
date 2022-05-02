@@ -3,90 +3,79 @@
 .header-cart {
     @include flexible-row(center, center);
 
-    .cart-link {
-        @include flexible-row(center, center);
+    text-decoration: none;
+    border: 1px solid white;
+    background-color: $red-color;
+    border-radius: 50px;
+    column-gap: 25px;
 
-        text-decoration: none;
-        border: 1px solid white;
-        background-color: $red-color;
-        border-radius: 50px;
-        column-gap: 25px;
+    .cart-picture {
+        border-right: 1px solid white;
+        padding: 5px 10px 5px 20px;
 
-        .cart-picture {
-            border-right: 1px solid white;
-
-            padding: 5px 10px 5px 20px;
-
-            svg {
-                fill: white;
-                width: 24px;
-                height: 24px;
-            }
+        svg {
+            fill: white;
+            width: 24px;
+            height: 24px;
         }
+    }
 
-        .cart-price {
-            font-size: 18px;
-            color: white;
-            margin-right: 20px;
+    .cart-price {
+        font-size: 18px;
+        color: white;
+        margin-right: 20px;
 
-            &::after {
-                margin-left: 2px;
-                content: "\20BD";
-            }
+        &::after {
+            margin-left: 2px;
+            content: "\20BD";
         }
     }
 }
 
 .active {
-    .cart-link {
-        border: 1px solid $red-color;
-        background-color: white;
-        
+    border: 1px solid $red-color;
+    background-color: white;
+    
+    .cart-picture {
+        border-right: 1px solid $red-color;
+
+        svg {
+            fill: $red-color;
+        }
+    }
+
+    .cart-price {
+        color: $title-color;
+    }
+
+    &:hover {
+        background-color: $red-color;
+            
         .cart-picture {
-            border-right: 1px solid $red-color;
+            border-right: 1px solid white;
 
             svg {
-                fill: $red-color;
+                fill: white;
             }
         }
 
         .cart-price {
-            color: $title-color;
-        }
-    }
-
-    &:hover {
-        .cart-link {
-            background-color: $red-color;
-            
-            .cart-picture {
-                border-right: 1px solid white;
-    
-                svg {
-                    fill: white;
-                }
-            }
-    
-            .cart-price {
-                color: white;
-            }
+            color: white;
         }
     }
 }
 
 @media screen and (max-width: $big) {
     .header-cart {
-        .cart-link {
-            .cart-picture {
-                svg {
-                    width: 20px;
-                    height: 20px;
-                }
+        .cart-picture {
+            svg {
+                width: 20px;
+                height: 20px;
             }
-    
-            .cart-price {
-                font-size: 14px;
-            }
+        }
+
+        .cart-price {
+            font-size: 14px;
         }
     }
 }
@@ -97,44 +86,38 @@
     }
 
     .active {
-        display: flex;
+        @include flexible-row(center, center);
+
         z-index: 10;
         position: fixed;
         bottom: 10px;
         right: 20px;
 
-        .cart-link {
-            @include flexible-row(center, center);
+        box-sizing: border-box;
+        width: 60px;
+        height: 60px;
 
-            box-sizing: border-box;
+        text-decoration: none;
+        border: 0px solid $red-color;
+        background-color: $hover-color;
+        border-radius: 30px;
+        column-gap: 0px;
+        padding: 15px;
 
-            width: 60px;
-            height: 60px;
+        .cart-picture {
+            margin-right: 4px;
+            border-right: 0px solid $red-color;
+            padding: 0px;
 
-            text-decoration: none;
-            border: 0px solid $red-color;
-            background-color: $hover-color;
-            border-radius: 30px;
-            column-gap: 0px;
-
-            padding: 15px;
-
-            .cart-picture {
-                margin-right: 4px;
-                border-right: 0px solid $red-color;
-
-                padding: 0px;
-
-                svg {
-                    fill: white;
-                    width: 28px;
-                    height: 28px;
-                }
+            svg {
+                fill: white;
+                width: 28px;
+                height: 28px;
             }
+        }
 
-            .cart-price {
-                display: none;
-            }
+        .cart-price {
+            display: none;
         }
     }
 }

@@ -3,44 +3,31 @@
 .header {
     @include flexible-row(center, center);
 
-    .header-wrapper {
-        @include flexible-row(center, center);
-
+    .header-content {
+        @include flexible-row(center, space-between);
+        
         width: $big;
-
-        .header-content {
-            @include flexible-row(center, space-between);
-
-            width: 100%;
-            padding: 30px;
-            gap: 10px;
-        }
+        padding: 30px;
+        gap: 10px;
+        box-sizing: border-box;
     }
 }
 
 @media screen and (max-width: $big) and (min-width: $medium) {
     .header {
-        .header-wrapper {
+        .header-content {
             width: 100%;
-    
-            .header-content {
-                padding: 15px;
-            }
+            padding: 15px;
         }
     }
 }
 
 @media screen and (max-width: $medium) {
     .header {
-        @include flexible-row(center, flex-start);
-
-        .header-wrapper {
+        .header-content {
             width: 100%;
-
-            .header-content {
-                padding: 15px;
-                gap: 0px;
-            }
+            padding: 15px;
+            gap: 0px;
         }
     }
 }
