@@ -74,7 +74,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 9,
         "title": "РОЛЛ ВЕГЕТАРИАНСКИЙ С ЧУКОЙ",
         "price": "299",
         "category": "РОЛЛЫ",
@@ -83,7 +83,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 10,
         "title": "РОЛЛ ВЕГЕТАРИАНСКИЙ С ШИИТАКЕ И АВОКАДО",
         "price": "289",
         "category": "РОЛЛЫ",
@@ -92,7 +92,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 11,
         "title": "РОЛЛ ВЕГЕТАРИАНСКИЙ С МИДИЯМИ",
         "price": "329",
         "category": "РОЛЛЫ",
@@ -101,7 +101,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 4,
+        "id": 12,
         "title": "РОЛЛ ВЕГЕТАРИАНСКИЙ С КРЕВЕТКОЙ",
         "price": "329",
         "category": "РОЛЛЫ",
@@ -110,7 +110,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 5,
+        "id": 13,
         "title": "РОЛЛ С МАРИНОВАННЫМ ТУНЦОМ",
         "price": "499",
         "category": "РОЛЛЫ",
@@ -119,7 +119,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 6,
+        "id": 14,
         "title": "РОЛЛ С КОПЧЕНЫМ ЛОСОСЕМ И МАНГО",
         "price": "449",
         "category": "РОЛЛЫ",
@@ -128,7 +128,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 7,
+        "id": 15,
         "title": "РОЛЛ ХАРУ",
         "price": "299",
         "category": "РОЛЛЫ",
@@ -137,7 +137,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 8,
+        "id": 16,
         "title": "РОЛЛ МИДОРИ",
         "price": "399",
         "category": "РОЛЛЫ",
@@ -148,7 +148,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 17,
         "title": "СУШИ С КРЕВЕТКОЙ",
         "price": "79",
         "category": "СУШИ",
@@ -157,7 +157,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 18,
         "title": "СУШИ С ЛОСОСЕМ",
         "price": "79",
         "category": "СУШИ",
@@ -166,7 +166,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 19,
         "title": "СУШИ С УГРЕМ",
         "price": "79",
         "category": "СУШИ",
@@ -175,7 +175,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 4,
+        "id": 20,
         "title": "СУШИ С ЧУКОЙ",
         "price": "79",
         "category": "СУШИ",
@@ -184,7 +184,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 5,
+        "id": 21,
         "title": "СУШИ ОСТРЫЕ С УГРЕМ",
         "price": "89",
         "category": "СУШИ",
@@ -193,7 +193,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 6,
+        "id": 22,
         "title": "СУШИ С ИКРОЙ МАСАГО",
         "price": "79",
         "category": "СУШИ",
@@ -202,7 +202,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 7,
+        "id": 23,
         "title": "СУШИ ОСТРЫЕ С ТУНЦОМ",
         "price": "89",
         "category": "СУШИ",
@@ -211,7 +211,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 8,
+        "id": 24,
         "title": "СУШИ ОСТРЫЕ С ЛОСОСЕМ",
         "price": "89",
         "category": "СУШИ",
@@ -222,7 +222,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 25,
         "title": "ГРАНД РОЛЛ ОЙШИ",
         "price": "249",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -231,7 +231,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 26,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ ОЙШИ",
         "price": "199",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -240,7 +240,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 27,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ ЧИКЕН ЧИЗ",
         "price": "199",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -249,7 +249,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 4,
+        "id": 28,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ СЛИВОЧНЫЙ КРАБ",
         "price": "269",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -258,7 +258,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 5,
+        "id": 29,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ ОСТРЫЙ С МИДИЯМИ",
         "price": "329",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -267,7 +267,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 6,
+        "id": 30,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ ОСТРЫЙ С КРАБОМ",
         "price": "329",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -276,7 +276,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 7,
+        "id": 31,
         "title": "РОЛЛ САЛЬМОН ТЕМПУРА",
         "price": "229",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -285,7 +285,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 8,
+        "id": 32,
         "title": "РОЛЛ ЗАПЕЧЕННЫЙ СЫРНЫЙ С ШИИАТАКЕ",
         "price": "349",
         "category": "ЗАПЕЧЕННЫЕ РОЛЛЫ",
@@ -296,7 +296,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 33,
         "title": "КЛУБНИЧНЫЙ МОРС, 0.5 Л",
         "price": "99",
         "category": "НАПИТКИ",
@@ -305,7 +305,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 34,
         "title": "КЛУБНИЧНЫЙ МОРС, 1 Л",
         "price": "169",
         "category": "НАПИТКИ",
@@ -314,7 +314,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 35,
         "title": "КЛЮКВЕННЫЙ МОРС, 0.5 Л",
         "price": "99",
         "category": "НАПИТКИ",
@@ -323,7 +323,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 4,
+        "id": 36,
         "title": "КЛЮКВЕННЫЙ МОРС, 1 Л",
         "price": "169",
         "category": "НАПИТКИ",
@@ -332,7 +332,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 5,
+        "id": 37,
         "title": "ВОДА 1 Л",
         "price": "59",
         "category": "НАПИТКИ",
@@ -341,7 +341,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 6,
+        "id": 38,
         "title": "КОЛА 0.5 Л",
         "price": "99",
         "category": "НАПИТКИ",
@@ -350,7 +350,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 7,
+        "id": 39,
         "title": "ЧАЙ 0.5 Л",
         "price": "99",
         "category": "НАПИТКИ",
@@ -359,7 +359,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 8,
+        "id": 40,
         "title": "КОЛА 1 Л",
         "price": "149",
         "category": "НАПИТКИ",
@@ -370,7 +370,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 41,
         "title": "ПИРОЖНОЕ ШОКОЛАДНАЯ БОМБА",
         "price": "269",
         "category": "ДЕСЕРТЫ",
@@ -379,7 +379,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 42,
         "title": "ЧИЗКЕЙК НЬЮ-ЙОРК",
         "price": "269",
         "category": "ДЕСЕРТЫ",
@@ -388,7 +388,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 43,
         "title": "ПИРОЖНОЕ МАНГО-МАРАКУЙЯ",
         "price": "269",
         "category": "ДЕСЕРТЫ",
@@ -399,7 +399,7 @@ const ShoppingData = [
 
 
     {
-        "id": 1,
+        "id": 44,
         "title": "ПОКЕ ВЕГЕТАРИАНСКИЙ",
         "price": "349",
         "category": "ПОКЕ",
@@ -408,7 +408,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 2,
+        "id": 45,
         "title": "ПОКЕ С УГРЕМ",
         "price": "579",
         "category": "ПОКЕ",
@@ -417,7 +417,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 3,
+        "id": 46,
         "title": "ПОКЕ С ТУНЦОМ",
         "price": "459",
         "category": "ПОКЕ",
@@ -426,7 +426,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 4,
+        "id": 47,
         "title": "ПОКЕ С ЛОСОСЕМ",
         "price": "519",
         "category": "ПОКЕ",
@@ -435,7 +435,7 @@ const ShoppingData = [
     },
 
     {
-        "id": 5,
+        "id": 48,
         "title": "ПОКЕ С КРЕВЕТКАМИ",
         "price": "459",
         "category": "ПОКЕ",

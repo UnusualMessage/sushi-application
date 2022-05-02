@@ -1,5 +1,3 @@
-import { observer } from 'mobx-react-lite';
-
 import ShoppingTitle from './Components/ShoppingTitle';
 import ShoppingCards from './Components/ShoppingCards';
 import CurrentCategory from '../../Store/CurrentCategory';
