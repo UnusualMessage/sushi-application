@@ -9,7 +9,7 @@ const FooterLink = (props) => {
     };
 
     return (
-        <Link className='footer-link' to={"/category" + props.to} onMouseDown={onMouseDown}>
+        <Link className='footer-link' to={"/category/" + props.to} onMouseDown={onMouseDown}>
             {props.text}
         </Link>
     );

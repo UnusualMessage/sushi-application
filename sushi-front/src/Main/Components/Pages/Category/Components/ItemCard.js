@@ -1,8 +1,11 @@
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "../../../Store/Cart";
 
 import "../Styles/ItemCard.scss";
 
 const ItemCard = (props) => {
+    const navigate = useNavigate();
+
     const onClick = (e) => {
         e.preventDefault();
         Cart.add(props);
@@ -10,9 +13,9 @@ const ItemCard = (props) => {
 
     return (
         <div className='item-card'>
-            <div className='card-image'>
+            <Link className='card-image' to={"/category/" + props.category + "/" + props.id}>
                 <img src={props.imageSource} alt="" />
-            </div>
+            </Link>
 
             <div className='card-description'>
                 <span className='card-description-title'>

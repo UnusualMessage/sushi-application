@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class Cart {
     price = localStorage.getItem("price") ? Number(localStorage.getItem("price")) : "0"; 
-    uniqueCount = localStorage.getItem("count") ? localStorage.getItem("count") : 0;
+    uniqueCount = localStorage.getItem("count") ? Number(localStorage.getItem("count")) : 0;
     items = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : []; 
 
     constructor() {
