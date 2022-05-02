@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Cart from "../../../Store/Cart";
 
 import "../Styles/ItemCard.scss";
@@ -9,13 +8,6 @@ const ItemCard = (props) => {
         Cart.add(props);
     }
 
-    const onTitleDown = (e) => {
-        e.preventDefault();
-        setModalActive(!modalActive);
-    }
-
-    const [modalActive, setModalActive] = useState(false);
-
     return (
         <div className='item-card'>
             <div className='card-image'>
@@ -23,7 +15,7 @@ const ItemCard = (props) => {
             </div>
 
             <div className='card-description'>
-                <span className='card-description-title' onMouseDown={onTitleDown}>
+                <span className='card-description-title'>
                     {props.title}
                 </span>
 
