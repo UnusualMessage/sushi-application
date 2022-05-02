@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Styles/FooterInfo.scss";
 
 const FooterInfo = () => {
@@ -8,11 +9,13 @@ const FooterInfo = () => {
             </div>
 
             <div className='footer-copyright'>
-                <span className='copyright-text'>Сеть магазинов "СушиСет"</span>
+                <span className='copyright-text'>
+                    Сеть магазинов "СушиСет"
+                </span>
 
-                <a className='copyright-link' href="/">
-                    <span className='copyright-policy'>Политика конфиденциальности</span>
-                </a>
+                <Link className='copyright-link' to="/">
+                    Политика конфиденциальности
+                </Link>
             </div>
         </div>
     );

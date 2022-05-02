@@ -9,8 +9,8 @@ const FooterLink = (props) => {
     };
 
     return (
-        <Link className='footer-link' to={"/shopping/" + props.to} onMouseDown={onMouseDown}>
-            <span className='footer-link-text'>{props.text}</span>
+        <Link className='footer-link' to={"/shopping" + props.to} onMouseDown={onMouseDown}>
+            {props.text}
         </Link>
     );
 }

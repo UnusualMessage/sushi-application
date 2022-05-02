@@ -12,15 +12,12 @@
 
         .footer-link {
             text-decoration: none;
+            color: $footer-aux-color;
+            font-size: 12px;
+            transition: color 0.5s;
 
-            .footer-link-text {
-                color: $footer-aux-color;
-                font-size: 12px;
-                transition: color 0.5s;
-
-                &:hover {
-                    color: $hover-color;
-                }
+            &:hover {
+                color: $hover-color;
             }
         }
     }
@@ -29,8 +26,6 @@
 @media screen and (max-width: $medium) {
     .footer-links {
         @include flexible-row(center, center);
-
-        max-width: $medium;
 
         .links-container {
             @include flexible-column(center, center);

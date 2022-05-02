@@ -16,14 +16,12 @@
         .copyright-link {
             text-decoration: none;
             
-            .copyright-policy {
-                font-size: 12px;
-                color: $footer-aux-color;
-                transition: color 0.5s;
+            font-size: 12px;
+            color: $footer-aux-color;
+            transition: color 0.5s;
 
-                &:hover {
-                    color: $hover-color;
-                }
+            &:hover {
+                color: $hover-color;
             }
         }
     }

@@ -3,11 +3,11 @@ import FooterLink from "./FooterLink";
 const FooterLinksContainer = (props) => {
     return (
         <div className="links-container">
-            <FooterLink to="/" text="СЕТЫ"/>
-            <FooterLink to="/" text="ПОКЕ"/>
-            <FooterLink to="/" text="РОЛЛЫ"/>
-            <FooterLink to="/" text="СУШИ"/>
-            <FooterLink to="/" text="ЗАПЕЧЕННЫЕ РОЛЛЫ"/>
+            <FooterLink to="СЕТЫ" text="СЕТЫ"/>
+            <FooterLink to="ПОКЕ" text="ПОКЕ"/>
+            <FooterLink to="РОЛЛЫ" text="РОЛЛЫ"/>
+            <FooterLink to="СУШИ" text="СУШИ"/>
+            <FooterLink to="ЗАПЕЧЕННЫЕ РОЛЛЫ" text="ЗАПЕЧЕННЫЕ РОЛЛЫ"/>
         </div>
     );
 }

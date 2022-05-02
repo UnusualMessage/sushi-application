@@ -7,11 +7,9 @@ import './Styles/FooterLinks.scss';
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer-wrapper">
-                <div className="footer-content">
-                    <FooterInfo/>
-                    <FooterLinks/>
-                </div>
+            <div className="footer-content">
+                <FooterInfo/>
+                <FooterLinks/>
             </div>
         </footer>
     )

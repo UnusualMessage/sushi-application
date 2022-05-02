@@ -5,46 +5,34 @@
 
     background-color: $title-color;
 
-    margin-top: 50px;
-
-    .footer-wrapper {
-        @include flexible-row(center, flex-start);
-
+    .footer-content {
+        @include flexible-row(center, center);
+        
         width: $big;
-
-        .footer-content {
-            @include flexible-row(center, center);
-
-            padding: 30px;
-            width: 100%;
-            column-gap: 100px;
-        }
+        padding: 30px;
+        column-gap: 100px;
+        box-sizing: border-box;
     }
 }
 
 @media screen and (min-width: $medium) and (max-width: $big) {
     .footer {
-        .footer-wrapper {
-            .footer-content {
-                @include flexible-row(center, space-around);
+        .footer-content {
+            @include flexible-row(center, space-around);
 
-                padding: 15px;
-            }
+            padding: 15px;
         }
     }
 }
 
 @media screen and (max-width: $medium) {
     .footer {
-        .footer-wrapper {
+        .footer-content {
+            @include flexible-column(center, flex-start);
+            
             width: $medium;
-
-            .footer-content {
-                @include flexible-column(center, flex-start);
-
-                row-gap: 30px;
-                padding: 15px;
-            }
+            row-gap: 30px;
+            padding: 15px;
         }
     }
 }
