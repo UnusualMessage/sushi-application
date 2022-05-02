@@ -2,26 +2,19 @@
 
 .nav-link {
     text-decoration: none;
-
-    .link-text {
-        color: $title-color;
-        font-size: 16px;
-        transition: color 0.5s;
-        font-weight: 600;
-    }
+    color: $title-color;
+    font-size: 16px;
+    transition: color 0.5s;
+    font-weight: 600;
 
     &:hover {
-        .link-text {
-            color: $hover-color;
-        }
+        color: $hover-color;
     }
 }
 
 @media screen and (max-width: $big) {
     .nav-link {
-        .link-text {
-            font-size: 14px;
-            white-space: nowrap;
-        }
+        font-size: 14px;
+        white-space: nowrap;
     }
 }

@@ -14,7 +14,7 @@ const NavLink = (props) => {
 
     return (
         <Link className="nav-link" to={"/shopping" + props.to} onClick={onClick}>
-            <span className="link-text">{props.text}</span>
+            {props.text}
         </Link>
     )
 }
