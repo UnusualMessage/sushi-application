@@ -16,15 +16,13 @@ const ShoppingCart = observer(() => {
             navigate("/");
         }
     }, [navigate])
-    
-    return(
+
+    return (
         <>
             <main className="cart">
-                <div className="cart-wrapper">
-                    <div className="cart-content">
-                        <CartOrderUnits/>
-                        <CartOrderForm/>
-                    </div>
+                <div className="cart-content">
+                    <CartOrderUnits />
+                    <CartOrderForm />
                 </div>
             </main>
         </>

@@ -1,4 +1,4 @@
-@use "../../Styles/Constants.scss" as *;
+@use "../../Styles/Constants.scss"as *;
 
 .cart {
     @include flexible-row(center, center);
@@ -6,36 +6,28 @@
     margin-top: 10px;
     background-color: #f9f9f9;
 
-    .cart-wrapper {
-        @include flexible-row(center, center);
+    .cart-content {
+        @include flexible-column(center, center);
 
         width: $big;
+        padding: 30px;
+        gap: 50px;
+        box-sizing: border-box;
 
-        .cart-content {
+        .cart-order-units {
             @include flexible-column(center, center);
 
             width: 100%;
-            padding: 30px;
-            gap: 50px;
-
-            .cart-order-units {
-                @include flexible-column(center, center);
-
-                width: 100%;
-                gap: 20px;
-            }
+            gap: 20px;
         }
     }
 }
 
 @media screen and (max-width: $big) {
     .cart {
-        .cart-wrapper {
+        .cart-content {
             width: $big;
-    
-            .cart-content {
-                padding: 15px;
-            }
+            padding: 15px;
         }
     }
 }
