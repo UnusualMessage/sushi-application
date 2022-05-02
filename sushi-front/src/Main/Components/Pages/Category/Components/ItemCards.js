@@ -1,12 +1,12 @@
-import ShoppingCard from "./ShoppingCard";
 import ShoppingData from "../../../Data/ShoppingData";
+import ItemCard from "./ItemCard";
 
-const ShoppingCards = ({category}) => {
+const ItemCards = ({category}) => {
     return (
-        <section className='shopping-cards-container'>
+        <section className='main-cards'>
             {
                 ShoppingData.filter(card => card.category.toLowerCase() === category.toLowerCase())?.map((card) => {
-                    return <ShoppingCard 
+                    return <ItemCard 
                         key={card.id}
                         id={card.id}
                         imageSource={card.path} 
@@ -19,4 +19,4 @@ const ShoppingCards = ({category}) => {
     );
 }
 
-export default ShoppingCards;
+export default ItemCards;

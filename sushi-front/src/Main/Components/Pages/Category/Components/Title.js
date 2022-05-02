@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import CurrentCategory from "../../../Store/CurrentCategory";
 
-const ShoppingTitle = observer(() => {
+const Title = observer(() => {
     return (
         <section className='main-title'>
             <h1>
@@ -11,4 +11,4 @@ const ShoppingTitle = observer(() => {
     )
 });
 
-export default ShoppingTitle;
+export default Title;

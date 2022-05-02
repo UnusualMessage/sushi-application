@@ -2,12 +2,12 @@ import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./Components/Base/Wrapper";
 import ShoppingCart from "./Components/Pages/Cart/ShoppingCart";
-import Shopping from "./Components/Pages/Shopping/Shopping";
+import Category from "./Components/Pages/Category/Category";
 
 const Main = () => {
     return (
         <Routes>
-            <Route exact path="/shopping/:category" element={<> <Wrapper> <Shopping /> </Wrapper></>}/>
+            <Route exact path="/category/:category" element={<> <Wrapper> <Category /> </Wrapper></>}/>
             <Route exact path="/cart" element={<> <Wrapper> <ShoppingCart /> </Wrapper></>} />
         </Routes>
     );

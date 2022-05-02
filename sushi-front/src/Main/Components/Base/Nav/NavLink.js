@@ -9,11 +9,11 @@ const NavLink = (props) => {
     const onClick = (e) => {
         e.preventDefault();
         CurrentCategory.set(props.text);
-        navigate("/shopping" + props.to);
+        navigate("/category" + props.to);
     };
 
     return (
-        <Link className="nav-link" to={"/shopping" + props.to} onClick={onClick}>
+        <Link className="nav-link" to={"/category" + props.to} onClick={onClick}>
             {props.text}
         </Link>
     )

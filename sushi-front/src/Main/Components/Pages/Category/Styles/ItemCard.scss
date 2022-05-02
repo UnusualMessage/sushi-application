@@ -1,37 +1,34 @@
 @use '../../../Styles/Constants.scss'as *;
 
-.shopping-card {
+.item-card {
     background-color: white;
-    border-radius: 20px 20px 0 0;
-    -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px 10px 0 0;
     box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     flex-basis: 21.5%;
 
     .card-image {
         width: 100%;
-        height: 100%;
         cursor: pointer;
 
         img {
             width: 100%;
-            height: 100%;
-            border-radius: 20px 20px 0 0;
+            border-radius: 10px 10px 0 0;
         }
     }
 
     .card-description {
-        @include flexible-column(stretch, flex-start);
+        @include flexible-column(stretch, space-between);
 
-        gap: 30px;
         padding: 15px;
+        height: 100px;
 
         .card-description-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: $title-color;
             text-transform: uppercase;
+            line-height: 1.2;
         }
 
         .card-description-order {
@@ -53,11 +50,9 @@
 
                 border: 1px solid $red-color;
                 border-radius: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding: 10px 20px 10px 20px;
                 font-size: 12px;
+                font-weight: bold;
                 text-transform: uppercase;
 
                 &:hover {
@@ -70,37 +65,22 @@
 }
 
 @media screen and (min-width: $pre-big) and (max-width: $big) {
-    .shopping-card {
+    .item-card {
         flex-basis: 21%;
-
-        .card-description {
-            gap: 20px;
-        }
     }
 }
 
 @media screen and (max-width: $pre-big) and (min-width: $medium) {
-    .shopping-card {
+    .item-card {
         flex-basis: 28%;
-
-        .card-description {
-            @include flexible-column(stretch, flex-start);
-
-            gap: 20px;
-        }
     }
 }
 
 @media screen and (max-width: $medium) and (min-width: $pre-medium) {
-    .shopping-card {
+    .item-card {
         flex-basis: 45%;
 
         .card-description {
-            @include flexible-column(stretch, flex-start);
-
-            gap: 20px;
-            padding: 15px;
-
             .card-description-order {
                 .order-button {
                     &:hover {
@@ -119,7 +99,7 @@
 }
 
 @media screen and (max-width: $pre-medium) {
-    .shopping-card {
+    .item-card {
         @include flexible-row(center, flex-start);
 
         border-radius: 5px 5px 5px 5px;
@@ -142,11 +122,11 @@
             @include flexible-column(stretch, space-between);
 
             width: 100%;
-            gap: 20px;
             padding: 10px;
+            height: 70px;
 
             .card-description-title {
-                font-size: 14px;
+                font-size: 12px;
             }
 
             .card-description-order {
@@ -156,6 +136,7 @@
 
                 .order-button {
                     font-size: 10px;
+                    padding: 5px 10px 5px 10px;
 
                     &:hover {
                         background-color: white;
