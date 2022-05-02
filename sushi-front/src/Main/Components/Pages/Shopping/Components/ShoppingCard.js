@@ -1,13 +1,13 @@
 import { useState } from "react";
-import CartPrice from "../../../Store/CartPrice";
+import Cart from "../../../Store/Cart";
 
 import "../Styles/ShoppingCard.scss";
 import ShoppingCardModal from "./ShoppingCardModal";
 
 const ShoppingCard = (props) => {
-    const onMouseDown = (e) => {
+    const onClick = (e) => {
         e.preventDefault();
-        CartPrice.add(props.price);
+        Cart.add(props);
     }
 
     const onTitleDown = (e) => {
@@ -34,7 +34,7 @@ const ShoppingCard = (props) => {
                             {props.price}
                         </span>
 
-                        <div className='order-button' onMouseDown={onMouseDown}>
+                        <div className='order-button' onClick={onClick}>
                             <span className='order-button-text'>
                                 Добавить
                             </span>

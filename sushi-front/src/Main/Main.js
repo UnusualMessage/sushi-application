@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./Components/Base/Wrapper";
-import Cart from "./Components/Pages/Cart/Cart";
+import ShoppingCart from "./Components/Pages/Cart/ShoppingCart";
 import Shopping from "./Components/Pages/Shopping/Shopping";
 
 const Main = () => {
     return (
         <Routes>
             <Route exact path="/shopping/:category" element={<> <Wrapper> <Shopping /> </Wrapper></>}/>
-            <Route exact path="/cart" element={<> <Wrapper> <Cart /> </Wrapper></>} />
+            <Route exact path="/cart" element={<> <Wrapper> <ShoppingCart /> </Wrapper></>} />
         </Routes>
     );
 }

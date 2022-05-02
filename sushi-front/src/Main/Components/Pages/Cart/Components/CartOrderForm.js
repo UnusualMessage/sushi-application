@@ -1,12 +1,14 @@
+import { observer } from "mobx-react-lite";
+import Cart from "../../../Store/Cart";
 import "../Styles/CartOrderForm.scss";
 
-const CartOrderForm = () => {
+const CartOrderForm = observer(() => {
     return (
         <>
             <section className="cart-order-form">
                 <div className="cart-order-form-result">
                     <span className="cart-order-form-result-text">Итого:</span>
-                    <span className="cart-order-form-result-price">512</span>
+                    <span className="cart-order-form-result-price">{Cart.getPrice()}</span>
                 </div>
 
                 <div className="cart-order-form-who">
@@ -53,6 +55,6 @@ const CartOrderForm = () => {
             </section>
         </>
     );
-}
+});
 
 export default CartOrderForm;

@@ -7,10 +7,12 @@ const ShoppingCards = ({category}) => {
             {
                 ShoppingData.filter(card => card.category.toLowerCase() === category.toLowerCase())?.map((card) => {
                     return <ShoppingCard 
-                        key={card.id} 
+                        key={card.id}
+                        id={card.id}
                         imageSource={card.path} 
                         title={card.title} 
-                        price={card.price} />
+                        price={card.price}
+                        count={1} />
                 })
             }
         </section>
