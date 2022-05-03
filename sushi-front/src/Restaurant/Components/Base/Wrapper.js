@@ -1,14 +1,19 @@
+import { Outlet } from "react-router-dom";
+
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Nav from "./Nav/Nav";
-import { Outlet } from "react-router-dom";
+import Main from "./Main/Main";
 
-const Wrapper = (props) => {
+const Wrapper = () => {
     return (
         <>
             <Header />
             <Nav />
-            <Outlet />
+            <Main>
+                <Outlet />
+            </Main>
+
             <Footer />
         </>
     );

@@ -19,12 +19,8 @@ const ShoppingCart = observer(() => {
 
     return (
         <>
-            <main className="cart">
-                <div className="cart-content">
-                    <CartOrderUnits />
-                    <CartOrderForm />
-                </div>
-            </main>
+            <CartOrderUnits />
+            <CartOrderForm />
         </>
     );
 });

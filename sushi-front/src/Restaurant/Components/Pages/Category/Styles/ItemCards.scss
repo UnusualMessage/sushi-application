@@ -1,0 +1,15 @@
+@use '../../../Styles/Constants.scss' as *;
+
+.main-cards {
+    @include flexible-row(center, flex-start);
+    flex-wrap: wrap;
+
+    width: 100%;
+    gap: 50px;
+}
+
+@media screen and (max-width: $pre-medium) {
+    .main-cards {
+        gap: 20px;
+    }
+}

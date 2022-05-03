@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ShoppingData from "../../Data/ShoppingData";
+import ShoppingData from "../../../Data/ShoppingData";
 
 const ItemPage = () => {
     const { category, id } = useParams();

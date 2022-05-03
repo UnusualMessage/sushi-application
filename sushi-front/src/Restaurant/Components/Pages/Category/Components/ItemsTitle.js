@@ -1,7 +1,10 @@
 import { observer } from "mobx-react-lite";
+
 import CurrentCategory from "../../../Store/CurrentCategory";
 
-const Title = observer(() => {
+import "../Styles/ItemsTitle.scss";
+
+const ItemsTitle = observer(() => {
     return (
         <section className='main-title'>
             <h1>
@@ -11,4 +14,4 @@ const Title = observer(() => {
     )
 });
 
-export default Title;
+export default ItemsTitle;

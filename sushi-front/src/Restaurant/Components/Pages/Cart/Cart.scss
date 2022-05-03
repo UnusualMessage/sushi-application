@@ -1,0 +1,8 @@
+@use "../../Styles/Constants.scss"as *;
+
+.cart-order-units {
+    @include flexible-column(center, center);
+
+    width: 100%;
+    gap: 20px;
+}

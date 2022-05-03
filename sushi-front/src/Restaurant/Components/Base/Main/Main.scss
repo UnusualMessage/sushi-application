@@ -1,4 +1,4 @@
-@use '../../Styles/Constants.scss' as *;
+@use "../../Styles/Constants.scss" as *;
 
 .main {
     @include flexible-row(center, center);
@@ -13,24 +13,6 @@
         box-sizing: border-box;
         padding: 30px;
         gap: 30px;
-
-        .main-title {
-            @include flexible-row(center, flex-start);
-
-            width: 100%;
-            color: $title-color;
-            font-size: 24px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .main-cards {
-            @include flexible-row(center, flex-start);
-            flex-wrap: wrap;
-
-            width: 100%;
-            gap: 50px;
-        }
     }
 }
 
@@ -46,10 +28,6 @@
     .main {
         .main-content {
             padding: 15px;
-
-            .main-cards {
-                gap: 20px;
-            }
         }
     }
 }

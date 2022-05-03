@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom"
 
-import Main from "./Main/Main";
+import Restaurant from "./Restaurant/Restaurant";
 
 import './App.scss';
-import './Main/Main.scss';
+import './Restaurant/Restaurant.scss';
 
 const App = () => {
     return (
         <Routes>
-            <Route exact path="/*" element={<Main/>}/>
+            <Route exact path="/*" element={<Restaurant/>}/>
         </Routes>
     )
 }
