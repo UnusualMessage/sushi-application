@@ -12,6 +12,7 @@ const CartOrderUnits = observer(() => {
                 {
                     items?.map((item) => {
                         return <CartOrderUnit 
+                            category={item.category}
                             key={item.id} 
                             id={item.id} 
                             price={item.price} 

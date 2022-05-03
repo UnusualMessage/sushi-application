@@ -1,5 +1,5 @@
 import Cart from "../../../Store/Cart";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import "../Styles/CartOrderUnit.scss";
 import { observer } from "mobx-react-lite";
@@ -28,9 +28,9 @@ const CartOrderUnit = observer((props) => {
 
     return (
         <div className="cart-order-unit">
-            <div className="order-unit-image">
+            <Link className="order-unit-image" to={"/category/" + props.category + "/" + props.id}>
                 <img src={props.image} alt="" />
-            </div>
+            </Link>
 
             <div className="order-unit-description">
                 <div className="order-unit-description-text-container">

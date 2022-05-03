@@ -1,0 +1,48 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.home-category {
+    @include flexible-column(flex-start, flex-start);
+    flex-basis: 30%;
+    position: relative;
+
+    border-radius: 20px;
+
+    img {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-category-tip {
+        margin: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        color: white;
+        position: absolute;
+        border-radius: 20px;
+        background-color: $title-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: $pre-big) and (min-width: $pre-medium) {
+    .home-category {
+        flex-basis: 45%;
+
+        .home-category-tip {
+            font-size: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: $pre-medium) {
+    .home-category {
+        flex-basis: 100%;
+
+        .home-category-tip {
+            font-size: 12px;
+        }
+    }
+}

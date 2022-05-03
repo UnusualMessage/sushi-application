@@ -1,0 +1,15 @@
+@use "../../Styles/Constants.scss" as *;
+
+.home-categories {
+    @include flexible-row(center, flex-start);
+    flex-wrap: wrap;
+
+    gap: 40px;
+}
+
+@media screen and (max-width: $pre-medium) {
+    .home-categories {
+        gap: 20px;
+    }
+    
+}
