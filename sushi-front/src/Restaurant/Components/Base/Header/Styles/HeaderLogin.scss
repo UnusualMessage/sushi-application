@@ -93,10 +93,11 @@
     }
 
     .login-buttons {
-        @include flexible-row(center, space-between);
+        @include flexible-row(center, center);
         flex-wrap: wrap;
 
         width: 100%;
+        gap: 30px;
 
         .mode-button {
             text-transform: uppercase;

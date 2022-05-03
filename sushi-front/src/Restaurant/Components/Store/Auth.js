@@ -16,6 +16,11 @@ class Auth {
         this.saveToLocalStorage();
     }
 
+    register() {
+        this.isAuth = true;
+        this.saveToLocalStorage();
+    }
+
     logout() {
         this.isAuth = false;
         this.saveToLocalStorage();
