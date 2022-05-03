@@ -19,6 +19,12 @@
             &:hover {
                 color: $hover-color;
             }
+
+            &:focus {
+
+                border: none;
+                outline: none; 
+            }
         }
     }
 }

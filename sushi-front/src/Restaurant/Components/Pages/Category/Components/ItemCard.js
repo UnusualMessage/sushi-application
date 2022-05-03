@@ -12,7 +12,7 @@ const ItemCard = (props) => {
     return (
         <div className='item-card'>
             <Link className='card-image' to={"/category/" + props.category + "/" + props.id}>
-                <img src={props.imageSource} alt="" />
+                <img src={props.path} alt="" />
             </Link>
 
             <div className='card-description'>

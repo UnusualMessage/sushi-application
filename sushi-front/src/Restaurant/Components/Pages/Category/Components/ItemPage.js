@@ -1,11 +1,19 @@
 import { useParams } from "react-router-dom";
+
 import ShoppingData from "../../../Data/ShoppingData";
+import Cart from "../../../Store/Cart";
 
 import "../Styles/ItemPage.scss";
 
 const ItemPage = () => {
     const { category, id } = useParams();
-    const item = ShoppingData.find((i) => (i.id.toString() === id) && (i.category === category));
+    let item = ShoppingData.find((i) => (i.id.toString() === id) && (i.category === category));
+    item.count = 1;
+
+    const onClick = (e) => {
+        e.preventDefault();
+        Cart.add(item);
+    }
 
     return (
         <section className="item-page">
@@ -23,7 +31,7 @@ const ItemPage = () => {
                         {item?.price}
                     </span>
 
-                    <span className="order-button">
+                    <span className="order-button" onClick={onClick}>
                         ДОБАВИТЬ
                     </span>
                 </div>

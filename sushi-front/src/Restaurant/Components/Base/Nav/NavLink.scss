@@ -10,6 +10,12 @@
     &:hover {
         color: $hover-color;
     }
+
+    &:focus {
+
+        border: none;
+        outline: none; 
+    }
 }
 
 @media screen and (max-width: $big) {

@@ -29,7 +29,7 @@ const CartOrderUnit = observer((props) => {
     return (
         <div className="cart-order-unit">
             <Link className="order-unit-image" to={"/category/" + props.category + "/" + props.id}>
-                <img src={props.image} alt="" />
+                <img src={props.path} alt="" />
             </Link>
 
             <div className="order-unit-description">

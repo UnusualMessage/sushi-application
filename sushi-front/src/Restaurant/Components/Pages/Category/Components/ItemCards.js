@@ -16,7 +16,7 @@ const ItemCards = () => {
                         category={params.category}
                         key={card.id}
                         id={card.id}
-                        imageSource={card.path}
+                        path={card.path}
                         title={card.title}
                         price={card.price}
                         count={1} />
