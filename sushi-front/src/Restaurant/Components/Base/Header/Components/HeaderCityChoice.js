@@ -36,6 +36,32 @@ const HeaderCityChoice = ({ active, setActive }) => {
                     <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
                     <HeaderCity city="Тула" setActive={setActive}/>
                     <HeaderCity city="Пермь" setActive={setActive}/>
+                    <HeaderCity city="Москва" setActive={setActive}/>
+                    <HeaderCity city="Москва" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
+                    <HeaderCity city="Тула" setActive={setActive}/>
+                    <HeaderCity city="Пермь" setActive={setActive}/>
+                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
+                    <HeaderCity city="Москва" setActive={setActive}/>
+                    <HeaderCity city="Москва" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
+                    <HeaderCity city="Тула" setActive={setActive}/>
+                    <HeaderCity city="Пермь" setActive={setActive}/>
+                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
+                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
+                    <HeaderCity city="Тула" setActive={setActive}/>
+                    <HeaderCity city="Пермь" setActive={setActive}/>
+                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
+                    <HeaderCity city="Владивосток" setActive={setActive}/>
+                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
+                    <HeaderCity city="Тула" setActive={setActive}/>
+                    <HeaderCity city="Пермь" setActive={setActive}/>
                     <HeaderCity city="Екатеринбург" setActive={setActive}/>
                     <HeaderCity city="Владивосток" setActive={setActive}/>
                     <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
