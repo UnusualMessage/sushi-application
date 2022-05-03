@@ -9,7 +9,7 @@ const HomeCategory = ({ image, category }) => {
 
     const onImageClick = (e) => {
         e.preventDefault();
-        navigate("/category/" + category);
+        navigate("/category/" + category.toLowerCase());
         CurrentCategory.set(category);
     }
 

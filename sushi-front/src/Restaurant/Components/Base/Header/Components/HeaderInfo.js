@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { observer } from "mobx-react-lite";
 
@@ -7,10 +7,13 @@ import HeaderCityChoice from "./HeaderCityChoice";
 import '../Styles/HeaderInfo.scss';
 import CurrentCity from "../../../Store/CurrentCity";
 import HeaderLogin from "./HeaderLogin";
+import Auth from "../../../Store/Auth";
 
 const HeaderInfo = observer(() => {
     const [cityModalActive, setCityModalActive] = useState(false);
     const [loginModalActive, setLoginModalActive] = useState(false);
+
+    const navigate = useNavigate();
 
     const onCityClick = (e) => {
         e.preventDefault();
@@ -19,7 +22,12 @@ const HeaderInfo = observer(() => {
 
     const onLoginClick = (e) => {
         e.preventDefault();
-        setLoginModalActive(!loginModalActive);
+
+        if (Auth.isAuth) {
+            navigate("/orders");
+        } else {
+            setLoginModalActive(!loginModalActive);
+        }
     }
 
     return (

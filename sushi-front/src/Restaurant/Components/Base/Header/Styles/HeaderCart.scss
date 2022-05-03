@@ -108,6 +108,30 @@
         column-gap: 0px;
         padding: 15px;
 
+        &:hover {
+            background-color: $hover-color;
+                
+            .cart-picture {
+                border-right: 1px solid $hover-color;
+    
+                svg {
+                    fill: white;
+                }
+            }
+        }
+
+        &:active {
+            background-color: $red-color;
+                
+            .cart-picture {
+                border-right: 1px solid $red-color;
+    
+                svg {
+                    fill: white;
+                }
+            }
+        }
+
         .cart-picture {
             margin-right: 4px;
             border-right: 0px solid $red-color;

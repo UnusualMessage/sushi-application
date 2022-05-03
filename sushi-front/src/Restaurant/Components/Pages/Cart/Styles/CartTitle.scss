@@ -1,0 +1,14 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.cart-title {
+    @include flexible-row(center, flex-start);
+
+    width: 100%;
+
+    .cart-title-text {
+        font-size: 22px;
+        color: $title-color;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

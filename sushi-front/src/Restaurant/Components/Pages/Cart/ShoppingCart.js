@@ -7,6 +7,7 @@ import CartOrderUnits from "./Components/CartOrderUnits";
 import Cart from "../../Store/Cart";
 
 import "./Cart.scss";
+import CartTitle from "./Components/CartTitle";
 
 const ShoppingCart = observer(() => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const ShoppingCart = observer(() => {
 
     return (
         <>
+            <CartTitle />
             <CartOrderUnits />
             <CartOrderForm />
         </>

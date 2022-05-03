@@ -1,14 +1,14 @@
 import { makeAutoObservable } from "mobx";
 
 class CurrentCategory {
-    category = "Сеты";
+    category = "сеты";
 
     constructor() {
         makeAutoObservable(this);
     }
 
     set(newCategory) {
-        this.category = newCategory;
+        this.category = newCategory.toLowerCase();
     }
 }
 

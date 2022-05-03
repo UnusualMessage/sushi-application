@@ -7,8 +7,11 @@ import "../Styles/ItemPage.scss";
 
 const ItemPage = () => {
     const { category, id } = useParams();
-    let item = ShoppingData.find((i) => (i.id.toString() === id) && (i.category === category));
-    item.count = 1;
+    let item = ShoppingData.find((i) => (i.id.toString() === id) && (i.category.toLowerCase() === category.toLowerCase()));
+
+    if (item) {
+        item.count = 1;
+    }
 
     const onClick = (e) => {
         e.preventDefault();
