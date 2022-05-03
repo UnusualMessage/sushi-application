@@ -6,13 +6,20 @@ import HeaderCityChoice from "./HeaderCityChoice";
 
 import '../Styles/HeaderInfo.scss';
 import CurrentCity from "../../../Store/CurrentCity";
+import HeaderLogin from "./HeaderLogin";
 
 const HeaderInfo = observer(() => {
-    const [modalActive, setModalActive] = useState(false);
+    const [cityModalActive, setCityModalActive] = useState(false);
+    const [loginModalActive, setLoginModalActive] = useState(false);
 
-    const onClick = (e) => {
+    const onCityClick = (e) => {
         e.preventDefault();
-        setModalActive(!modalActive);
+        setCityModalActive(!cityModalActive);
+    }
+
+    const onLoginClick = (e) => {
+        e.preventDefault();
+        setLoginModalActive(!loginModalActive);
     }
 
     return (
@@ -44,7 +51,7 @@ const HeaderInfo = observer(() => {
                     </svg>
                 </span>
 
-                <span className='city-choice' onClick={onClick}>Город доставки</span>
+                <span className='city-choice' onClick={onCityClick}>Город доставки</span>
                 <span className='city-name'>{CurrentCity.city}</span>
             </div>
 
@@ -61,7 +68,7 @@ const HeaderInfo = observer(() => {
                 <span className='contacts-time'>с 10:00 до 23:00</span>
             </div>
 
-            <div className="header-login">
+            <div className="header-login" onClick={onLoginClick}>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 489 489" enableBackground="new 0 0 489 489">
                     <path d="M417.4,71.6C371.2,25.4,309.8,0,244.5,0S117.8,25.4,71.6,71.6S0,179.2,0,244.5s25.4,126.7,71.6,172.9S179.2,489,244.5,489 s126.7-25.4,172.9-71.6S489,309.8,489,244.5S463.6,117.8,417.4,71.6z M244.5,462C124.6,462,27,364.4,27,244.5S124.6,27,244.5,27 S462,124.6,462,244.5S364.4,462,244.5,462z" />
                     <path d="M244.5,203.2c35.1,0,63.6-28.6,63.6-63.6s-28.5-63.7-63.6-63.7s-63.6,28.6-63.6,63.6S209.4,203.2,244.5,203.2z M244.5,102.9c20.2,0,36.6,16.4,36.6,36.6s-16.4,36.6-36.6,36.6s-36.6-16.4-36.6-36.6S224.3,102.9,244.5,102.9z" />
@@ -69,7 +76,8 @@ const HeaderInfo = observer(() => {
                 </svg>
             </div>
 
-            <HeaderCityChoice active={modalActive} setActive={setModalActive}/>
+            <HeaderCityChoice active={cityModalActive} setActive={setCityModalActive}/>
+            <HeaderLogin active={loginModalActive} setActive={setLoginModalActive}/>
         </div>
     );
 });

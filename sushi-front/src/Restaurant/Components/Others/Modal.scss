@@ -13,16 +13,14 @@
     left: 0;
 
     .modal-content {
-        @include flexible-row(stretch, flex-start);
-
+        @include flexible-row(center, center);
+        width: 750px;
+        height: 400px;
         z-index: 20;
         padding: 40px;
         box-sizing: border-box;
         border-radius: 12px;
         background-color: white;
-        height: 350px;
-        width: 800px;
-        max-width: 800px;
         transform: scale(0);
         transition: 0.5s all;
     }

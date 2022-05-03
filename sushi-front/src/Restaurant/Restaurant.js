@@ -19,6 +19,7 @@ const Restaurant = () => {
                 </Route>
 
                 <Route path="cart" element={<ShoppingCart />} />
+                <Route path="orders" element={<> </>} />
                 <Route path="discounts" element={<> </>} />
                 <Route path="sandbox" element={<> </>} />
                 <Route path="company" element={<> </>} />
