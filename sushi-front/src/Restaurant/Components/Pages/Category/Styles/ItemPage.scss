@@ -1,0 +1,97 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.item-page {
+    @include flexible-row(stretch, flex-start);
+
+    gap: 30px;
+    height: 180px;
+
+    .item-page-image {
+        border-radius: 10px;
+        flex-basis: 300px;
+
+        img {
+            height: 180px;
+            border-radius: 10px;
+        }
+    }
+
+    .item-page-description {
+        @include flexible-column(stretch, flex-start);
+        flex-basis: 70%;
+
+        gap: 20px;
+
+        .item-page-description-title {
+            font-size: 22px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $title-color;
+        }
+
+        .item-page-description-order {
+            @include flexible-row(center, space-between);
+
+            .order-price {
+                font-size: 20px;
+                color: $title-color;
+                font-weight: bold;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+            }
+
+            .order-button {
+                cursor: pointer;
+                border: 1px solid $red-color;
+                border-radius: 20px;
+                padding: 10px 20px 10px 20px;
+                font-size: 12px;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $red-color;
+                    color: white;
+                }
+            }
+        }
+
+        .item-page-description-text {
+            padding-right: 10px;
+            height: 50%;
+            max-height: 50%;
+            overflow: auto;
+            color: $aux-color;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+
+}
+
+@media screen and (max-width: $medium) {
+    .item-page {
+        @include flexible-column(center, center);
+    
+        height: auto;
+    
+        .item-page-image {
+            flex-basis: auto;
+        }
+    
+        .item-page-description {
+            flex-basis: auto;
+    
+            .item-page-description-text {
+                padding-right: 0px;
+                height: auto;
+                max-height: auto;
+                overflow: auto;
+            }
+        }
+    
+    }
+}
