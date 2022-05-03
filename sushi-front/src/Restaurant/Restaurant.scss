@@ -1,8 +1,13 @@
 @use './Components/Styles/Constants.scss' as *;
 
 #root {
+    height: 100vh;
     min-width: $mini;
     font-family: "AT Open Sans", sans-serif;
+
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
 }
 
 body {

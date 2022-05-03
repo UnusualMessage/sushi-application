@@ -33,9 +33,14 @@
 
         gap: 20px;
         .city {
+            cursor: pointer;
             flex-basis: 21.5%;
             font-size: 14px;
             color: $aux-color;
+
+            &:hover {
+                color: $hover-color;
+            }
         }
     }
 }
@@ -48,6 +53,14 @@
             .city {
                 flex-basis: 30%;
             }
+
+            &:hover {
+                color: $aux-color;
+            }
+
+            &:active {
+                color: $hover-color;
+            }
         }
     }
 }
@@ -59,6 +72,14 @@
 
             .city {
                 flex-basis: 40%;
+            }
+
+            &:hover {
+                color: $aux-color;
+            }
+
+            &:active {
+                color: $hover-color;
             }
         }
     }
