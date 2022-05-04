@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import ShoppingData from "../../../Data/ShoppingData";
-import Cart from "../../../Store/Cart";
+import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemPage.scss";
 
@@ -15,7 +15,7 @@ const ItemPage = () => {
 
     const onClick = (e) => {
         e.preventDefault();
-        Cart.add(item);
+        CartStore.add(item);
     }
 
     return (

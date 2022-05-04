@@ -4,16 +4,16 @@ import { useEffect } from "react";
 
 import CartOrderForm from "./Components/CartOrderForm";
 import CartOrderUnits from "./Components/CartOrderUnits";
-import Cart from "../../Store/Cart";
+import CartTitle from "./Components/CartTitle";
+import CartStore from "../../Store/CartStore";
 
 import "./Cart.scss";
-import CartTitle from "./Components/CartTitle";
 
 const ShoppingCart = observer(() => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (Cart.isEmpty()) {
+        if (CartStore.isEmpty()) {
             navigate("/");
         }
     }, [navigate])

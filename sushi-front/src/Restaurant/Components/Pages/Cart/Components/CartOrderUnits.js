@@ -1,10 +1,10 @@
 import { observer } from "mobx-react-lite";
-import Cart from "../../../Store/Cart";
 
+import CartStore from "../../../Store/CartStore";
 import CartOrderUnit from "./CartOrderUnit";
 
 const CartOrderUnits = observer(() => {
-    const items = Cart.items.slice();
+    const items = CartStore.items.slice();
 
     return(
         <>

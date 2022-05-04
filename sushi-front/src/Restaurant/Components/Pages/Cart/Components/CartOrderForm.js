@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import { useState } from "react";
 
 import HeaderCityChoice from "../../../Base/Header/Components/HeaderCityChoice";
-import Cart from "../../../Store/Cart";
+import CartStore from "../../../Store/CartStore";
 import CurrentCity from "../../../Store/CurrentCity";
 import OrdersStore from "../../../Store/OrdersStore";
 
@@ -18,7 +18,7 @@ const CartOrderForm = observer(() => {
 
     const onConfirmClick = (e) => {
         e.preventDefault();
-        OrdersStore.makeOrder(Cart.items, Cart.getPrice());
+        OrdersStore.makeOrder(CartStore.items, CartStore.getPrice());
     }
 
     return (
@@ -26,7 +26,7 @@ const CartOrderForm = observer(() => {
             <section className="cart-order-form">
                 <div className="cart-order-form-result">
                     <span className="cart-order-form-result-text">Итого:</span>
-                    <span className="cart-order-form-result-price">{Cart.getPrice()}</span>
+                    <span className="cart-order-form-result-price">{CartStore.getPrice()}</span>
                 </div>
 
                 <div className="cart-order-form-who">

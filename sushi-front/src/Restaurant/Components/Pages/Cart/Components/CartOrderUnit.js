@@ -1,29 +1,30 @@
-import Cart from "../../../Store/Cart";
 import { Link, useNavigate } from 'react-router-dom';
+import { observer } from "mobx-react-lite";
+
+import CartStore from "../../../Store/CartStore";
 
 import "../Styles/CartOrderUnit.scss";
-import { observer } from "mobx-react-lite";
 
 const CartOrderUnit = observer((props) => {
     const navigate = useNavigate();
 
     const onRemove = (e) => {
         e.preventDefault();
-        Cart.remove(props.id);
+        CartStore.remove(props.id);
 
-        if (Cart.isEmpty()) {
+        if (CartStore.isEmpty()) {
             navigate("/");
         } 
     }
 
     const onMinus = (e) => {
         e.preventDefault();
-        Cart.minusCount(props.id);
+        CartStore.minusCount(props.id);
     }
 
     const onPlus = (e) => {
         e.preventDefault();
-        Cart.plusCount(props.id);
+        CartStore.plusCount(props.id);
     }
 
     return (
@@ -41,7 +42,7 @@ const CartOrderUnit = observer((props) => {
                 <div className="order-unit-buttons">
                     <div className="order-unit-count">
                         <span className="order-unit-count-minus" onClick={onMinus}>-</span>
-                        <span className="order-unit-count-current">{Cart.getCount(props.id)}</span>
+                        <span className="order-unit-count-current">{CartStore.getCount(props.id)}</span>
                         <span className="order-unit-count-plus" onClick={onPlus}>+</span>
                     </div>
 
