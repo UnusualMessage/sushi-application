@@ -6,6 +6,7 @@ import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
 import ItemPage from "./Components/Pages/Category/Components/ItemPage";
 import Home from "./Components/Pages/Home/Home";
+import Orders from "./Components/Pages/Orders/Orders";
 
 const Restaurant = () => {
     return (
@@ -19,10 +20,11 @@ const Restaurant = () => {
                 </Route>
 
                 <Route path="cart" element={<ShoppingCart />} />
-                <Route path="orders" element={<> </>} />
+                <Route path="orders" element={<Orders />} />
                 <Route path="discounts" element={<> </>} />
                 <Route path="sandbox" element={<> </>} />
                 <Route path="company" element={<> </>} />
+                <Route path="courier" element={<> </>} />
             </Route>
         </Routes>
     );

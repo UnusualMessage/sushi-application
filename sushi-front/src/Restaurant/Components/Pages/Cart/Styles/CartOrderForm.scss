@@ -159,4 +159,14 @@
             }
         }
     }
+
+    .cart-order-confirm {
+        padding: 15px;
+        font-size: 16px;
+        border: 1px solid $red-color;
+        text-transform: uppercase;
+        color: $title-color;
+        border-radius: 30px;
+        align-self: center;
+    }
 }

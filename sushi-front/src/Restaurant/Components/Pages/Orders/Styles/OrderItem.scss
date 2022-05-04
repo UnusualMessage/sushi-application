@@ -1,0 +1,153 @@
+@use "../../../Styles/Constants.scss"as *;
+
+.order-item {
+    @include flexible-row(stretch, flex-start);
+
+    gap: 15px;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .order-item-image {
+        border-radius: 10px 0px 0px 10px;
+        flex-basis: 150px;
+
+        img {
+            border-radius: 10px 0px 0px 10px;
+
+            width: 100%;
+        }
+    }
+
+    .order-item-description {
+        @include flexible-row(center, space-between);
+
+        flex-basis: 85%;
+        gap: 10px;
+
+        .order-item-description-text {
+            @include flexible-column(stretch, flex-start);
+
+            flex-basis: 500px;
+            gap: 10px;
+
+            .order-item-title {
+                font-size: 18px;
+                color: $title-color;
+                font-weight: bold;
+            }
+
+            .order-item-text {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                font-size: 12px;
+                color: $aux-color;
+            }
+        }
+
+        .order-item-quantities {
+            @include flexible-row(center, center);
+            gap: 5px;
+
+            .order-item-count {
+                font-size: 14px;
+                color: $title-color;
+
+                &::after {
+                    content: "x";
+                    margin-left: 2px;
+                }
+            }
+
+            .order-item-price {
+                font-size: 18px;
+                font-weight: bold;
+                color: $title-color;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .order-item {
+        @include flexible-row(stretch, flex-start);
+    
+        gap: 10px;
+        width: 100%;
+        padding-right: 20px;
+        box-sizing: border-box;
+    
+        .order-item-image {
+            border-radius: 10px 0px 0px 10px;
+            flex-basis: 150px;
+    
+            img {
+                border-radius: 10px 0px 0px 10px;
+    
+                width: 100%;
+            }
+        }
+    
+        .order-item-description {
+            @include flexible-column(stretch, flex-start);
+    
+            flex-basis: 70%;
+            gap: 10px;
+    
+            .order-item-description-text {
+                @include flexible-column(stretch, flex-start);
+    
+                flex-basis: auto;
+                gap: 10px;
+    
+                .order-item-title {
+                    font-size: 14px;
+                    color: $title-color;
+                    font-weight: bold;
+                }
+    
+                .order-item-text {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 12px;
+                    color: $aux-color;
+                }
+            }
+    
+            .order-item-quantities {
+                @include flexible-row(center, flex-start);
+                gap: 5px;
+    
+                .order-item-count {
+                    font-size: 14px;
+                    color: $title-color;
+    
+                    &::after {
+                        content: "x";
+                        margin-left: 2px;
+                    }
+                }
+    
+                .order-item-price {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $title-color;
+    
+                    &::after {
+                        margin-left: 2px;
+                        content: "\20BD";
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@use "../../Styles/Constants.scss" as *;
+
+.main-orders {
+    @include flexible-column(center, center);
+
+    width: 100%;
+    gap: 50px;
+}

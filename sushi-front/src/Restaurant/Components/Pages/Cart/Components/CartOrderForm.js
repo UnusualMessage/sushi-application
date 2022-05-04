@@ -4,6 +4,7 @@ import { useState } from "react";
 import HeaderCityChoice from "../../../Base/Header/Components/HeaderCityChoice";
 import Cart from "../../../Store/Cart";
 import CurrentCity from "../../../Store/CurrentCity";
+import OrdersStore from "../../../Store/OrdersStore";
 
 import "../Styles/CartOrderForm.scss";
 
@@ -13,6 +14,11 @@ const CartOrderForm = observer(() => {
     const onChangeCityClick = (e) => {
         e.preventDefault();
         setCityModal(true);
+    }
+
+    const onConfirmClick = (e) => {
+        e.preventDefault();
+        OrdersStore.makeOrder(Cart.items, Cart.getPrice());
     }
 
     return (
@@ -59,6 +65,8 @@ const CartOrderForm = observer(() => {
                         <input className="cart-input" placeholder="Квартира"/>
                     </div>
                 </div>
+
+                <span className="cart-order-confirm" onClick={onConfirmClick}>ПОДТВЕРДИТЬ ЗАКАЗ</span>
 
                 <HeaderCityChoice active={cityModal} setActive={setCityModal}/>
             </section>
