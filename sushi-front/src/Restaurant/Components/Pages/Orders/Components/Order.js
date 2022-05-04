@@ -1,7 +1,16 @@
-import "../Styles/Order.scss";
+import { observer } from "mobx-react-lite";
+
+import OrdersStore from "../../../Store/OrdersStore";
 import OrderItems from "./OrderItems";
 
-const Order = ({ id, date, status, price }) => {
+import "../Styles/Order.scss";
+
+const Order = observer(({ id, date, status, price }) => {
+    const onOrderRemove = (e) => {
+        e.preventDefault();
+        OrdersStore.removeOrder(id);
+    }
+
     return(
         <div className="order">
             <div className="order-header">
@@ -12,12 +21,12 @@ const Order = ({ id, date, status, price }) => {
                     <span className="order-price">{price}</span>
                 </div>
 
-                <span className="order-remove">Удалить</span>
+                <span className="order-remove" onClick={onOrderRemove}>Удалить</span>
             </div>
 
             <OrderItems id={id}/>
         </div>
     );
-}
+});
 
 export default Order;

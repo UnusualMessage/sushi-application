@@ -5,6 +5,8 @@ import CartStore from "../../../Store/CartStore";
 import "../Styles/ItemCard.scss";
 
 const ItemCard = ({ item }) => {
+    item.count = 1;
+    
     const onClick = (e) => {
         e.preventDefault();
         CartStore.add(item);

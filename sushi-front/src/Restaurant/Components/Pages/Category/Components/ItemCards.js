@@ -31,7 +31,8 @@ const ItemCards = observer(() => {
                 items?.map((item) => {
                     return <ItemCard
                         item={item}
-                        key={item.id}/>
+                        key={item.id}
+                    />
                 })
             }
         </section>

@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
 class CartStore {
-    uniqueCount = localStorage.getItem("count") ? Number(localStorage.getItem("count")) : 0;
     items = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : []; 
 
     constructor() {
@@ -9,12 +8,11 @@ class CartStore {
     }
 
     saveToLocalStorage() {
-        localStorage.setItem("count", this.uniqueCount);
         localStorage.setItem("items", JSON.stringify(this.items));
     }
 
     isEmpty() {
-        return (this.uniqueCount === 0) ? true : false;
+        return (this.items.length === 0) ? true : false;
     }
 
     add(newItem) {
@@ -24,7 +22,6 @@ class CartStore {
         }
         else {
             this.items.push(newItem);
-            this.uniqueCount += 1;
         }
 
         this.saveToLocalStorage();
@@ -32,7 +29,6 @@ class CartStore {
 
     remove(id) {
         this.items = this.items.filter((item) => item.id !== id);
-        this.uniqueCount -= 1;
         this.saveToLocalStorage();
     }
 
@@ -40,7 +36,6 @@ class CartStore {
         localStorage.removeItem("count");
         localStorage.removeItem("items");
 
-        this.uniqueCount = 0;
         this.items.clear();
     }
 
