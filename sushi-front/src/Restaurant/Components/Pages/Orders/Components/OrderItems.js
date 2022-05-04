@@ -11,7 +11,10 @@ const OrderItems = observer(({ id }) => {
         <div className="order-items">
             {
                 items.map(item => {
-                    return <OrderItem key={item.id} id={item.id} image={item.path} title={item.title} count={item.count} price={item.price}/>
+                    return <OrderItem 
+                        key={item.id}
+                        item={item}
+                    />
                 })
             }
         </div>

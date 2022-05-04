@@ -17,7 +17,7 @@ class OrdersStore {
         newOrder.date = "04.05.22";
         newOrder.status = "Оформлен";
         newOrder.price = price;
-        newOrder.items = items;
+        newOrder.items = items.slice(0);
 
         this.orders.push(newOrder);
     }

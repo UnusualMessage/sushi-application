@@ -1,11 +1,39 @@
 @use '../../../Styles/Constants.scss' as *;
 
 .main-title {
-    @include flexible-row(center, flex-start);
+    @include flexible-row(center, space-between);
 
     width: 100%;
-    color: $title-color;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
+
+    h1 {
+        color: $title-color;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .main-sorting {
+        cursor: pointer;
+        color: $aux-color;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .main-title {    
+        .main-sorting {    
+            &:hover {
+                color: $aux-color;
+            }
+
+            &:active {
+                color: $hover-color;
+            }
+        }
+    }
 }

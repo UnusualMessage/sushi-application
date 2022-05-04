@@ -4,26 +4,26 @@ import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemCard.scss";
 
-const ItemCard = (props) => {
+const ItemCard = ({ item }) => {
     const onClick = (e) => {
         e.preventDefault();
-        CartStore.add(props);
+        CartStore.add(item);
     }
 
     return (
         <div className='item-card'>
-            <Link className='card-image' to={"/category/" + props.category + "/" + props.id}>
-                <img src={props.path} alt="" />
+            <Link className='card-image' to={"/category/" + item.category + "/" + item.id}>
+                <img src={item.path} alt="" />
             </Link>
 
             <div className='card-description'>
                 <span className='card-description-title'>
-                    {props.title}
+                    {item.title}
                 </span>
 
                 <div className='card-description-order'>
                     <span className='order-price'>
-                        {props.price}
+                        {item.price}
                     </span>
 
                     <span className='order-button' onClick={onClick}>

@@ -1,15 +1,27 @@
 import { observer } from "mobx-react-lite";
+import { useParams } from "react-router-dom";
 
-import CurrentCategory from "../../../Store/CurrentCategory";
+import CurrentSorting from "../../../Store/CurrentSorting";
 
 import "../Styles/ItemsTitle.scss";
 
 const ItemsTitle = observer(() => {
+    const params = useParams();
+
+    const onSortingChange = (e) => {
+        e.preventDefault();
+        CurrentSorting.change();
+    }
+    
     return (
         <section className='main-title'>
             <h1>
-                {CurrentCategory.category}
+                {params.category}
             </h1>
+
+            <span className="main-sorting" onClick={onSortingChange}>
+                {CurrentSorting.ascending ? "По возрастанию цены" : "По убыванию цены"}
+            </span>
         </section>
     )
 });

@@ -4,7 +4,8 @@
     @include flexible-column(stretch, flex-start);
 
     gap: 50px;
-    height: 250px;
+    min-height: 100px;
+    max-height: 250px;
     overflow: auto;
     width: 100%;
 }

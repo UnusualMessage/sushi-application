@@ -18,7 +18,9 @@ const CartOrderUnits = observer(() => {
                             price={item.price} 
                             title={item.title} 
                             path={item.path} 
-                            count={item.count}/>
+                            count={item.count}
+                            text={item.text}
+                        />
                     })
                 }
             </section>

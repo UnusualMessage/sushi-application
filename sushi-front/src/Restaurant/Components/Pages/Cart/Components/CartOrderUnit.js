@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
 
 import CartStore from "../../../Store/CartStore";
@@ -6,15 +6,9 @@ import CartStore from "../../../Store/CartStore";
 import "../Styles/CartOrderUnit.scss";
 
 const CartOrderUnit = observer((props) => {
-    const navigate = useNavigate();
-
     const onRemove = (e) => {
         e.preventDefault();
         CartStore.remove(props.id);
-
-        if (CartStore.isEmpty()) {
-            navigate("/");
-        } 
     }
 
     const onMinus = (e) => {
@@ -36,7 +30,7 @@ const CartOrderUnit = observer((props) => {
             <div className="order-unit-description">
                 <div className="order-unit-description-text-container">
                     <span className="order-unit-description-title">{props.title}</span>
-                    <span className="order-unit-description-text">Задача организации, в особенности же сложившаяся структура организации создаёт предпосылки качественно новых шагов для всесторонне сбалансированных нововведений. </span>
+                    <span className="order-unit-description-text">{props.text}</span>
                 </div>
 
                 <div className="order-unit-buttons">

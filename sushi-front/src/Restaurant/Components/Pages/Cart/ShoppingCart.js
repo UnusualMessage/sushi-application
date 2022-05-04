@@ -11,12 +11,13 @@ import "./Cart.scss";
 
 const ShoppingCart = observer(() => {
     const navigate = useNavigate();
+    const isCartEmpty = CartStore.isEmpty();
 
     useEffect(() => {
-        if (CartStore.isEmpty()) {
+        if (isCartEmpty) {
             navigate("/");
         }
-    }, [navigate])
+    }, [navigate, isCartEmpty])
 
     return (
         <>

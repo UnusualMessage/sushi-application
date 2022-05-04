@@ -19,6 +19,7 @@ const CartOrderForm = observer(() => {
     const onConfirmClick = (e) => {
         e.preventDefault();
         OrdersStore.makeOrder(CartStore.items, CartStore.getPrice());
+        CartStore.clear();
     }
 
     return (

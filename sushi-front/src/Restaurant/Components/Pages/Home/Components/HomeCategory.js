@@ -1,23 +1,13 @@
-import { useNavigate } from "react-router-dom";
-
-import CurrentCategory from "../../../Store/CurrentCategory";
+import { Link } from "react-router-dom";
 
 import "../Styles/HomeCategory.scss";
 
 const HomeCategory = ({ image, category }) => {
-    const navigate = useNavigate();
-
-    const onImageClick = (e) => {
-        e.preventDefault();
-        navigate("/category/" + category.toLowerCase());
-        CurrentCategory.set(category);
-    }
-
     return(
-        <div className="home-category" onClick={onImageClick}>
+        <Link className="home-category" to={"/category/" + category.toLowerCase()}>
             <img alt="" src={image}/>
             <span className="home-category-tip">{category}</span>
-        </div>
+        </Link>
     );
 }
 
