@@ -23,7 +23,7 @@ const Order = ({ id, date, status, price }) => {
                     <span className="order-price">{price}</span>
                 </div>
 
-                <span className="order-remove" onClick={action(onOrderRemove)}>Удалить</span>
+                {OrdersStore.canBeDeleted(id) ? <span className="order-remove" onClick={action(onOrderRemove)}>Удалить из истории</span> : <></>}
             </div>
 
             <OrderItems id={id}/>

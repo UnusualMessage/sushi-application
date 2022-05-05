@@ -2,12 +2,10 @@ import { makeAutoObservable } from "mobx";
 import OrdersStore from "./OrdersStore";
 
 class CurrentOrder {
-    order;
+    order = localStorage.getItem("current_order") ? JSON.parse(localStorage.getItem("current_order")) : {};
 
     constructor() {
         makeAutoObservable(this);
-
-        this.order = localStorage.getItem("current_order") ? JSON.parse(localStorage.getItem("current_order")) : {};
     }
 
     accept(id) {

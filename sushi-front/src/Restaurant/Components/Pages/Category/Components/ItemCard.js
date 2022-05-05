@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -5,9 +6,10 @@ import { CategoryRoute } from "../../../Others/ClientRoutes";
 import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemCard.scss";
+import { action } from "mobx";
 
 const ItemCard = ({ id, category, image, title, text, price, count }) => {
-    const onClick = (e) => {
+    const onClick = action(e => {
         e.preventDefault();
 
         CartStore.add({
@@ -19,7 +21,7 @@ const ItemCard = ({ id, category, image, title, text, price, count }) => {
             "category": category,
             "count": count,
         });
-    }
+    })
 
     return (
         <div className='item-card'>
@@ -56,4 +58,4 @@ ItemCard.propTypes = {
     count: PropTypes.number
 }
 
-export default ItemCard;
+export default observer(ItemCard);

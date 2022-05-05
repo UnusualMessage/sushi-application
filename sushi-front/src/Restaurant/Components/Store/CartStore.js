@@ -11,10 +11,6 @@ class CartStore {
         localStorage.setItem("items", JSON.stringify(this.items));
     }
 
-    isEmpty() {
-        return (this.items.length === 0) ? true : false;
-    }
-
     add(newItem) {
         const check = this.items.find((item) => item.id === newItem.id);
         if (check) {
@@ -39,18 +35,6 @@ class CartStore {
         this.items.clear();
     }
 
-    getPrice() {
-        return this.items.map(item => Number(item.price) * item.count).reduce((prev, curr) => prev + curr, 0);
-    }
-
-    getCount(id) {
-        return this.items.find((item) => item.id === id).count.toString();
-    }
-
-    getTotalCount() {
-        return this.items.length;
-    }
-
     minusCount(id) {
         const temp = this.items.find((item) => item.id === id);
 
@@ -64,6 +48,22 @@ class CartStore {
         const temp = this.items.find((item) => item.id === id);
         temp.count += 1;
         this.saveToLocalStorage();
+    }
+
+    isEmpty() {
+        return (this.items.length === 0) ? true : false;
+    }
+    
+    getPrice() {
+        return this.items.map(item => item.price * item.count).reduce((prev, curr) => prev + curr, 0);
+    }
+
+    getCount(id) {
+        return this.items.find((item) => item.id === id).count;
+    }
+
+    getTotalCount() {
+        return this.items.length;
     }
 }
 

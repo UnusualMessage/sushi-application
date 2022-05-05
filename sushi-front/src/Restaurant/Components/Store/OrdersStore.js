@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import CurrentCity from "./CurrentCity";
 
 class OrdersStore {
     orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
@@ -24,9 +25,42 @@ class OrdersStore {
         newOrder.status = "Оформлен";
         newOrder.price = price;
         newOrder.items = items.slice(0);
+        newOrder.city = CurrentCity.city
 
         this.orders.push(newOrder);
         this.saveToLocalStorage();
+    }
+
+    set(orders) {
+        this.orders = orders.slice(0);
+    }
+
+    remove(id) {
+        this.orders = this.orders.filter((order) => order.id !== id);
+        this.saveToLocalStorage();
+    }
+
+    accept(id) {
+        let acceptedOrder = this.getById(id);
+        acceptedOrder.status = "Доставка";
+        this.saveToLocalStorage();
+        return acceptedOrder;
+    }
+
+    canBeDeleted(id) {
+        const temp = this.orders.find(order => order.id === id);
+        return temp.status.toLowerCase() === "доставлен";
+    }
+
+    isFirst(id) {
+        const temp = this.orders.filter(order => CurrentCity.city === order.city);
+        
+        return id === temp[0].id;
+    }
+
+    isLast(id) {
+        const temp = this.orders.filter(order => CurrentCity.city === order.city);
+        return id === temp[this.getOrdersCountInCity() - 1].id;
     }
 
     getSorted(ascending) {
@@ -47,53 +81,39 @@ class OrdersStore {
         return this.orders.find(order => order.id === id);
     }
 
-    set(orders) {
-        this.orders = orders.slice(0);
-    }
-
-    remove(id) {
-        this.orders = this.orders.filter((order) => order.id !== id);
-        this.saveToLocalStorage();
-    }
-
-    accept(id) {
-        let acceptedOrder = this.getById(id);
-        acceptedOrder.status = "Доставка";
-        this.saveToLocalStorage();
-        return acceptedOrder;
-    }
-
     getRandomOrder() {
-        const randomIndex = Math.floor(Math.random() * this.orders.length);
-        return this.orders[randomIndex];
-    }
-
-    isFirst(id) {
-        return id === 1;
-    }
-
-    isLast(id) {
-        return id === this.orders.length;
+        const randomIndex = Math.floor(Math.random() * this.getOrdersCountInCity());
+        return this.orders.filter(order => CurrentCity.city === order.city)[randomIndex];
     }
 
     getFirst() {
-        return this.orders[0];
+        return this.orders.filter(order => CurrentCity.city === order.city)[0];
     }
 
     getLast() {
-        return this.orders[this.getOrdersCount() - 1];
+        return this.orders.filter(order => CurrentCity.city === order.city)[this.getOrdersCountInCity() - 1];
     }
 
     getNext(id) {
-        return this.orders[id];
+        const temp = this.orders.filter(order => CurrentCity.city === order.city);
+        const orderIndex = temp.map(item => item.id).indexOf(id);
+
+        return temp[orderIndex + 1];
     }
 
     getPrevious(id) {
-        return this.orders[id - 2];
+        const temp = this.orders.filter(order => CurrentCity.city === order.city);
+        const orderIndex = temp.map(item => item.id).indexOf(id);
+
+        return temp[orderIndex - 1];
     }
 
     getOrdersCount() {
         return this.orders.length;
+    }
+
+    getOrdersCountInCity() {
+        return this.orders.filter(order => CurrentCity.city === order.city).length;
     }
 }
 
