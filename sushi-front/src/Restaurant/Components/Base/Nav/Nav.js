@@ -8,7 +8,6 @@ const Nav = () => {
         <>
             <nav className="nav">
                 <div className="nav-content">
-                    <NavLink text="АКЦИИ" to="/discounts" />
                     <NavCategoryLink text="СЕТЫ" to="/сеты" />
                     <NavCategoryLink text="ПОКЕ" to="/поке" />
                     <NavCategoryLink text="РОЛЛЫ" to="/роллы" />

@@ -13,7 +13,7 @@ import Orders from "./Components/Pages/Orders/Orders";
 const Restaurant = () => {
     return (
         <Routes>
-            <Route path="" element={<Wrapper />}>
+            <Route path="*" element={<Wrapper />}>
                 <Route path="" element={<Home />} />
 
                 <Route path="category" element={<Category />}>
@@ -28,7 +28,6 @@ const Restaurant = () => {
                 <Route path="orders" element={<Orders />} />
 
                 <Route path="cart" element={<ShoppingCart />} />
-                <Route path="discounts" element={<> </>} />
                 <Route path="sandbox" element={<> </>} />
                 <Route path="company" element={<> </>} />
             </Route>
