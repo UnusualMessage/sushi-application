@@ -39,10 +39,11 @@ const HeaderLogin = observer(({ active, setActive }) => {
         e.preventDefault();
 
         if (isCustomer) {
-            Auth.login();
+            Auth.loginAsCustomer();
             navigate("/orders");
         } else {
-            Auth.login();
+            Auth.loginAsCorier();
+            navigate("/courier");
         }
 
         setActive(false);
@@ -52,6 +53,7 @@ const HeaderLogin = observer(({ active, setActive }) => {
         e.preventDefault();
         Auth.register();
         navigate("/orders");
+        setActive(false);
     }
 
     return (
@@ -73,7 +75,7 @@ const HeaderLogin = observer(({ active, setActive }) => {
 
                 <div className="login-buttons">
                     <span className={isCustomer ? "mode-button" : "mode-button input-hidden"} onClick={onModeChange}>{isLogin ? registration : auth}</span>
-                    <span className="confirm-button" onClick={isLogin ? onLoginClick : onRegistrationClick}>ПОДТВЕРДИТЬ</span>
+                    <span className="confirm-button" onClick={isCustomer ? (isLogin ? onLoginClick : onRegistrationClick) : onLoginClick}>ПОДТВЕРДИТЬ</span>
                 </div>
             </div>
         </Modal>

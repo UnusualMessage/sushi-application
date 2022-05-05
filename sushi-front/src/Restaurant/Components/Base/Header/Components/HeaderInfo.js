@@ -23,8 +23,10 @@ const HeaderInfo = observer(() => {
     const onLoginClick = (e) => {
         e.preventDefault();
 
-        if (Auth.isAuth) {
+        if (Auth.isCustomer()) {
             navigate("/orders");
+        } else if (Auth.isCourier()) {
+            navigate("/courier");
         } else {
             setLoginModalActive(!loginModalActive);
         }
