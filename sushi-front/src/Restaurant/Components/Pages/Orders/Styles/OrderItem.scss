@@ -2,7 +2,8 @@
 
 .order-item {
     @include flexible-row(stretch, flex-start);
-
+    
+    scroll-snap-align: start;
     gap: 15px;
     width: 100%;
     padding-right: 20px;

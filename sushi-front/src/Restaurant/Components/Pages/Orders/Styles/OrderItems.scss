@@ -3,6 +3,7 @@
 .order-items {
     @include flexible-column(stretch, flex-start);
 
+    scroll-snap-type: y mandatory;
     gap: 50px;
     min-height: 100px;
     max-height: 250px;

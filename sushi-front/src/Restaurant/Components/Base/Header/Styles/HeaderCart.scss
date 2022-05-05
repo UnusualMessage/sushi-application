@@ -13,6 +13,10 @@
         outline: none; 
     }
 
+    .cart-count {
+        display: none;
+    }
+
     .cart-picture {
         border-right: 1px solid white;
         padding: 5px 10px 5px 20px;
@@ -130,6 +134,22 @@
                     fill: white;
                 }
             }
+        }
+
+        .cart-count {
+            @include flexible-row(center, center);
+            position: absolute;
+
+            width: 24px;
+            height: 24px;
+
+            border-radius: 30px;
+            background-color: $title-color;
+            color: white;
+            top: -10px;
+            right: 0;
+            font-size: 10px;
+            overflow: hidden;
         }
 
         .cart-picture {

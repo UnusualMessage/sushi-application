@@ -47,6 +47,10 @@ class CartStore {
         return this.items.find((item) => item.id === id).count.toString();
     }
 
+    getTotalCount() {
+        return this.items.length;
+    }
+
     minusCount(id) {
         const temp = this.items.find((item) => item.id === id);
 
