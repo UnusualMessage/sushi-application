@@ -3,11 +3,12 @@ import { useState } from "react";
 import { observer } from "mobx-react-lite";
 
 import HeaderCityChoice from "./HeaderCityChoice";
-
-import '../Styles/HeaderInfo.scss';
 import CurrentCity from "../../../Store/CurrentCity";
 import HeaderLogin from "./HeaderLogin";
 import Auth from "../../../Store/Auth";
+import { CourierRoute, OrdersRoute } from "../../../Others/ClientRoutes";
+
+import '../Styles/HeaderInfo.scss';
 
 const HeaderInfo = observer(() => {
     const [cityModalActive, setCityModalActive] = useState(false);
@@ -24,9 +25,9 @@ const HeaderInfo = observer(() => {
         e.preventDefault();
 
         if (Auth.isCustomer()) {
-            navigate("/orders");
+            navigate("/" + OrdersRoute);
         } else if (Auth.isCourier()) {
-            navigate("/courier");
+            navigate("/" + CourierRoute);
         } else {
             setLoginModalActive(!loginModalActive);
         }

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
 
 import CartStore from "../../../Store/CartStore";
+import { CategoryRoute } from '../../../Others/ClientRoutes';
 
 import "../Styles/CartOrderUnit.scss";
 
@@ -23,7 +24,7 @@ const CartOrderUnit = observer((props) => {
 
     return (
         <div className="cart-order-unit">
-            <Link className="order-unit-image" to={"/category/" + props.category + "/" + props.id}>
+            <Link className="order-unit-image" to={"/" + CategoryRoute + "/" + props.category + "/" + props.id}>
                 <img src={props.path} alt="" />
             </Link>
 

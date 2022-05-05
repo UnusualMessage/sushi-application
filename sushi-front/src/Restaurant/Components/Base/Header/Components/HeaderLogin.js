@@ -1,6 +1,8 @@
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { CourierRoute, OrdersRoute } from "../../../Others/ClientRoutes";
 import Modal from "../../../Others/Modal";
 import Auth from "../../../Store/Auth";
 
@@ -40,10 +42,10 @@ const HeaderLogin = observer(({ active, setActive }) => {
 
         if (isCustomer) {
             Auth.loginAsCustomer();
-            navigate("/orders");
+            navigate("/" + OrdersRoute);
         } else {
             Auth.loginAsCorier();
-            navigate("/courier");
+            navigate("/" + CourierRoute);
         }
 
         setActive(false);
@@ -52,7 +54,7 @@ const HeaderLogin = observer(({ active, setActive }) => {
     const onRegistrationClick = (e) => {
         e.preventDefault();
         Auth.register();
-        navigate("/orders");
+        navigate("/" + OrdersRoute);
         setActive(false);
     }
 

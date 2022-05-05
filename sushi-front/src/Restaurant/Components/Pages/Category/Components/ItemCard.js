@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { CategoryRoute } from "../../../Others/ClientRoutes";
 import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemCard.scss";
@@ -14,7 +15,7 @@ const ItemCard = ({ item }) => {
 
     return (
         <div className='item-card'>
-            <Link className='card-image' to={"/category/" + item.category + "/" + item.id}>
+            <Link className='card-image' to={"/" + CategoryRoute + "/" + item.category + "/" + item.id}>
                 <img src={item.path} alt="" />
             </Link>
 
