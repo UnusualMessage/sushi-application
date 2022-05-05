@@ -4,19 +4,26 @@ import AvailableOrderItem from "./AvailableOrderItem";
 
 import "../Styles/AvailableOrderItems.scss";
 
-const AvailableOrderItems = observer(({ items }) => {
+const AvailableOrderItems = ({ items }) => {
     return(
         <div className="available-order-items">
             {
-                items.map(item => {
+                items?.map(item => {
                     return <AvailableOrderItem 
                         key={item.id}
-                        item={item}
+
+                        id={item.id} 
+                        category={item.category}
+                        price={item.price} 
+                        title={item.title} 
+                        image={item.path} 
+                        count={item.count}
+                        text={item.text}
                     />
                 })
             }
         </div>
     );
-});
+}
 
-export default AvailableOrderItems;
+export default observer(AvailableOrderItems);

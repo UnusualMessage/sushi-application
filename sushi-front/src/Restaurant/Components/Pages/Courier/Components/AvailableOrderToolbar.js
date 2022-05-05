@@ -1,10 +1,11 @@
 import { observer } from "mobx-react-lite";
+import PropTypes from "prop-types";
 
 import OrdersStore from "../../../Store/OrdersStore";
 
 import "../Styles/AvailableOrderToolbar.scss";
 
-const AvailableOrderToolbar = observer(({ id, setOrder }) => {
+const AvailableOrderToolbar = ({ id, setOrder }) => {
     const onShowNext = (e) => {
         e.preventDefault();
 
@@ -37,6 +38,11 @@ const AvailableOrderToolbar = observer(({ id, setOrder }) => {
             <span className="toolbar-next" onClick={onShowNext}>Вперед</span>
         </div>
     );
-});
+}
 
-export default AvailableOrderToolbar;
+AvailableOrderToolbar.propTypes = {
+    id: PropTypes.number,
+    setOrder: PropTypes.func
+}
+
+export default observer(AvailableOrderToolbar);

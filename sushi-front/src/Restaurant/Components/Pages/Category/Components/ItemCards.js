@@ -8,9 +8,10 @@ import CurrentSorting from "../../../Store/CurrentSorting";
 
 import "../Styles/ItemCards.scss";
 
-const ItemCards = observer(() => {
+const ItemCards = () => {
     const params = useParams();
     const currentSorting = CurrentSorting.ascending;
+
     const [items, setItems] = useState(ShoppingData.filter(card => card.category.toLowerCase() === params.category.toLowerCase()));
 
     useEffect(() => {
@@ -30,13 +31,20 @@ const ItemCards = observer(() => {
             {
                 items?.map((item) => {
                     return <ItemCard
-                        item={item}
                         key={item.id}
+
+                        id={item.id} 
+                        category={item.category}
+                        price={item.price} 
+                        title={item.title} 
+                        image={item.path} 
+                        count={item.count}
+                        text={item.text}
                     />
                 })
             }
         </section>
     );
-});
+}
 
-export default ItemCards;
+export default observer(ItemCards);

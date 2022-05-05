@@ -7,7 +7,7 @@ import AvailableOrderToolbar from "./Components/AvailableOrderToolbar";
 
 import "./Courier.scss";
 
-const Courier = observer(() => {
+const Courier = () => {
     const [order, setOrder] = useState(OrdersStore.getRandomOrder());
 
     return(
@@ -16,6 +16,6 @@ const Courier = observer(() => {
             <AvailableOrderToolbar id={order.id} setOrder={setOrder}/>
         </section>
     );
-});
+}
 
-export default Courier;
+export default observer(Courier);

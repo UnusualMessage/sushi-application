@@ -1,48 +1,49 @@
 import { Link } from 'react-router-dom';
 import { observer } from "mobx-react-lite";
+import PropTypes from "prop-types";
 
 import CartStore from "../../../Store/CartStore";
 import { CategoryRoute } from '../../../Others/ClientRoutes';
 
 import "../Styles/CartOrderUnit.scss";
 
-const CartOrderUnit = observer((props) => {
+const CartOrderUnit = ({ id, category, image, title, text, price }) => {
     const onRemove = (e) => {
         e.preventDefault();
-        CartStore.remove(props.id);
+        CartStore.remove(id);
     }
 
     const onMinus = (e) => {
         e.preventDefault();
-        CartStore.minusCount(props.id);
+        CartStore.minusCount(id);
     }
 
     const onPlus = (e) => {
         e.preventDefault();
-        CartStore.plusCount(props.id);
+        CartStore.plusCount(id);
     }
 
     return (
         <div className="cart-order-unit">
-            <Link className="order-unit-image" to={"/" + CategoryRoute + "/" + props.category + "/" + props.id}>
-                <img src={props.path} alt="" />
+            <Link className="order-unit-image" to={"/" + CategoryRoute + "/" + category + "/" + id}>
+                <img src={image} alt="" />
             </Link>
 
             <div className="order-unit-description">
                 <div className="order-unit-description-text-container">
-                    <span className="order-unit-description-title">{props.title}</span>
-                    <span className="order-unit-description-text">{props.text}</span>
+                    <span className="order-unit-description-title">{title}</span>
+                    <span className="order-unit-description-text">{text}</span>
                 </div>
 
                 <div className="order-unit-buttons">
                     <div className="order-unit-count">
                         <span className="order-unit-count-minus" onClick={onMinus}>-</span>
-                        <span className="order-unit-count-current">{CartStore.getCount(props.id)}</span>
+                        <span className="order-unit-count-current">{CartStore.getCount(id)}</span>
                         <span className="order-unit-count-plus" onClick={onPlus}>+</span>
                     </div>
 
                     <div className="order-unit-price">
-                        <span className="order-unit-count-price-text">{props.price}</span>
+                        <span className="order-unit-count-price-text">{price}</span>
                     </div>
 
                     <div className="order-unit-remove-button" onClick={onRemove}>
@@ -55,6 +56,16 @@ const CartOrderUnit = observer((props) => {
             </div>
         </div>
     );
-});
+}
 
-export default CartOrderUnit;
+CartOrderUnit.propTypes = {
+    id: PropTypes.number,
+    category: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    price: PropTypes.number,
+    count: PropTypes.number
+}
+
+export default observer(CartOrderUnit);

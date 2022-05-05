@@ -9,7 +9,7 @@ import CartStore from "../../Store/CartStore";
 
 import "./Cart.scss";
 
-const ShoppingCart = observer(() => {
+const ShoppingCart = () => {
     const navigate = useNavigate();
     const isCartEmpty = CartStore.isEmpty();
 
@@ -26,6 +26,6 @@ const ShoppingCart = observer(() => {
             <CartOrderForm />
         </>
     );
-});
+}
 
-export default ShoppingCart;
+export default observer(ShoppingCart);

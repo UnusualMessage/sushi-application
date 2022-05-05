@@ -1,13 +1,13 @@
 import FooterLink from "./FooterLink";
 
-const FooterLinksContainer = (props) => {
+const FooterLinksContainer = () => {
     return (
         <div className="links-container">
-            <FooterLink to="сеты" text="СЕТЫ"/>
-            <FooterLink to="поке" text="ПОКЕ"/>
-            <FooterLink to="роллы" text="РОЛЛЫ"/>
-            <FooterLink to="суши" text="СУШИ"/>
-            <FooterLink to="запеченные роллы" text="ЗАПЕЧЕННЫЕ РОЛЛЫ"/>
+            <FooterLink to="сеты" title="СЕТЫ"/>
+            <FooterLink to="поке" title="ПОКЕ"/>
+            <FooterLink to="роллы" title="РОЛЛЫ"/>
+            <FooterLink to="суши" title="СУШИ"/>
+            <FooterLink to="запеченные роллы" title="ЗАПЕЧЕННЫЕ РОЛЛЫ"/>
         </div>
     );
 }

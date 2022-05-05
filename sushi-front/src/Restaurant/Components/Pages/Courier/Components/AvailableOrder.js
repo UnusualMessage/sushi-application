@@ -1,10 +1,12 @@
+import { observer } from "mobx-react-lite";
+import PropTypes from "prop-types";
+
 import AvailableOrderItems from "./AvailableOrderItems";
 import CurrentOrder from "../../../Store/CurrentOrder";
 
 import "../Styles/AvailableOrder.scss";
-import { observer } from "mobx-react-lite";
 
-const AvailableOrder = observer(({ id, date, status, price, items }) => {
+const AvailableOrder = ({ id, date, status, price, items }) => {
     const onAccept = (e) => {
         e.preventDefault();
 
@@ -27,6 +29,14 @@ const AvailableOrder = observer(({ id, date, status, price, items }) => {
             <AvailableOrderItems id={id} items={items}/>
         </div>
     );
-});
+}
 
-export default AvailableOrder;
+AvailableOrder.propTypes = {
+    id: PropTypes.number,
+    date: PropTypes.string,
+    status: PropTypes.string,
+    price: PropTypes.number,
+    items: PropTypes.array
+}
+
+export default observer(AvailableOrder);

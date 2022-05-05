@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Modal from "../../../Others/Modal";
 import HeaderCity from "./HeaderCity";
 
@@ -77,6 +79,11 @@ const HeaderCityChoice = ({ active, setActive }) => {
             </div>
         </Modal>
     );
+}
+
+HeaderCityChoice.propTypes = {
+    active: PropTypes.bool.isRequired,
+    setActive: PropTypes.func.isRequired
 }
 
 export default HeaderCityChoice;

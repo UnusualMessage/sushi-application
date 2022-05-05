@@ -8,16 +8,16 @@ const Nav = () => {
         <>
             <nav className="nav">
                 <div className="nav-content">
-                    <NavCategoryLink text="СЕТЫ" to="/сеты" />
-                    <NavCategoryLink text="ПОКЕ" to="/поке" />
-                    <NavCategoryLink text="РОЛЛЫ" to="/роллы" />
-                    <NavCategoryLink text="СУШИ" to="/суши" />
-                    <NavCategoryLink text="ЗАПЕЧЕННЫЕ РОЛЛЫ" to="/запеченные роллы" />
-                    <NavCategoryLink text="НАПИТКИ" to="/напитки" />
-                    <NavCategoryLink text="ДЕСЕРТЫ" to="/десерты" />
-                    <NavCategoryLink text="ДОПОЛНИТЕЛЬНО" to="/дополнительно" />
-                    <NavLink text="КОМПАНИЯ" to="/company" />
-                    <NavLink text="ПЕСОЧНИЦА" to="/sandbox" />
+                    <NavCategoryLink title="СЕТЫ" to="/сеты" />
+                    <NavCategoryLink title="ПОКЕ" to="/поке" />
+                    <NavCategoryLink title="РОЛЛЫ" to="/роллы" />
+                    <NavCategoryLink title="СУШИ" to="/суши" />
+                    <NavCategoryLink title="ЗАПЕЧЕННЫЕ РОЛЛЫ" to="/запеченные роллы" />
+                    <NavCategoryLink title="НАПИТКИ" to="/напитки" />
+                    <NavCategoryLink title="ДЕСЕРТЫ" to="/десерты" />
+                    <NavCategoryLink title="ДОПОЛНИТЕЛЬНО" to="/дополнительно" />
+                    <NavLink title="КОМПАНИЯ" to="/company" />
+                    <NavLink title="ПЕСОЧНИЦА" to="/sandbox" />
                 </div>
             </nav>
         </>

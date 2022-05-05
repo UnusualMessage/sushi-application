@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import CartStore from "../../../Store/CartStore";
 import CartOrderUnit from "./CartOrderUnit";
 
-const CartOrderUnits = observer(() => {
+const CartOrderUnits = () => {
     const items = CartStore.items.slice();
 
     return(
@@ -11,13 +11,14 @@ const CartOrderUnits = observer(() => {
             <section className="cart-order-units">
                 {
                     items?.map((item) => {
-                        return <CartOrderUnit 
-                            category={item.category}
-                            key={item.id} 
+                        return <CartOrderUnit
+                            key={item.id}
+
                             id={item.id} 
-                            price={item.price} 
+                            category={item.category}
+                            price={Number(item.price)} 
                             title={item.title} 
-                            path={item.path} 
+                            image={item.path} 
                             count={item.count}
                             text={item.text}
                         />
@@ -26,6 +27,6 @@ const CartOrderUnits = observer(() => {
             </section>
         </>
     );
-});
+}
 
-export default CartOrderUnits;
+export default observer(CartOrderUnits);

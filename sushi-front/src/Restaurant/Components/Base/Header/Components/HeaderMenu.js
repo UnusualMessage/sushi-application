@@ -1,6 +1,6 @@
 import '../Styles/HeaderMenu.scss';
 
-const HeaderMenu = (props) => {
+const HeaderMenu = () => {
     return (
         <div className='header-menu'>
             <span className='menu-icon'>

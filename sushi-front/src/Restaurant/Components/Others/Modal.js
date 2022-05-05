@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import './Modal.scss';
 
 const Modal = ({ active, setActive, children }) => {
@@ -8,6 +10,16 @@ const Modal = ({ active, setActive, children }) => {
             </div>
         </div>
     );
+}
+
+Modal.propTypes = {
+    active: PropTypes.bool.isRequired,
+    setActive: PropTypes.func.isRequired,
+    children: PropTypes.element
+}
+
+Modal.defaultProps = {
+    children: <></>
 }
 
 export default Modal;

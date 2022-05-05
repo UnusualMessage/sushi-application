@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { CategoryRoute } from "../../../Others/ClientRoutes";
 
@@ -11,6 +12,11 @@ const HomeCategory = ({ image, category }) => {
             <span className="home-category-tip">{category}</span>
         </Link>
     );
+}
+
+HomeCategory.propTypes = {
+    image: PropTypes.string,
+    category: PropTypes.string
 }
 
 export default HomeCategory;

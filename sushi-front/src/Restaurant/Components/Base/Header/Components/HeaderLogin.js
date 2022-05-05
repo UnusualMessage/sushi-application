@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import { CourierRoute, OrdersRoute } from "../../../Others/ClientRoutes";
 import Modal from "../../../Others/Modal";
@@ -83,5 +84,10 @@ const HeaderLogin = observer(({ active, setActive }) => {
         </Modal>
     );
 });
+
+HeaderLogin.propTypes = {
+    active: PropTypes.bool.isRequired,
+    setActive: PropTypes.func.isRequired
+}
 
 export default HeaderLogin;

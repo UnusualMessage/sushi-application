@@ -1,11 +1,12 @@
 import { observer } from "mobx-react-lite";
+import PropTypes from "prop-types";
 
 import OrdersStore from "../../../Store/OrdersStore";
 import OrderItems from "./OrderItems";
 
 import "../Styles/Order.scss";
 
-const Order = observer(({ id, date, status, price }) => {
+const Order = ({ id, date, status, price }) => {
     const onOrderRemove = (e) => {
         e.preventDefault();
         OrdersStore.removeOrder(id);
@@ -27,6 +28,13 @@ const Order = observer(({ id, date, status, price }) => {
             <OrderItems id={id}/>
         </div>
     );
-});
+}
 
-export default Order;
+Order.propTypes = {
+    id: PropTypes.number,
+    date: PropTypes.string,
+    status: PropTypes.string,
+    price: PropTypes.number
+}
+
+export default observer(Order);

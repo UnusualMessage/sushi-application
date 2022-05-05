@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./Main.scss";
 
 const Main = ({ children }) => {
@@ -8,6 +10,14 @@ const Main = ({ children }) => {
             </div>
         </main>
     );
+}
+
+Main.propTypes = {
+    children: PropTypes.element
+}
+
+Main.defaultProps = {
+    children: <></>
 }
 
 export default Main;

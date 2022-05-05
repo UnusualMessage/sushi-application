@@ -1,26 +1,24 @@
 import { makeAutoObservable } from "mobx";
 
 class OrdersStore {
-    currentId;
-    orders;
+    orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
 
     constructor() {
         makeAutoObservable(this);
-
-        this.currentId = localStorage.getItem("current_id") ? Number(localStorage.getItem("current_id")) : 0;
-        this.orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
     }
 
     saveToLocalStorage() {
         localStorage.setItem("orders", JSON.stringify(this.orders));
-        localStorage.setItem("current_id", this.currentId);
     }
 
     makeOrder(items, price) {
         let newOrder = {};
 
-        newOrder.id = this.currentId + 1;
-        this.currentId += 1;
+        if (this.getOrdersCount() === 0) {
+            newOrder.id = 1;
+        } else {
+            newOrder.id = this.orders[this.getOrdersCount() - 1].id + 1;
+        }
 
         newOrder.date = "04.05.22";
         newOrder.status = "Оформлен";

@@ -5,7 +5,7 @@ import CurrentSorting from "../../../Store/CurrentSorting";
 
 import "../Styles/ItemsTitle.scss";
 
-const ItemsTitle = observer(() => {
+const ItemsTitle = () => {
     const params = useParams();
 
     const onSortingChange = (e) => {
@@ -24,6 +24,6 @@ const ItemsTitle = observer(() => {
             </span>
         </section>
     )
-});
+}
 
-export default ItemsTitle;
+export default observer(ItemsTitle);
