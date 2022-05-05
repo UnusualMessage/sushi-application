@@ -1,14 +1,11 @@
 import { makeAutoObservable } from "mobx";
 
 class Auth {
-    isAuth;
-    role;
+    isAuth = localStorage.getItem("auth") ? localStorage.getItem("auth") === "true" : false;
+    role = localStorage.getItem("role") ? localStorage.getItem("role") : "guest";
 
     constructor() {
         makeAutoObservable(this);
-
-        this.isAuth = localStorage.getItem("auth") ? localStorage.getItem("auth") === "true" : false;
-        this.role = localStorage.getItem("role") ? localStorage.getItem("role") : "guest";
     }
 
     saveToLocalStorage() {

@@ -22,7 +22,7 @@ const CartOrderUnit = ({ id, category, image, title, text, price }) => {
         e.preventDefault();
         CartStore.plusCount(id);
     }
-
+    
     return (
         <div className="cart-order-unit">
             <Link className="order-unit-image" to={"/" + CategoryRoute + "/" + category + "/" + id}>

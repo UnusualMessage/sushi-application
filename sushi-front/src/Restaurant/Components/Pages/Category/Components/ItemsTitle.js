@@ -10,7 +10,7 @@ const ItemsTitle = () => {
 
     const onSortingChange = (e) => {
         e.preventDefault();
-        CurrentSorting.change();
+        CurrentSorting.changeItemCardsSorting();
     }
     
     return (
@@ -20,7 +20,7 @@ const ItemsTitle = () => {
             </h1>
 
             <span className="main-sorting" onClick={onSortingChange}>
-                {CurrentSorting.ascending ? "По возрастанию цены" : "По убыванию цены"}
+                {CurrentSorting.itemCardsAscending ? "По возрастанию цены" : "По убыванию цены"}
             </span>
         </section>
     )

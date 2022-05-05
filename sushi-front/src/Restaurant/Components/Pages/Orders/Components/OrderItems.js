@@ -7,7 +7,7 @@ import OrdersStore from "../../../Store/OrdersStore";
 import "../Styles/OrderItems.scss";
 
 const OrderItems = ({ id }) => {
-    const items = OrdersStore.orders.find((order => order.id === id)).items;
+    const items = OrdersStore.getById(id)?.items;
 
     return(
         <div className="order-items">

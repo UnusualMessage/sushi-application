@@ -29,7 +29,29 @@ class OrdersStore {
         this.saveToLocalStorage();
     }
 
-    removeOrder(id) {
+    getSorted(ascending) {
+        let sortedItems = this.get();
+
+        if (ascending) {
+            return sortedItems.sort((a, b) => a.price > b.price ? 1 : -1);
+        } else {
+            return sortedItems.sort((a, b) => a.price < b.price ? 1 : -1);
+        }
+    }
+
+    get() {
+        return this.orders.slice(0);
+    }
+
+    getById(id) {
+        return this.orders.find(order => order.id === id);
+    }
+
+    set(orders) {
+        this.orders = orders.slice(0);
+    }
+
+    remove(id) {
         this.orders = this.orders.filter((order) => order.id !== id);
         this.saveToLocalStorage();
     }
@@ -39,10 +61,6 @@ class OrdersStore {
         acceptedOrder.status = "Доставка";
         this.saveToLocalStorage();
         return acceptedOrder;
-    }
-
-    getById(id) {
-        return this.orders.find(order => order.id === id);
     }
 
     getRandomOrder() {

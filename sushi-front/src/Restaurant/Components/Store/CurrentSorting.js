@@ -1,14 +1,19 @@
 import { makeAutoObservable } from "mobx";
 
 class CurrentSorting {
-    ascending = true;
+    itemCardsAscending = true;
+    ordersAscending = true;
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    change() {
-        this.ascending = !this.ascending;
+    changeItemCardsSorting() {
+        this.itemCardsAscending = !this.itemCardsAscending;
+    }
+
+    changeOrdersSorting() {
+        this.ordersAscending = !this.ordersAscending;
     }
 }
 

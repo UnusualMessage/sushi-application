@@ -10,7 +10,7 @@ import "../Styles/ItemCards.scss";
 
 const ItemCards = () => {
     const params = useParams();
-    const currentSorting = CurrentSorting.ascending;
+    const currentSorting = CurrentSorting.itemCardsAscending;
 
     const [items, setItems] = useState(ShoppingData.filter(card => card.category.toLowerCase() === params.category.toLowerCase()));
 
@@ -18,9 +18,9 @@ const ItemCards = () => {
         let sortedItems = ShoppingData.filter(card => card.category.toLowerCase() === params.category.toLowerCase());
 
         if (currentSorting) {
-            sortedItems = sortedItems.sort((a, b) => Number(a.price) > Number(b.price) ? 1 : -1);
+            sortedItems = sortedItems.sort((a, b) => a.price > b.price ? 1 : -1);
         } else {
-            sortedItems = sortedItems.sort((a, b) => Number(a.price) < Number(b.price) ? 1 : -1);
+            sortedItems = sortedItems.sort((a, b) => a.price < b.price ? 1 : -1);
         }
 
         setItems(sortedItems.slice(0));

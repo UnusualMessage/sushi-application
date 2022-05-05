@@ -5,11 +5,12 @@ import OrdersStore from "../../../Store/OrdersStore";
 import OrderItems from "./OrderItems";
 
 import "../Styles/Order.scss";
+import { action } from "mobx";
 
 const Order = ({ id, date, status, price }) => {
     const onOrderRemove = (e) => {
         e.preventDefault();
-        OrdersStore.removeOrder(id);
+        OrdersStore.remove(id);
     }
 
     return(
@@ -22,7 +23,7 @@ const Order = ({ id, date, status, price }) => {
                     <span className="order-price">{price}</span>
                 </div>
 
-                <span className="order-remove" onClick={onOrderRemove}>Удалить</span>
+                <span className="order-remove" onClick={action(onOrderRemove)}>Удалить</span>
             </div>
 
             <OrderItems id={id}/>
