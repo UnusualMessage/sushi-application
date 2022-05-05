@@ -1,11 +1,14 @@
 import { makeAutoObservable } from "mobx";
 
 class OrdersStore {
-    currentId = localStorage.getItem("current_id") ? Number(localStorage.getItem("current_id")) : 0;
-    orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
+    currentId;
+    orders;
 
     constructor() {
         makeAutoObservable(this);
+
+        this.currentId = localStorage.getItem("current_id") ? Number(localStorage.getItem("current_id")) : 0;
+        this.orders = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
     }
 
     saveToLocalStorage() {
@@ -31,6 +34,50 @@ class OrdersStore {
     removeOrder(id) {
         this.orders = this.orders.filter((order) => order.id !== id);
         this.saveToLocalStorage();
+    }
+
+    accept(id) {
+        let acceptedOrder = this.getById(id);
+        acceptedOrder.status = "Доставка";
+        this.saveToLocalStorage();
+        return acceptedOrder;
+    }
+
+    getById(id) {
+        return this.orders.find(order => order.id === id);
+    }
+
+    getRandomOrder() {
+        const randomIndex = Math.floor(Math.random() * this.orders.length);
+        return this.orders[randomIndex];
+    }
+
+    isFirst(id) {
+        return id === 1;
+    }
+
+    isLast(id) {
+        return id === this.orders.length;
+    }
+
+    getFirst() {
+        return this.orders[0];
+    }
+
+    getLast() {
+        return this.orders[this.getOrdersCount() - 1];
+    }
+
+    getNext(id) {
+        return this.orders[id];
+    }
+
+    getPrevious(id) {
+        return this.orders[id - 2];
+    }
+
+    getOrdersCount() {
+        return this.orders.length;
     }
 }
 

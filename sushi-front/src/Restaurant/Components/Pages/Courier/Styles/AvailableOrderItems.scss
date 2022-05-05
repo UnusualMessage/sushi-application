@@ -1,5 +1,12 @@
 @use "../../../Styles/Constants.scss" as *;
 
 .available-order-items {
-    
+    @include flexible-column(stretch, flex-start);
+
+    scroll-snap-type: y mandatory;
+    gap: 50px;
+    min-height: 250px;
+    max-height: 400px;
+    overflow: auto;
+    width: 100%;
 }
