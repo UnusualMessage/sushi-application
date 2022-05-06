@@ -68,12 +68,49 @@
     .header-login {
         @include flexible-row(center, center);
 
+        position: relative;
+
         cursor: pointer;
 
         svg {
             fill: $red-color;
             width: 30px;
             height: 30px;
+        }
+
+        &:hover {
+            .header-login-menu {
+                @include flexible-column(flex-start, flex-start);
+            }
+        }
+
+        .header-login-menu {
+            display: none;
+
+            width: 200px;
+            gap: 10px;
+            z-index: 20;
+            position: absolute;
+            top: 31px;
+            background-color: white;
+            border: 1px solid $red-color;
+            padding: 10px;
+
+            a {
+                text-decoration: none; 
+                color: $aux-color;
+                font-size: 16px; 
+                text-transform: uppercase;
+                transition: color 0.5s;
+
+                &:hover {
+                    color: $hover-color;
+                }
+
+                &:focus {
+                    outline: none
+                }
+            }
         }
     }
 }
@@ -162,6 +199,20 @@
 
             svg {
                 fill: white;
+            }
+
+            .header-login-menu {
+                display: none;
+    
+                width: 200px;
+                gap: 10px;
+                z-index: 20;
+                position: absolute;
+                right: -200px;
+                top: -50px;
+                background-color: white;
+                border: 1px solid $red-color;
+                padding: 10px;
             }
         }
     }

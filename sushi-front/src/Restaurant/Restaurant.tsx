@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./Components/Base/Wrapper";
+import AuthorizedRoute from "./Components/Others/AuthorizedRoute";
 import CourierRoute from "./Components/Others/CourierRoute";
 import ShoppingCart from "./Components/Pages/Cart/ShoppingCart";
 import Category from "./Components/Pages/Category/Category";
@@ -21,11 +22,13 @@ const Restaurant = () => {
                     <Route path=":category/:id" element={<ItemPage />} />
                 </Route>
 
-                <Route path="courier" element={<CourierRoute />}> 
+                <Route path="courier" element={<CourierRoute />}>
                     <Route path="" element={<Courier />} />
                 </Route>
 
-                <Route path="orders" element={<Orders />} />
+                <Route path="orders" element={<AuthorizedRoute />}>
+                    <Route path="" element={<Orders />} />
+                </Route>
 
                 <Route path="cart" element={<ShoppingCart />} />
                 <Route path="sandbox" element={<> </>} />

@@ -55,14 +55,18 @@ class OrdersStore {
     }
 
     isFirst(id) {
-        const temp = this.orders.filter((order : IOrder) => CurrentCity.city === order.city);
+        const temp = this.orders.filter((order : IOrder) => CurrentCity.city.toLowerCase() === order.city.toLowerCase());
         
         return id === temp[0].id;
     }
 
     isLast(id) {
-        const temp = this.orders.filter((order : IOrder) => CurrentCity.city === order.city);
+        const temp = this.orders.filter((order : IOrder) => CurrentCity.city.toLowerCase() === order.city.toLowerCase());
         return id === temp[this.getOrdersCountInCity() - 1].id;
+    }
+
+    isEmpty() {
+        return this.getByCity().length === 0;
     }
 
     getSorted(ascending : boolean) {

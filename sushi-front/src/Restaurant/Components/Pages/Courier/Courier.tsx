@@ -9,18 +9,23 @@ import AvailableOrderToolbar from "./Components/AvailableOrderToolbar";
 import "./Courier.scss";
 
 const Courier = () => {
-    const currentCity : string = CurrentCity.city;
+    const currentCity: string = CurrentCity.city;
     const [order, setOrder] = useState(OrdersStore.getRandomOrder());
+    const isEmpty = OrdersStore.isEmpty();
 
     useEffect(() => {
         setOrder(OrdersStore.getRandomOrder());
     }, [currentCity])
 
-    return(
-        <section className="available-orders">
-            <AvailableOrder id={order?.id} date={order?.date} status={order?.status} price={order?.price} items={order?.items}/>
-            <AvailableOrderToolbar id={order?.id} setOrder={setOrder}/>
-        </section>
+    return (
+        isEmpty
+        ?
+            <></>
+        :         
+            <section className="available-orders">
+                <AvailableOrder id={order?.id} date={order?.date} status={order?.status} price={order?.price} items={order?.items} />
+                <AvailableOrderToolbar id={order?.id} setOrder={setOrder} />
+            </section>
     );
 }
 

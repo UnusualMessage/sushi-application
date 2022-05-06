@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 
 import Auth from "../Store/Auth";
 
-const CourierRoute = observer(() => {
-    return Auth.isCourier() ? <Outlet /> : <></>
+const AuthorizedRoute = observer(() => {
+    return Auth.isAuth ? <Outlet /> : <></>
 });
 
-export default CourierRoute;
+export default AuthorizedRoute;
