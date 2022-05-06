@@ -24,6 +24,7 @@
         .change-form-icon {
             @include flexible-row(center, center);
 
+            cursor: pointer;
             svg {
                 width: 30px;
                 height: 30px;
@@ -100,6 +101,7 @@
         gap: 30px;
 
         .mode-button {
+            cursor: pointer;
             text-transform: uppercase;
             color: $aux-color;
             font-size: 18px;
@@ -113,6 +115,7 @@
             padding: 10px;
             border-radius: 20px;
             border: 1px solid $red-color;
+            background-color: white;
 
             &:hover {
                 background-color: $red-color;

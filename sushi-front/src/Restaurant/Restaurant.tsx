@@ -7,9 +7,11 @@ import Cart from "./Components/Pages/Cart/Cart";
 import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
 import ItemPage from "./Components/Pages/Category/Components/ItemPage";
+import Company from "./Components/Pages/Company/Company";
 import Courier from "./Components/Pages/Courier/Courier";
 import Home from "./Components/Pages/Home/Home";
 import Orders from "./Components/Pages/Orders/Orders";
+import Sandbox from "./Components/Pages/Sandbox/Sandbox";
 
 const Restaurant = () => {
     return (
@@ -31,8 +33,9 @@ const Restaurant = () => {
                 </Route>
 
                 <Route path="cart" element={<Cart />} />
-                <Route path="sandbox" element={<> </>} />
-                <Route path="company" element={<> </>} />
+                
+                <Route path="sandbox" element={<Sandbox />} />
+                <Route path="company" element={<Company />} />
             </Route>
         </Routes>
     );

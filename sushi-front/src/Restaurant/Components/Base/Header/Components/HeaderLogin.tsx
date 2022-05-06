@@ -28,19 +28,15 @@ const HeaderLogin = ({ active, setActive }) => {
         }
     }, [isLogin, isCustomer])
 
-    const onModeChange = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onModeChange = action(() => {
         setIsLogin(!isLogin);
     });
 
-    const onUserChange = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onUserChange = action(() => {
         setIsCustomer(!isCustomer);
     });
 
-    const onLoginClick = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
+    const onLoginClick = action(() => {
         if (isCustomer) {
             Auth.loginAsCustomer();
             navigate("/" + OrdersRoute);
@@ -52,8 +48,7 @@ const HeaderLogin = ({ active, setActive }) => {
         setActive(false);
     });
 
-    const onRegistrationClick = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onRegistrationClick = action(() => {
         Auth.register();
         navigate("/" + OrdersRoute);
         setActive(false);
@@ -78,7 +73,7 @@ const HeaderLogin = ({ active, setActive }) => {
 
                 <div className="login-buttons">
                     <span className={isCustomer ? "mode-button" : "mode-button input-hidden"} onClick={onModeChange}>{isLogin ? registration : auth}</span>
-                    <span className="confirm-button" onClick={isCustomer ? (isLogin ? onLoginClick : onRegistrationClick) : onLoginClick}>ПОДТВЕРДИТЬ</span>
+                    <button className="confirm-button" type="submit" onClick={isCustomer ? (isLogin ? onLoginClick : onRegistrationClick) : onLoginClick}>ПОДТВЕРДИТЬ</button>
                 </div>
             </div>
         </Modal>

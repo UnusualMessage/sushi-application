@@ -3,9 +3,7 @@ import { observer } from "mobx-react-lite";
 import CurrentCity from "../../../Store/CurrentCity";
 
 const HeaderCity = ({ city, setActive }) => {
-    const onClick = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
+    const onClick = () => {
         CurrentCity.set(city);
         setActive(false);
     }

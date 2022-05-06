@@ -12,7 +12,7 @@ const NavLink = ({ to, title } : INavLinkProps) => {
 
 interface INavLinkProps {
     to: string,
-    title, string
+    title: string
 }
 
 export default NavLink;
