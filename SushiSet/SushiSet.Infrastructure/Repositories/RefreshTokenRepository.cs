@@ -13,7 +13,7 @@ namespace SushiSet.Infrastructure.Repositories
         {
         }
 
-        public override Task<RefreshToken> UpdateAsync(RefreshToken entity, string properties)
+        public override Task<RefreshToken> UpdateAsync(RefreshToken entity)
         {
             throw new System.NotImplementedException();
         }

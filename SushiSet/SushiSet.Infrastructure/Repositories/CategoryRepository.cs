@@ -13,7 +13,7 @@ namespace SushiSet.Infrastructure.Repositories
         {
         }
 
-        public override Task<Category> UpdateAsync(Category entity, string properties)
+        public override Task<Category> UpdateAsync(Category entity)
         {
             throw new System.NotImplementedException();
         }

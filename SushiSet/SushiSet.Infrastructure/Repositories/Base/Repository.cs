@@ -46,6 +46,6 @@ namespace SushiSet.Infrastructure.Repositories.Base
             return await _applicationContext.Set<T>().FindAsync(id);
         }
 
-        public abstract Task<T> UpdateAsync(T entity, string properties);
+        public abstract Task<T> UpdateAsync(T entity);
     }
 }
