@@ -9,7 +9,11 @@ namespace SushiSet.Core.Entities
     public class Order : Entity
     {
         public string Title { get; set; }
-        public bool Active { get; set; }
+        public bool Status { get; set; }
+        public DateTime Created { get; set; }
+
+        public Guid? ShopId { get; set; }
+        public Shop Shop { get; set; }
 
         public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
 

@@ -16,6 +16,8 @@ namespace SushiSet.Infrastructure.Context
         public DbSet<OrderUnit> OrderUnits { get; set; }
 
         public DbSet<About> Abouts { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Shop> Shops { get; set; }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers{ get; set; }
@@ -30,6 +32,7 @@ namespace SushiSet.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.AddUsers();
             modelBuilder.AddCustomers();
             modelBuilder.AddCouriers();
             modelBuilder.AddAdministrators();
@@ -41,6 +44,8 @@ namespace SushiSet.Infrastructure.Context
             modelBuilder.AddCategories();
 
             modelBuilder.AddAbouts();
+            modelBuilder.AddCities();
+            modelBuilder.AddShops();
         }
     }
 }
