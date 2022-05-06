@@ -1,6 +1,7 @@
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
+import { useFormik } from 'formik';
 
 import HeaderCityChoice from "../../../Base/Header/Components/HeaderCityChoice";
 import CartStore from "../../../Store/CartStore";
@@ -10,6 +11,7 @@ import OrdersStore from "../../../Store/OrdersStore";
 import ShopChoice from "./ShopChoice";
 
 import "../Styles/OrderForm.scss";
+import Input from "./Input";
 
 const OrderForm = () => {
     const [cityModal, setCityModal] = useState(false);
@@ -28,15 +30,31 @@ const OrderForm = () => {
         setShopModal(true);
     });
 
-    const onConfirmClick = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
+    const confirm = action(() => {
         OrdersStore.makeOrder(CartStore.items, CartStore.getPrice());
         CartStore.clear();
     });
 
+    const formik = useFormik({
+        initialValues: {
+            phone: '',
+            name: '',
+            street: '',
+            home: '',
+            housing: '',
+            part: '',
+            floor: '',
+            flat: ''
+        },
+
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+            confirm();
+        },
+    });
+
     return (
-        <section className="cart-order-form">
+        <form className="cart-order-form" onSubmit={formik.handleSubmit}>
             <div className="cart-order-form-result">
                 <span className="cart-order-form-result-text">Итого:</span>
                 <span className="cart-order-form-result-price">{CartStore.getPrice()}</span>
@@ -44,11 +62,17 @@ const OrderForm = () => {
 
             <span className="cart-order-form-who-title">Кому доставить</span>
             <div className="cart-order-form-who">
-                <input className="cart-input" placeholder="Телефон" />
-                <input className="cart-input" placeholder="Как вас называть" />
+                <Input value={formik.values.phone} onChange={formik.handleChange}
+                    name="phone" placeholder="Телефон" type="tel"
+                />
+
+                <Input value={formik.values.name} onChange={formik.handleChange}
+                    name="name" placeholder="Как вас называть" type="text"
+                />
             </div>
 
             <span className="cart-order-form-address-title">{isShop ? "Адрес ресторана" : "Адрес доставки"}</span>
+
             <div className="cart-order-type-choice">
                 <input type={"checkbox"} checked={isShop} onChange={onCartTypeChange} className="cart-order-type" />
                 <span onClick={onCartTypeChange}>Самовывоз?</span>
@@ -79,21 +103,38 @@ const OrderForm = () => {
                     </div>
 
                     <div className="cart-order-form-address">
-                        <input className="cart-input" placeholder="Улица" />
-                        <input className="cart-input" placeholder="Номер дома" />
-                        <input className="cart-input" placeholder="Корпус" />
-                        <input className="cart-input" placeholder="Подъезд" />
-                        <input className="cart-input" placeholder="Этаж" />
-                        <input className="cart-input" placeholder="Квартира" />
+                        <Input value={formik.values.street} onChange={formik.handleChange}
+                            name="street" placeholder="Улица" type="text"
+                        />
+
+                        <Input value={formik.values.home} onChange={formik.handleChange}
+                            name="home" placeholder="Дом" type="text"
+                        />
+
+                        <Input value={formik.values.housing} onChange={formik.handleChange}
+                            name="housing" placeholder="Корпус" type="text"
+                        />
+
+                        <Input value={formik.values.part} onChange={formik.handleChange}
+                            name="part" placeholder="Подъезд" type="text"
+                        />
+
+                        <Input value={formik.values.floor} onChange={formik.handleChange}
+                            name="floor" placeholder="Этаж" type="text"
+                        />
+
+                        <Input value={formik.values.flat} onChange={formik.handleChange}
+                            name="flat" placeholder="Квартира" type="text"
+                        />
                     </div>
                 </>
             }
 
-            <span className="cart-order-confirm" onClick={onConfirmClick}>ПОДТВЕРДИТЬ ЗАКАЗ</span>
+            <button className="cart-order-confirm" type="submit">ПОДТВЕРДИТЬ ЗАКАЗ</button>
 
             <HeaderCityChoice active={cityModal} setActive={setCityModal} />
             <ShopChoice active={shopModal} setActive={setShopModal} />
-        </section>
+        </form>
     );
 }
 

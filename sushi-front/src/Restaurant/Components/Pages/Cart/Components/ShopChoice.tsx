@@ -19,6 +19,18 @@ const ShopChoice = ({ active, setActive }) => {
                     <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
                     <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
                     <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 2" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 3" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 5" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 2" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 3" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 5" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
+                    <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
                 </div>
             </div>
         </Modal>
