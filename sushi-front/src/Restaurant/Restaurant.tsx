@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Wrapper from "./Components/Base/Wrapper";
 import AuthorizedRoute from "./Components/Others/AuthorizedRoute";
 import CourierRoute from "./Components/Others/CourierRoute";
-import ShoppingCart from "./Components/Pages/Cart/ShoppingCart";
+import Cart from "./Components/Pages/Cart/Cart";
 import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
 import ItemPage from "./Components/Pages/Category/Components/ItemPage";
@@ -30,7 +30,7 @@ const Restaurant = () => {
                     <Route path="" element={<Orders />} />
                 </Route>
 
-                <Route path="cart" element={<ShoppingCart />} />
+                <Route path="cart" element={<Cart />} />
                 <Route path="sandbox" element={<> </>} />
                 <Route path="company" element={<> </>} />
             </Route>

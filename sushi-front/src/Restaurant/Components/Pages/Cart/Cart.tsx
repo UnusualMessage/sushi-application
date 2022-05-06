@@ -2,12 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 
-import CartOrderForm from "./Components/CartOrderForm";
-import CartOrderUnits from "./Components/CartOrderUnits";
-import CartTitle from "./Components/CartTitle";
+import OrderForm from "./Components/OrderForm";
+import OrderUnits from "./Components/OrderUnits";
+import Title from "./Components/Title";
 import CartStore from "../../Store/CartStore";
-
-import "./Cart.scss";
 
 const ShoppingCart = () => {
     const navigate = useNavigate();
@@ -21,9 +19,9 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <CartTitle />
-            <CartOrderUnits />
-            <CartOrderForm />
+            <Title />
+            <OrderUnits />
+            <OrderForm />
         </>
     );
 }

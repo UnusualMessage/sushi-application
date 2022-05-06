@@ -4,22 +4,22 @@ import { action } from 'mobx';
 
 import CartStore from "../../../Store/CartStore";
 import { CategoryRoute } from '../../../Others/ClientRoutes';
+import IItem from '../../../Interfaces/IItem';
 
-import "../Styles/CartOrderUnit.scss";
+import "../Styles/OrderUnit.scss";
 
-const CartOrderUnit = ({ id, category, path, title, text, price } : ICartOrderUnitProps) => {
-    const onRemove = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+const OrderUnit = ({ item } : IOrderUnitProps) => {
+    const { id, category, text, title, price, path } = item;
+
+    const onRemove = action(() => {
         CartStore.remove(id);
     });
 
-    const onMinus = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onMinus = action(() => {
         CartStore.minusCount(id);
     });
 
-    const onPlus = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onPlus = action(() => {
         CartStore.plusCount(id);
     });
     
@@ -58,14 +58,8 @@ const CartOrderUnit = ({ id, category, path, title, text, price } : ICartOrderUn
     );
 }
 
-interface ICartOrderUnitProps {
-    id: number,
-    category: string,
-    title: string,
-    text: string,
-    count: number,
-    price: number,
-    path: string
+interface IOrderUnitProps {
+    item: IItem
 }
 
-export default observer(CartOrderUnit);
+export default observer(OrderUnit);

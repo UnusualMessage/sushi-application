@@ -1,6 +1,6 @@
-import "../Styles/CartTitle.scss";
+import "../Styles/Title.scss";
 
-const CartTitle = () => {
+const Title = () => {
     return(
         <section className="cart-title">
             <h1 className="cart-title-text">ВАШ ЗАКАЗ</h1>
@@ -8,4 +8,4 @@ const CartTitle = () => {
     );
 }
 
-export default CartTitle;
+export default Title;
