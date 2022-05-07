@@ -1,0 +1,107 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.delivery-header {
+    @include flexible-row(center, space-between);
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    .delivery-info {
+        @include flexible-row(center, flex-start);
+
+        flex-wrap: wrap;
+        gap: 80px;
+
+        .delivery-number {
+            color: $title-color;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .delivery-date {
+            color: $title-color;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .delivery-status {
+            color: $title-color;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .delivery-price {
+            color: $title-color;
+            font-size: 18px;
+            font-weight: bold;
+
+            &::after {
+                margin-left: 2px;
+                content: "\20BD";
+            }
+        }
+    }
+
+    .delivery-accept {
+        cursor: pointer;
+        color: $aux-color;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .delivery-header {
+        @include flexible-row(stretch, space-between);
+        
+        .delivery-info {
+            @include flexible-column(stretch, space-between);
+            flex-basis: 50%;
+
+            column-gap: 0px;
+            row-gap: 10px;
+
+            .delivery-number {
+                color: $title-color;
+                font-weight: bold;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+
+            .delivery-date {
+                color: $title-color;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .delivery-status {
+                color: $title-color;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .delivery-price {
+                color: $title-color;
+                font-size: 16px;
+                font-weight: bold;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+            }
+        }
+
+        .delivery-accept {
+            cursor: pointer;
+            color: $aux-color;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}

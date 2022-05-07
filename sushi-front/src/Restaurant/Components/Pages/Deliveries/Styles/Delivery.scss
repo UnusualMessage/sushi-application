@@ -1,0 +1,14 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.delivery {
+    @include flexible-column(stretch, flex-start);
+
+    gap: 20px;
+    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    padding: 15px;
+    box-sizing: border-box;
+}

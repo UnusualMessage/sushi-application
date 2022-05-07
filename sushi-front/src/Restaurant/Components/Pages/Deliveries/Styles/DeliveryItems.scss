@@ -1,6 +1,6 @@
 @use "../../../Styles/Constants.scss" as *;
 
-.available-order-items {
+.delivery-items {
     @include flexible-column(stretch, flex-start);
 
     scroll-snap-type: y mandatory;

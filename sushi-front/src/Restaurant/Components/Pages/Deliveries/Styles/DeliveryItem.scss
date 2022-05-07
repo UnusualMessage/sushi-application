@@ -1,8 +1,6 @@
 @use "../../../Styles/Constants.scss" as *;
 
-@use "../../../Styles/Constants.scss"as *;
-
-.available-order-item {
+.delivery-item {
     @include flexible-row(stretch, flex-start);
     
     scroll-snap-align: start;
@@ -11,7 +9,7 @@
     padding-right: 20px;
     box-sizing: border-box;
 
-    .available-order-item-image {
+    .delivery-item-image {
         border-radius: 10px 0px 0px 10px;
         flex-basis: 150px;
 
@@ -22,25 +20,25 @@
         }
     }
 
-    .available-order-item-description {
+    .delivery-item-description {
         @include flexible-row(center, space-between);
 
         flex-basis: 85%;
         gap: 10px;
 
-        .available-order-item-description-text {
+        .delivery-item-description-text {
             @include flexible-column(stretch, flex-start);
 
             flex-basis: 500px;
             gap: 10px;
 
-            .available-order-item-title {
+            .delivery-item-title {
                 font-size: 18px;
                 color: $title-color;
                 font-weight: bold;
             }
 
-            .available-order-item-text {
+            .delivery-item-text {
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
@@ -50,11 +48,11 @@
             }
         }
 
-        .available-order-item-quantities {
+        .delivery-item-quantities {
             @include flexible-row(center, center);
             gap: 5px;
 
-            .available-order-item-count {
+            .delivery-item-count {
                 font-size: 14px;
                 color: $title-color;
 
@@ -64,7 +62,7 @@
                 }
             }
 
-            .available-order-item-price {
+            .delivery-item-price {
                 font-size: 18px;
                 font-weight: bold;
                 color: $title-color;
@@ -79,7 +77,7 @@
 }
 
 @media screen and (max-width: $medium) {
-    .available-order-item {
+    .delivery-item {
         @include flexible-row(stretch, flex-start);
     
         gap: 10px;
@@ -87,7 +85,7 @@
         padding-right: 20px;
         box-sizing: border-box;
     
-        .available-order-item-image {
+        .delivery-item-image {
             border-radius: 10px 0px 0px 10px;
             flex-basis: 150px;
     
@@ -98,25 +96,25 @@
             }
         }
     
-        .available-order-item-description {
+        .delivery-item-description {
             @include flexible-column(stretch, flex-start);
     
             flex-basis: 70%;
             gap: 10px;
     
-            .available-order-item-description-text {
+            .delivery-item-description-text {
                 @include flexible-column(stretch, flex-start);
     
                 flex-basis: auto;
                 gap: 10px;
     
-                .available-order-item-title {
+                .delivery-item-title {
                     font-size: 14px;
                     color: $title-color;
                     font-weight: bold;
                 }
     
-                .available-order-item-text {
+                .delivery-item-text {
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
@@ -126,11 +124,11 @@
                 }
             }
     
-            .available-order-item-quantities {
+            .delivery-item-quantities {
                 @include flexible-row(center, flex-start);
                 gap: 5px;
     
-                .order-item-count {
+                .delivery-item-count {
                     font-size: 14px;
                     color: $title-color;
     
@@ -140,7 +138,7 @@
                     }
                 }
     
-                .available-order-item-price {
+                .delivery-item-price {
                     font-size: 18px;
                     font-weight: bold;
                     color: $title-color;

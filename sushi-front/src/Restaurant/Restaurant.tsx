@@ -8,7 +8,7 @@ import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
 import ItemPage from "./Components/Pages/Category/Components/ItemPage";
 import Company from "./Components/Pages/Company/Company";
-import Delivery from "./Components/Pages/Delivery/Delivery";
+import Deliveries from "./Components/Pages/Deliveries/Deliveries";
 import Home from "./Components/Pages/Home/Home";
 import Orders from "./Components/Pages/Orders/Orders";
 
@@ -24,7 +24,7 @@ const Restaurant = () => {
                 </Route>
 
                 <Route path="courier" element={<CourierRoute />}>
-                    <Route path="" element={<Delivery />} />
+                    <Route path="" element={<Deliveries />} />
                 </Route>
 
                 <Route path="orders" element={<CustomerRoute />}>
