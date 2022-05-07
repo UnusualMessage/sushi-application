@@ -7,5 +7,10 @@ namespace SushiSet.Core.Entities.Users
     public class Customer : User
     {
         public ICollection<Order> Orders { get; set; }
+
+        public Customer()
+        {
+            Role = nameof(Customer);
+        }
     }
 }

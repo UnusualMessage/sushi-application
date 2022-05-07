@@ -8,6 +8,8 @@ namespace SushiSet.Core.Entities
     {
         public string Name { get; set; }
 
+        public bool TakesPartInSandbox { get; set; }
+
         public ICollection<Item> Items { get; set; } = new List<Item>();
     }
 }

@@ -9,8 +9,9 @@ namespace SushiSet.Core.Entities
     public class Order : Entity
     {
         public string Title { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; }
         public DateTime Created { get; set; }
+        public bool InCart { get; set; }
 
         public Guid? ShopId { get; set; }
         public Shop Shop { get; set; }

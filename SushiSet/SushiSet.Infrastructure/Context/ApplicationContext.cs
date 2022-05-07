@@ -32,20 +32,20 @@ namespace SushiSet.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.AddUsers();
-            modelBuilder.AddCustomers();
-            modelBuilder.AddCouriers();
-            modelBuilder.AddAdministrators();
-            modelBuilder.AddRefreshTokens();
+            modelBuilder.ApplyConfiguration(new AboutsConfiguration());
+            modelBuilder.ApplyConfiguration(new CitiesConfiguration());
+            modelBuilder.ApplyConfiguration(new ShopsConfiguration());
+               
+            modelBuilder.ApplyConfiguration(new UsersConfiguration());
+            modelBuilder.ApplyConfiguration(new AdministratorsConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomersConfiguration());
+            modelBuilder.ApplyConfiguration(new CouriersConfiguration());
+            modelBuilder.ApplyConfiguration(new RefreshTokensConfiguration());
 
-            modelBuilder.AddOrderUnits();
-            modelBuilder.AddOrders();
-            modelBuilder.AddItems();
-            modelBuilder.AddCategories();
-
-            modelBuilder.AddAbouts();
-            modelBuilder.AddCities();
-            modelBuilder.AddShops();
+            modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemsConfiguration());
+            modelBuilder.ApplyConfiguration(new OrdersConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderUnitsConfiguration());
         }
     }
 }

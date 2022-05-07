@@ -31,6 +31,7 @@ namespace SushiSet.API
         {
             services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
             services.Configure<StorageSettings>(Configuration.GetSection("StorageSettings"));
+            services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -61,7 +62,7 @@ namespace SushiSet.API
             {
                 options.Filters.Add(new ProducesAttribute("application/json"));
             })
-                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.ConfigureSwagger();
 
