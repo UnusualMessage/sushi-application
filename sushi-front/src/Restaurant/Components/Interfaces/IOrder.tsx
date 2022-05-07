@@ -1,5 +1,6 @@
-import IAddress from "./IAddress"
-import IItem from "./IItem"
+import IAddress from "./IAddress";
+import IItem from "./IItem";
+import ICustomerContacts from "./ICustomerContacts";
 
 export default interface IOrder {
     id: number,
@@ -7,7 +8,10 @@ export default interface IOrder {
     price: number,
     date: string,
     city: string,
-    shop: string,
+    shop?: string,
+
+    isDelivery: boolean,
+    customer: ICustomerContacts,
     address?: IAddress,
     items: IItem[]
 }

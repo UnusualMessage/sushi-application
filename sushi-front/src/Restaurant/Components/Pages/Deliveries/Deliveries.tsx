@@ -6,7 +6,7 @@ import DeliveriesList from "./Components/DeliveriesList";
 import DeliveriesTitle from "./Components/DeliveriesTitle";
 
 const Deliveries = () => {
-    const orders : IOrder[] = OrdersStore.getByCity();
+    const orders : IOrder[] = OrdersStore.getForCourier();
 
     return (
         <>

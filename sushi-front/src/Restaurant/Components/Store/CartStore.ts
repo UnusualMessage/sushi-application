@@ -68,6 +68,10 @@ class CartStore {
     getTotalCount() {
         return this.items.length;
     }
+
+    get() {
+        return this.items.slice(0);
+    }
 }
 
 export default new CartStore();

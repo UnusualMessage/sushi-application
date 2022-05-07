@@ -1,5 +1,5 @@
 import Modal from "../../../Others/Modal";
-import CartShop from "./CartShop";
+import Shop from "./Shop";
 
 import "../Styles/ShopChoice.scss";
 
@@ -13,24 +13,24 @@ const ShopChoice = ({ active, setActive }) => {
                 </div>
 
                 <div className="shops">
-                    <CartShop shop="ул. 1 д. 2" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 3" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 5" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 2" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 3" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 5" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 2" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 3" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 5" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 4" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 1" setActive={setActive}/>
-                    <CartShop shop="ул. 1 д. 8" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 2" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 3" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 5" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 4" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 1" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 8" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 2" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 3" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 5" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 4" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 1" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 8" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 2" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 3" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 5" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 4" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 1" setActive={setActive}/>
+                    <Shop shop="ул. 1 д. 8" setActive={setActive}/>
                 </div>
             </div>
         </Modal>

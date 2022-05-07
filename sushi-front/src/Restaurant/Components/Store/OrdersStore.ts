@@ -1,8 +1,11 @@
 import { makeAutoObservable } from "mobx";
 
 import IOrder from "../Interfaces/IOrder";
-import IItem from "../Interfaces/IItem";
 import CurrentCity from "./CurrentCity";
+import ICustomerContacts from "../Interfaces/ICustomerContacts";
+import CurrentShop from "./CurrentShop";
+import IAddress from "../Interfaces/IAddress";
+import CartStore from "./CartStore";
 
 class OrdersStore {
     orders : IOrder[] = localStorage.getItem("orders") ? JSON.parse(localStorage.getItem("orders")) : [];
@@ -15,14 +18,45 @@ class OrdersStore {
         localStorage.setItem("orders", JSON.stringify(this.orders));
     }
 
-    makeOrder(items : IItem[], price : number) {
+    getCurrentDate() : string {
+        const currentDate = new Date();
+
+        const date : number = currentDate.getDate();
+        const month : number = currentDate.getMonth() + 1;
+        const year : number = currentDate.getFullYear();
+
+        let correctDate : string;
+        if (date < 10) {
+            correctDate = "0" + date.toString();
+        } else {
+            correctDate = date.toString();
+        }
+
+        let correctMonth : string;
+        if (month < 10) {
+            correctMonth = "0" + month.toString();
+        } else {
+            correctMonth = month.toString();
+        }
+
+        return correctDate + "." + correctMonth + "." + year.toString();
+    }
+
+    makeOrder(customer : ICustomerContacts, isDelivery : boolean, address? : IAddress) {
         let newOrder : IOrder = {
             id: 1,
-            date: "04.05.22",
+            date: this.getCurrentDate(),
             status: "Оформлен",
-            price: price,
-            items: items.slice(0),
-            city: CurrentCity.city
+            price: CartStore.getPrice(),
+
+            city: CurrentCity.city,
+            shop: CurrentShop.shop,
+
+            isDelivery: isDelivery,
+
+            address: address,
+            customer: customer,
+            items: CartStore.get(),
         };
 
         if (this.getOrdersCount() !== 0) {
@@ -54,17 +88,6 @@ class OrdersStore {
         return temp.status.toLowerCase() === "доставлен";
     }
 
-    isFirst(id) {
-        const temp = this.orders.filter((order : IOrder) => CurrentCity.city.toLowerCase() === order.city.toLowerCase());
-        
-        return id === temp[0].id;
-    }
-
-    isLast(id) {
-        const temp = this.orders.filter((order : IOrder) => CurrentCity.city.toLowerCase() === order.city.toLowerCase());
-        return id === temp[this.getOrdersCountInCity() - 1].id;
-    }
-
     isEmpty() {
         return this.getByCity().length === 0;
     }
@@ -91,39 +114,16 @@ class OrdersStore {
         return this.orders.filter((order : IOrder) => CurrentCity.city === order.city)
     }
 
-    getRandomOrder() {
-        const randomIndex = Math.floor(Math.random() * this.getOrdersCountInCity());
-        return this.getByCity()[randomIndex];
-    }
-
-    getFirst() {
-        return this.getByCity()[0];
-    }
-
-    getLast() {
-        return this.getByCity()[this.getOrdersCountInCity() - 1];
-    }
-
-    getNext(id) {
-        const temp = this.getByCity();
-        const orderIndex = temp.map((order : IOrder) => order.id).indexOf(id);
-
-        return temp[orderIndex + 1];
-    }
-
-    getPrevious(id) {
-        const temp = this.getByCity();
-        const orderIndex = temp.map((order : IOrder) => order.id).indexOf(id);
-
-        return temp[orderIndex - 1];
-    }
-
     getOrdersCount() {
         return this.orders.length;
     }
 
     getOrdersCountInCity() {
         return this.getByCity().length;
+    }
+
+    getForCourier() {
+        return this.orders.filter((order : IOrder) => CurrentCity.city === order.city && order.isDelivery);
     }
 }
 
