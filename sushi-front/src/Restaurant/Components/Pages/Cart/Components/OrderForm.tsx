@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 
-import HeaderCityChoice from "../../../Base/Header/Components/HeaderCityChoice";
+import HeaderCityChoice from "../../../Base/Header/Components/CityChoice";
 import CartStore from "../../../Store/CartStore";
 import CurrentCity from "../../../Store/CurrentCity";
 import CurrentShop from "../../../Store/CurrentShop";
@@ -19,17 +19,17 @@ import "../Styles/OrderForm.scss";
 const OrderForm = () => {
     const [cityModal, setCityModal] = useState(false);
     const [shopModal, setShopModal] = useState(false);
-    const [isShop, setisShop] = useState(false);
+    const [isDelivery, setIsDelivery] = useState(true);
 
-    const onCartTypeChange = () => {
-        setisShop(!isShop);
+    const changeDeliveryType = () => {
+        setIsDelivery(!isDelivery);
     }
 
-    const onChangeCityClick = action(() => {
+    const showCityChoice = action(() => {
         setCityModal(true);
     });
 
-    const onChangeShopClick = action(() => {
+    const showShopChoice = action(() => {
         setShopModal(true);
     });
 
@@ -65,7 +65,7 @@ const OrderForm = () => {
         validateOnBlur: false,
         validateOnChange: false,
 
-        validationSchema: isShop ? shopSchema : deliverySchema,
+        validationSchema: isDelivery ? deliverySchema : shopSchema,
 
         onSubmit: values => {
             const customer: ICustomerContacts = {
@@ -82,7 +82,7 @@ const OrderForm = () => {
                 flat: values.flat
             }
 
-            isShop ? OrdersStore.makeOrder(customer, false) : OrdersStore.makeOrder(customer, true, address)
+            isDelivery ? OrdersStore.makeOrder(customer, true, address) : OrdersStore.makeOrder(customer, false)
 
             CartStore.clear();
         },
@@ -106,34 +106,20 @@ const OrderForm = () => {
                 />
             </div>
 
-            <span className="cart-order-form-address-title">{isShop ? "Адрес ресторана" : "Адрес доставки"}</span>
+            <span className="cart-order-form-address-title">{isDelivery ? "Адрес доставки" : "Адрес ресторана"}</span>
 
             <div className="cart-order-type-choice">
-                <input type={"checkbox"} checked={isShop} onChange={onCartTypeChange} className="cart-order-type" />
-                <span onClick={onCartTypeChange}>Самовывоз?</span>
+                <input type={"checkbox"} checked={!isDelivery} onChange={changeDeliveryType} className="cart-order-type" />
+                <span onClick={changeDeliveryType}>Самовывоз?</span>
             </div>
 
-            {isShop ?
-
-                <div className="cart-order-form-place">
-                    <div className="cart-order-form-city">
-                        <span className="cart-current-city">{CurrentCity.city}</span>
-                        <span className="cart-current-city-change" onClick={onChangeCityClick}>Сменить</span>
-                    </div>
-
-                    <div className="cart-order-form-shop">
-                        <span className="cart-current-shop">{CurrentShop.shop}</span>
-                        <span className="cart-current-shop-change" onClick={onChangeShopClick}>Сменить</span>
-                    </div>
-                </div>
-
-                :
+            {isDelivery ?
 
                 <>
                     <div className="cart-order-form-place">
                         <div className="cart-order-form-city">
                             <span className="cart-current-city">{CurrentCity.city}</span>
-                            <span className="cart-current-city-change" onClick={onChangeCityClick}>Сменить</span>
+                            <span className="cart-current-city-change" onClick={showCityChoice}>Сменить</span>
                         </div>
                     </div>
 
@@ -163,6 +149,20 @@ const OrderForm = () => {
                         />
                     </div>
                 </>
+
+                :
+
+                <div className="cart-order-form-place">
+                    <div className="cart-order-form-city">
+                        <span className="cart-current-city">{CurrentCity.city}</span>
+                        <span className="cart-current-city-change" onClick={showCityChoice}>Сменить</span>
+                    </div>
+
+                    <div className="cart-order-form-shop">
+                        <span className="cart-current-shop">{CurrentShop.shop}</span>
+                        <span className="cart-current-shop-change" onClick={showShopChoice}>Сменить</span>
+                    </div>
+                </div>
             }
 
             <button className="cart-order-confirm" type="submit">ПОДТВЕРДИТЬ ЗАКАЗ</button>

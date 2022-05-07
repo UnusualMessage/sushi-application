@@ -31,7 +31,7 @@ class Auth {
         this.saveToLocalStorage();
     }
 
-    loginAsCorier() {
+    loginAsCourier() {
         this.isAuth = true;
         this.role = "courier";
         this.saveToLocalStorage();

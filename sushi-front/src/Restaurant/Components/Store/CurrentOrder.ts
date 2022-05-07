@@ -27,7 +27,7 @@ class CurrentOrder {
         return !this.order;
     }
 
-    exists() {
+    exists() : boolean {
         return this.order;
     }
 }

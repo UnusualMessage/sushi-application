@@ -1,3 +1,4 @@
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
@@ -8,10 +9,9 @@ import "../Styles/ItemsTitle.scss";
 const ItemsTitle = () => {
     const params = useParams();
 
-    const onSortingChange = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onSortingChange = action(() => {
         CurrentSorting.changeItemCardsSorting();
-    }
+    });
     
     return (
         <section className='main-title'>

@@ -41,7 +41,7 @@ const HeaderLogin = ({ active, setActive }) => {
             Auth.loginAsCustomer();
             navigate("/" + OrdersRoute);
         } else {
-            Auth.loginAsCorier();
+            Auth.loginAsCourier();
             navigate("/" + CourierRoute);
         }
 

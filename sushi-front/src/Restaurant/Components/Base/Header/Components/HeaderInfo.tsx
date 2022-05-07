@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { observer } from "mobx-react-lite";
 
-import HeaderCityChoice from "./HeaderCityChoice";
+import CityChoice from "./CityChoice";
 import CurrentCity from "../../../Store/CurrentCity";
 import HeaderLogin from "./HeaderLogin";
 import Auth from "../../../Store/Auth";
 import CurrentOrder from "../../../Store/CurrentOrder";
+import { CourierRoute } from "../../../Others/RouteNames";
 
 import '../Styles/HeaderInfo.scss';
-import { CourierRoute } from "../../../Others/RouteNames";
 
 const HeaderInfo = () => {
     const [cityModalActive, setCityModalActive] = useState(false);
@@ -86,7 +86,7 @@ const HeaderInfo = () => {
                             {CurrentOrder.isEmpty() ?
                                 <></>
                                 :
-                                <Link to={"/courier/deliveries/" + CurrentOrder.order.id}>Активный заказ</Link>
+                                <Link to={"/" + CourierRoute + "/" + CurrentOrder.order.id}>Активный заказ</Link>
                             }
 
                             <Link to="/" onClick={() => { Auth.logout(); }}>Выход</Link>
@@ -104,7 +104,7 @@ const HeaderInfo = () => {
 
             </div>
 
-            <HeaderCityChoice active={cityModalActive} setActive={setCityModalActive} />
+            <CityChoice active={cityModalActive} setActive={setCityModalActive} />
             <HeaderLogin active={loginModalActive} setActive={setLoginModalActive} />
         </div>
     );

@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 
 class CurrentCity {
-    city : string = localStorage.getItem("city") ? localStorage.getItem("city") : "Москва";
+    city : string = localStorage.getItem("city") ? localStorage.getItem("city") : "Калуга";
 
     constructor() {
         makeAutoObservable(this);

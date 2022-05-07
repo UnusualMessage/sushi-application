@@ -3,13 +3,13 @@ import { observer } from "mobx-react-lite";
 import CurrentCity from "../../../Store/CurrentCity";
 
 const HeaderCity = ({ city, setActive }) => {
-    const onClick = () => {
+    const chooseCity = () => {
         CurrentCity.set(city);
         setActive(false);
     }
 
     return (
-        <div className="city" onClick={onClick}>
+        <div className="city" onClick={chooseCity}>
             {city}
         </div>
     );

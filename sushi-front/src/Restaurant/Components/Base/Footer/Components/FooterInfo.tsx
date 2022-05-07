@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+
 import "../Styles/FooterInfo.scss";
 
 const FooterInfo = () => {
     return (
         <div className='footer-content-info'>
-            <div className='footer-logo'>
+            <Link className='footer-logo' to="/">
                 <img src="/logo_light.png" alt="" />
-            </div>
+            </Link>
 
             <div className='footer-copyright'>
                 <span className='copyright-text'>

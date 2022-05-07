@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { CategoryRoute } from "../../Others/RouteNames";
 
 import './NavLink.scss';

@@ -1,8 +1,8 @@
 import OrderItems from "./OrderItems";
 import OrderHeader from "./OrderHeader";
+import IOrder from "../../../Interfaces/IOrder";
 
 import "../Styles/Order.scss";
-import IOrder from "../../../Interfaces/IOrder";
 
 const Order = ({ order } : IOrderProps) => {
     const { id, date, status, price } = order;

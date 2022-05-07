@@ -4,12 +4,12 @@ import { action } from "mobx";
 
 import { CategoryRoute } from "../../../Others/RouteNames";
 import CartStore from "../../../Store/CartStore";
-
-import "../Styles/ItemCard.scss";
 import Auth from "../../../Store/Auth";
 
+import "../Styles/ItemCard.scss";
+
 const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardProps) => {
-    const onClick = action(() => {
+    const addToCart = action(() => {
         CartStore.add({
             id: id,
             title: title,
@@ -37,7 +37,7 @@ const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardP
                         {price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? ()=>{} : onClick}>
+                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : addToCart}>
                         Добавить
                     </span>
                 </div>

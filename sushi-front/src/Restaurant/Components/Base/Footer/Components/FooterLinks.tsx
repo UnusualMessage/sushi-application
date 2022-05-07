@@ -1,5 +1,7 @@
 import FooterLinksContainer from "./FooterLinkContainer";
 
+import "../Styles/FooterLinks.scss";
+
 const FooterLinks = () => {
     return (
         <div className='footer-links'>

@@ -6,6 +6,7 @@ import OrderForm from "./Components/OrderForm";
 import OrderUnits from "./Components/OrderUnits";
 import Title from "./Components/Title";
 import CartStore from "../../Store/CartStore";
+import { InitialRoute } from "../../Others/RouteNames";
 
 const ShoppingCart = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const ShoppingCart = () => {
 
     useEffect(() => {
         if (isCartEmpty) {
-            navigate("/");
+            navigate(InitialRoute);
         }
     }, [navigate, isCartEmpty])
 

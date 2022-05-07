@@ -16,7 +16,7 @@ const ItemPage = () => {
         item.count = 1;
     }
 
-    const onClick = action(() => {
+    const addToCart = action(() => {
         CartStore.add(item);
     });
 
@@ -36,7 +36,7 @@ const ItemPage = () => {
                         {item?.price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : onClick}>
+                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : addToCart}>
                         ДОБАВИТЬ
                     </span>
                 </div>

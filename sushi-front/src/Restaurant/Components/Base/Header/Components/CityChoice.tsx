@@ -1,9 +1,9 @@
 import Modal from "../../../Others/Modal";
 import HeaderCity from "./HeaderCity";
 
-import "../Styles/HeaderCityChoice.scss";
+import "../Styles/CityChoice.scss";
 
-const HeaderCityChoice = ({ active, setActive }) => {
+const CityChoice = ({ active, setActive }) => {
     return(
         <Modal active={active} setActive={setActive}>
             <div className="city-choice-container">
@@ -79,4 +79,4 @@ const HeaderCityChoice = ({ active, setActive }) => {
     );
 }
 
-export default HeaderCityChoice;
+export default CityChoice;
