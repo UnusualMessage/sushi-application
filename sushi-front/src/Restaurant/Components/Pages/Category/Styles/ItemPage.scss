@@ -57,6 +57,12 @@
                     color: white;
                 }
             }
+
+            .blocked {
+                background-color: $red-color;
+                color: white;
+                cursor: default;
+            }
         }
 
         .item-page-description-text {

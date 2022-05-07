@@ -37,7 +37,7 @@ const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardP
                         {price}
                     </span>
 
-                    <span className='order-button' onClick={Auth.isCourier() ? ()=>{} : onClick}>
+                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? ()=>{} : onClick}>
                         Добавить
                     </span>
                 </div>

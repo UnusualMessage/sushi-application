@@ -1,7 +1,9 @@
+import { action } from "mobx";
 import { useParams } from "react-router-dom";
 
 import ShoppingData from "../../../Data/ShoppingData";
 import IItem from "../../../Interfaces/IItem";
+import Auth from "../../../Store/Auth";
 import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemPage.scss";
@@ -14,10 +16,9 @@ const ItemPage = () => {
         item.count = 1;
     }
 
-    const onClick = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
+    const onClick = action(() => {
         CartStore.add(item);
-    }
+    });
 
     return (
         <section className="item-page">
@@ -35,7 +36,7 @@ const ItemPage = () => {
                         {item?.price}
                     </span>
 
-                    <span className="order-button" onClick={onClick}>
+                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : onClick}>
                         ДОБАВИТЬ
                     </span>
                 </div>

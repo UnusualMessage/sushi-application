@@ -60,6 +60,12 @@
                     color: white;
                 }
             }
+
+            .blocked {
+                background-color: $red-color;
+                color: white;
+                cursor: default;
+            }
         }
     }
 }
@@ -89,6 +95,17 @@
                     }
 
                     &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .blocked {
+                    background-color: $red-color;
+                    color: white;
+                    cursor: default;
+
+                    &:hover {
                         background-color: $red-color;
                         color: white;
                     }
@@ -144,6 +161,17 @@
                     }
 
                     &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .blocked {
+                    background-color: $red-color;
+                    color: white;
+                    cursor: default;
+
+                    &:hover {
                         background-color: $red-color;
                         color: white;
                     }
