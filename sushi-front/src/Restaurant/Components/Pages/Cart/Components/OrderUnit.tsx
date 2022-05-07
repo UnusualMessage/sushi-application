@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import { action } from 'mobx';
 
 import CartStore from "../../../Store/CartStore";
-import { CategoryRoute } from '../../../Others/ClientRoutes';
+import { CategoryRoute } from '../../../Others/RouteNames';
 import IItem from '../../../Interfaces/IItem';
 
 import "../Styles/OrderUnit.scss";

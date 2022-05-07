@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { CourierRoute, OrdersRoute } from "../../../Others/ClientRoutes";
+import { CourierRoute, OrdersRoute } from "../../../Others/RouteNames";
 import Modal from "../../../Others/Modal";
 import Auth from "../../../Store/Auth";
 

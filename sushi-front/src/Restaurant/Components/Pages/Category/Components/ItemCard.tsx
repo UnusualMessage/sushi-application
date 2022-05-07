@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import { action } from "mobx";
 
-import { CategoryRoute } from "../../../Others/ClientRoutes";
+import { CategoryRoute } from "../../../Others/RouteNames";
 import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemCard.scss";

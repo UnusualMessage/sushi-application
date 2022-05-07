@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { CategoryRoute } from "../../../Others/ClientRoutes";
+import { CategoryRoute } from "../../../Others/RouteNames";
 
 import "../Styles/HomeCategory.scss";
 
