@@ -10,7 +10,7 @@
         @include flexible-row(center, flex-start);
 
         flex-wrap: wrap;
-        gap: 80px;
+        gap: 50px;
 
         .delivery-number {
             color: $title-color;
@@ -40,6 +40,21 @@
             &::after {
                 margin-left: 2px;
                 content: "\20BD";
+            }
+        }
+
+        .delivary-more {
+            cursor: pointer;
+            color: $aux-color;
+            font-size: 12px;
+            transition: color 0.5s;
+
+            &::after {
+                content: "...";
+            }
+
+            &:hover {
+                color: $hover-color;
             }
         }
     }
