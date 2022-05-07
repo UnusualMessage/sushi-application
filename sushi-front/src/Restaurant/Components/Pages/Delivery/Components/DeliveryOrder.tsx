@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 
-import AvailableOrderItems from "./AvailableOrderItems";
+import AvailableOrderItems from "./DeliveryOrderItems";
 import CurrentOrder from "../../../Store/CurrentOrder";
 import IItem from "../../../Interfaces/IItem";
 

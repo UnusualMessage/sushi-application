@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 
 import CurrentCity from "../../Store/CurrentCity";
 import OrdersStore from "../../Store/OrdersStore";
-import AvailableOrder from "./Components/AvailableOrder";
-import AvailableOrderToolbar from "./Components/AvailableOrderToolbar";
+import AvailableOrder from "./Components/DeliveryOrder";
+import AvailableOrderToolbar from "./Components/DeliveryOrderToolbar";
 
-import "./Courier.scss";
+import "./Delivery.scss";
 
-const Courier = () => {
+const Delivery = () => {
     const currentCity: string = CurrentCity.city;
     const [order, setOrder] = useState(OrdersStore.getRandomOrder());
     const isEmpty = OrdersStore.isEmpty();
@@ -29,4 +29,4 @@ const Courier = () => {
     );
 }
 
-export default observer(Courier);
+export default observer(Delivery);

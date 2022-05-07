@@ -12,7 +12,7 @@ const OrdersTitle = () => {
 
     return (
         <section className="orders-title">
-            <h1>Ваши заказы</h1>
+            <h1>История заказов</h1>
 
             <span className="orders-sorting" onClick={onSortingChange}>
                 {CurrentSorting.ordersAscending ? "По возрастанию цены" : "По убыванию цены"}
