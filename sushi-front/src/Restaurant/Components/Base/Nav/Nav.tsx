@@ -17,7 +17,6 @@ const Nav = () => {
                     <NavCategoryLink title="ДЕСЕРТЫ" to="/десерты" />
                     <NavCategoryLink title="ДОПОЛНИТЕЛЬНО" to="/дополнительно" />
                     <NavLink title="КОМПАНИЯ" to="/company" />
-                    <NavLink title="ПЕСОЧНИЦА" to="/sandbox" />
                 </div>
             </nav>
         </>

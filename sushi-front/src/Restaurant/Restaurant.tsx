@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./Components/Base/Wrapper";
-import AuthorizedRoute from "./Components/Others/AuthorizedRoute";
 import CourierRoute from "./Components/Others/CourierRoute";
+import CustomerRoute from "./Components/Others/CustomerRoute";
 import Cart from "./Components/Pages/Cart/Cart";
 import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
@@ -11,7 +11,6 @@ import Company from "./Components/Pages/Company/Company";
 import Courier from "./Components/Pages/Courier/Courier";
 import Home from "./Components/Pages/Home/Home";
 import Orders from "./Components/Pages/Orders/Orders";
-import Sandbox from "./Components/Pages/Sandbox/Sandbox";
 
 const Restaurant = () => {
     return (
@@ -28,13 +27,14 @@ const Restaurant = () => {
                     <Route path="" element={<Courier />} />
                 </Route>
 
-                <Route path="orders" element={<AuthorizedRoute />}>
+                <Route path="orders" element={<CustomerRoute />}>
                     <Route path="" element={<Orders />} />
                 </Route>
 
-                <Route path="cart" element={<Cart />} />
-                
-                <Route path="sandbox" element={<Sandbox />} />
+                <Route path="cart" element={<CustomerRoute />}>
+                    <Route path="" element={<Cart />} />
+                </Route>
+
                 <Route path="company" element={<Company />} />
             </Route>
         </Routes>

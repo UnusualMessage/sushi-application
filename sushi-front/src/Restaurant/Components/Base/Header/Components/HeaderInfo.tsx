@@ -80,7 +80,6 @@ const HeaderInfo = () => {
                             ?
                             <div className="header-login-menu">
                                 <Link to="/courier">Доставка</Link>
-                                <Link to="/orders">Ваши заказы</Link>
                                 <Link to="/" onClick={() => { Auth.logout(); }}>Выход</Link>
                             </div>
 

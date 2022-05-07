@@ -6,19 +6,18 @@ import { CategoryRoute } from "../../../Others/ClientRoutes";
 import CartStore from "../../../Store/CartStore";
 
 import "../Styles/ItemCard.scss";
+import Auth from "../../../Store/Auth";
 
 const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardProps) => {
-    const onClick = action((e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
+    const onClick = action(() => {
         CartStore.add({
-            "id": id,
-            "title": title,
-            "path": path,
-            "text": text,
-            "price": price,
-            "category": category,
-            "count": count,
+            id: id,
+            title: title,
+            path: path,
+            text: text,
+            price: price,
+            category: category,
+            count: count,
         });
     })
 
@@ -38,7 +37,7 @@ const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardP
                         {price}
                     </span>
 
-                    <span className='order-button' onClick={onClick}>
+                    <span className='order-button' onClick={Auth.isCourier() ? ()=>{} : onClick}>
                         Добавить
                     </span>
                 </div>

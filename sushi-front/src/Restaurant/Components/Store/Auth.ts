@@ -22,7 +22,7 @@ class Auth {
     }
 
     isGuest() {
-        return this.isAuth;
+        return !this.isAuth;
     }
 
     loginAsCustomer() {
