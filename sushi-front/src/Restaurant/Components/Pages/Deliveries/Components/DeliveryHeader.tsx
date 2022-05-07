@@ -1,24 +1,18 @@
-import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 
 import IAddress from "../../../Interfaces/IAddress";
 import ICustomerContacts from "../../../Interfaces/ICustomerContacts";
-import CurrentOrder from "../../../Store/CurrentOrder";
-
-import "../Styles/DeliveryHeader.scss";
 import DeliveryInfoModal from "./DeliveryInfoModal";
 
-const OrderHeader = ({ id, date, status, price, address, customer }: IDeliveryHeaderProps) => {
+import "../Styles/DeliveryHeader.scss";
+
+const OrderHeader = ({ id, date, status, price, address, customer, children }: IDeliveryHeaderProps) => {
     const [infoModalActive, setInfoModalActive] = useState(false);
 
     const showInfo = () => {
         setInfoModalActive(true);
     }
-
-    const onAccept = action(() => {
-        CurrentOrder.accept(id);
-    });
 
     return (
         <div className="delivery-header">
@@ -29,8 +23,8 @@ const OrderHeader = ({ id, date, status, price, address, customer }: IDeliveryHe
                 <span className="delivery-price">{price}</span>
                 <span className="delivary-more" onClick={showInfo}>Подробнее</span>
             </div>
-
-            <span className="delivery-accept" onClick={onAccept}>Принять</span>
+            
+            {children}
 
             <DeliveryInfoModal active={infoModalActive} setActive={setInfoModalActive} address={address} customer={customer}/>
         </div>
@@ -43,7 +37,8 @@ interface IDeliveryHeaderProps {
     status: string,
     price: number,
     address: IAddress,
-    customer: ICustomerContacts
+    customer: ICustomerContacts,
+    children: JSX.Element
 }
 
 export default observer(OrderHeader);

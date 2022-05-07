@@ -8,6 +8,8 @@ import Category from "./Components/Pages/Category/Category";
 import ItemCards from "./Components/Pages/Category/Components/ItemCards";
 import ItemPage from "./Components/Pages/Category/Components/ItemPage";
 import Company from "./Components/Pages/Company/Company";
+import CurrentDelivery from "./Components/Pages/Deliveries/Components/CurrentDelivery";
+import DeliveriesList from "./Components/Pages/Deliveries/Components/DeliveriesList";
 import Deliveries from "./Components/Pages/Deliveries/Deliveries";
 import Home from "./Components/Pages/Home/Home";
 import Orders from "./Components/Pages/Orders/Orders";
@@ -24,7 +26,10 @@ const Restaurant = () => {
                 </Route>
 
                 <Route path="courier" element={<CourierRoute />}>
-                    <Route path="" element={<Deliveries />} />
+                    <Route path="deliveries" element={<Deliveries />}>
+                        <Route path="" element={<DeliveriesList />} />
+                        <Route path=":id" element={<CurrentDelivery />} />
+                    </Route>
                 </Route>
 
                 <Route path="orders" element={<CustomerRoute />}>

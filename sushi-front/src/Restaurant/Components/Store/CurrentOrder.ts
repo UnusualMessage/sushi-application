@@ -1,16 +1,34 @@
 import { makeAutoObservable } from "mobx";
-import OrdersStore from "./OrdersStore";
+
+import IOrder from "../Interfaces/IOrder";
 
 class CurrentOrder {
-    order = localStorage.getItem("current_order") ? JSON.parse(localStorage.getItem("current_order")) : {};
+    order = localStorage.getItem("current_order") ? JSON.parse(localStorage.getItem("current_order")) : null;
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    accept(id) {
-        this.order = OrdersStore.accept(id);
+    saveToLocalStorage() {
         localStorage.setItem("current_order", JSON.stringify(this.order));
+    }
+
+    accept(order : IOrder) {
+        this.order = order;
+        this.saveToLocalStorage();
+    }
+
+    finish() {
+        this.order = null;
+        this.saveToLocalStorage();
+    }
+
+    isEmpty() : boolean {
+        return !this.order;
+    }
+
+    exists() {
+        return this.order;
     }
 }
 

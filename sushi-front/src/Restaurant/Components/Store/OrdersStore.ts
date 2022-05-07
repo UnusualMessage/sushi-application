@@ -83,6 +83,12 @@ class OrdersStore {
         return acceptedOrder;
     }
 
+    finish(id) {
+        let finishedOrder = this.getById(id);
+        finishedOrder.status = "Доставлен";
+        this.saveToLocalStorage();
+    }
+
     canBeDeleted(id) {
         const temp : IOrder = this.orders.find((order : IOrder) => order.id === id);
         return temp.status.toLowerCase() === "доставлен";
@@ -123,7 +129,7 @@ class OrdersStore {
     }
 
     getForCourier() {
-        return this.orders.filter((order : IOrder) => CurrentCity.city === order.city && order.isDelivery);
+        return this.orders.filter((order : IOrder) => CurrentCity.city === order.city && order.isDelivery && order.status.toLowerCase() === "оформлен");
     }
 }
 
