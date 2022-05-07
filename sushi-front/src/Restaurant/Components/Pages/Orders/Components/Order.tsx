@@ -1,40 +1,22 @@
-import { observer } from "mobx-react-lite";
-import { action } from "mobx";
-
-import OrdersStore from "../../../Store/OrdersStore";
 import OrderItems from "./OrderItems";
+import OrderHeader from "./OrderHeader";
 
 import "../Styles/Order.scss";
+import IOrder from "../../../Interfaces/IOrder";
 
-const Order = ({ id, date, status, price } : IOrderProps) => {
-    const onOrderRemove = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        OrdersStore.remove(id);
-    }
+const Order = ({ order } : IOrderProps) => {
+    const { id, date, status, price } = order;
 
     return(
         <div className="order">
-            <div className="order-header">
-                <div className="order-info">
-                    <span className="order-number">ЗАКАЗ №{id}</span>
-                    <span className="order-date">от {date}</span>
-                    <span className="order-status">{status}</span>
-                    <span className="order-price">{price}</span>
-                </div>
-
-                {OrdersStore.canBeDeleted(id) ? <span className="order-remove" onClick={action(onOrderRemove)}>Удалить из истории</span> : <></>}
-            </div>
-
+            <OrderHeader id={id} date={date} status={status} price={price}/>
             <OrderItems id={id}/>
         </div>
     );
 }
 
 interface IOrderProps {
-    id: number,
-    date: string,
-    status: string,
-    price: number,
+    order: IOrder
 }
 
-export default observer(Order);
+export default Order;

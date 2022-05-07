@@ -6,7 +6,7 @@ import IItem from "../../../Interfaces/IItem";
 
 import "../Styles/AvailableOrder.scss";
 
-const AvailableOrder = ({ id, date, status, price, items } : IAvailableOrder) => {
+const DeliveryOrder = ({ id, date, status, price, items } : IDeliveryOrder) => {
     const onAccept = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
@@ -31,7 +31,7 @@ const AvailableOrder = ({ id, date, status, price, items } : IAvailableOrder) =>
     );
 }
 
-interface IAvailableOrder {
+interface IDeliveryOrder {
     id: number,
     date: string,
     status: string,
@@ -39,4 +39,4 @@ interface IAvailableOrder {
     items: IItem[]
 }
 
-export default observer(AvailableOrder);
+export default observer(DeliveryOrder);

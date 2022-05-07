@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 
 import CurrentCity from "../../Store/CurrentCity";
 import OrdersStore from "../../Store/OrdersStore";
-import AvailableOrder from "./Components/DeliveryOrder";
-import AvailableOrderToolbar from "./Components/DeliveryOrderToolbar";
+import DeliveryOrder from "./Components/DeliveryOrder";
 
 import "./Delivery.scss";
 
@@ -23,8 +22,7 @@ const Delivery = () => {
             <></>
         :         
             <section className="available-orders">
-                <AvailableOrder id={order?.id} date={order?.date} status={order?.status} price={order?.price} items={order?.items} />
-                <AvailableOrderToolbar id={order?.id} setOrder={setOrder} />
+                <DeliveryOrder id={order?.id} date={order?.date} status={order?.status} price={order?.price} items={order?.items} />
             </section>
     );
 }

@@ -1,4 +1,4 @@
-@use "../../Styles/Constants.scss" as *;
+@use "../../../Styles/Constants.scss" as *;
 
 .main-orders {
     @include flexible-column(center, center);

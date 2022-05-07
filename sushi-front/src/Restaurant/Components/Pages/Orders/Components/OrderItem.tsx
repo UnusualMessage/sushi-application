@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import IItem from "../../../Interfaces/IItem";
 
 import "../Styles/OrderItem.scss";
 
-const OrderItem = ({ id, category, path, title, text, count, price } : IOrderItemProps) => {
+const OrderItem = ({ item } : IOrderItemProps) => {
+    const { id, category, price, text, title, count, path } = item;
+    
     return (
         <div className="order-item">
             <Link className="order-item-image" to={"/category/" + category + "/" + id}>
@@ -25,13 +28,7 @@ const OrderItem = ({ id, category, path, title, text, count, price } : IOrderIte
 }
 
 interface IOrderItemProps {
-    id: number,
-    category: string,
-    path: string,
-    title: string,
-    text: string,
-    count: number,
-    price: number
+    item: IItem,
 }
 
 export default OrderItem;
