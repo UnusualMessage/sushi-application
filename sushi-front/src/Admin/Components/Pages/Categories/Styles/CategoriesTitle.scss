@@ -1,0 +1,39 @@
+@use '../../../Styles/Constants.scss' as *;
+
+.categories-title {
+    @include flexible-row(center, space-between);
+
+    width: 100%;
+
+    h1 {
+        color: $title-color;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .categories-add {
+        cursor: pointer;
+        color: $aux-color;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .categories-title {    
+        .categories-add {    
+            &:hover {
+                color: $aux-color;
+            }
+
+            &:active {
+                color: $hover-color;
+            }
+        }
+    }
+}
