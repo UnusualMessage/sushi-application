@@ -10,5 +10,11 @@ namespace SushiSet.Core.Entities
         public string PicturePath { get; set; }
 
         public ICollection<Item> Items { get; set; } = new List<Item>();
+
+        public void Set(Category category)
+        {
+            Name = category.Name;
+            PicturePath = category.PicturePath;
+        }
     }
 }

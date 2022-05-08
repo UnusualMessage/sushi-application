@@ -15,10 +15,12 @@ namespace SushiSet.Infrastructure.Context.Extensions
                 .HasColumnName("CATEGORY_ID");
 
             builder.Property(p => p.Name)
-                .HasColumnName("CATEGORY_NAME");
+                .HasColumnName("CATEGORY_NAME")
+                .IsRequired();
 
             builder.Property(p => p.PicturePath)
-                .HasColumnName("CATEGORY_PICTURE_PATH");
+                .HasColumnName("CATEGORY_PICTURE_PATH")
+                .IsRequired();
         }
     }
 }

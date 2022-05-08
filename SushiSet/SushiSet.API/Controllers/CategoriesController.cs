@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
 
 using System;
 using System.Threading.Tasks;
@@ -16,10 +17,12 @@ namespace SushiSet.API.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CategoriesController(IMediator mediator)
+        public CategoriesController(IMediator mediator, IWebHostEnvironment webHostEnvironment)
         {
             _mediator = mediator;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [AllowAnonymous]
@@ -37,8 +40,10 @@ namespace SushiSet.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateCategory request)
+        public async Task<IActionResult> Post([FromForm] CreateCategory request)
         {
+            request.Destination = _webHostEnvironment.WebRootPath;
+
             return Ok(await _mediator.Send(request));
         }
 
@@ -49,8 +54,10 @@ namespace SushiSet.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] UpdateCategory request)
+        public async Task<IActionResult> Put([FromForm] UpdateCategory request)
         {
+            request.Destination = _webHostEnvironment.WebRootPath;
+
             return Ok(await _mediator.Send(request));
         }
     }

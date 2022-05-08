@@ -16,5 +16,6 @@ namespace SushiSet.Application.Requests.Commands.CategoryCommands
          
         public string Name { get; set; }
         public IFormFile Picture { get; set; }
+        public string Destination { get; set; }
     }
 }

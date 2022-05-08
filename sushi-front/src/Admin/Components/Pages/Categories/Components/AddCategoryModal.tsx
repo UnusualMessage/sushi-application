@@ -1,7 +1,10 @@
 import { useFormik } from "formik";
 import { object, string } from "yup";
+import { observer } from "mobx-react-lite";
 
+import ICreateCategory from "../Interfaces/ICreateCategory";
 import Modal from "../../../../../Restaurant/Components/Others/Modal";
+import CategoriesStore from "../../../../../Restaurant/Components/Store/CategoriesStore";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
 
@@ -10,7 +13,7 @@ import "../Styles/AddCategoryModal.scss";
 const AddCategoryModal = ({ active, setActive } : IDeliveryInfoModalProps) => {
     const validationSchema = object({
         name: string().required("Введите название!"),
-        file: object().nullable().required("Загрузите изображение!"),
+        file: string().nullable().required("Загрузите изображение!")
     });
 
     interface IFormValues {
@@ -32,12 +35,13 @@ const AddCategoryModal = ({ active, setActive } : IDeliveryInfoModalProps) => {
         validateOnChange: false,
 
         onSubmit: values => {
-            const category = {
+            const category : ICreateCategory = {
                 name: values.name,
-                file: values.file,
+                picture: values.file,
             }
 
-            console.log(category);
+            CategoriesStore.addCategory(category);
+            setActive(false);
         },
     });
 
@@ -70,4 +74,4 @@ interface IDeliveryInfoModalProps {
     setActive: (arg: boolean) => void
 }
 
-export default AddCategoryModal;
+export default observer(AddCategoryModal);

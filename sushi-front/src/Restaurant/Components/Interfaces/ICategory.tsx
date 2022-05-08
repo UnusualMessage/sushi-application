@@ -1,4 +1,5 @@
 export default interface ICategory {
+    id: string,
     name: string,
-    path: string
+    picturePath: string
 }

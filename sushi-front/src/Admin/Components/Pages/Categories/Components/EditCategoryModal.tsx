@@ -1,10 +1,13 @@
 import { useFormik } from "formik";
 import { object, string } from "yup";
+import { observer } from "mobx-react-lite";
 
 import Modal from "../../../../../Restaurant/Components/Others/Modal";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
 import ICategory from "../../../../../Restaurant/Components/Interfaces/ICategory";
+import IUpdateCategory from "../Interfaces/IUpdateCategory";
+import CategoriesStore from "../../../../../Restaurant/Components/Store/CategoriesStore";
 
 import "../Styles/EditCategoryModal.scss";
 
@@ -33,12 +36,14 @@ const EditCategoryModal = ({ active, setActive, category } : IDeliveryInfoModalP
         validateOnChange: false,
 
         onSubmit: values => {
-            const category = {
+            const newCategory : IUpdateCategory = {
+                id: category.id,
                 name: values.name,
-                file: values.file,
+                picture: values.file,
             }
 
-            console.log(category);
+            CategoriesStore.edit(newCategory);
+            setActive(false);
         },
     });
 
@@ -73,4 +78,4 @@ interface IDeliveryInfoModalProps {
     category: ICategory
 }
 
-export default EditCategoryModal;
+export default observer(EditCategoryModal);

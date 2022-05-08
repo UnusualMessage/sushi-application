@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Http;
 
 using SushiSet.Application.Responses.CategoryResponses;
+
 using System.ComponentModel.DataAnnotations;
 
 namespace SushiSet.Application.Requests.Commands.CategoryCommands
@@ -14,5 +15,7 @@ namespace SushiSet.Application.Requests.Commands.CategoryCommands
 
         [Required]
         public IFormFile Picture { get; set; }
+        
+        public string Destination { get; set; }
     }
 }

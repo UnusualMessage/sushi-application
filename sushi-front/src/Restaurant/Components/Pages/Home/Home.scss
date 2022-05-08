@@ -4,6 +4,7 @@
     @include flexible-row(center, flex-start);
     flex-wrap: wrap;
 
+    width: 100%;
     gap: 40px;
 }
 

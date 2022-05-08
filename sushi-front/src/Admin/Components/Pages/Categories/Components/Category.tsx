@@ -6,7 +6,7 @@ import EditCategoryModal from "./EditCategoryModal";
 import "../Styles/Category.scss";
 import ICategory from "../../../../../Restaurant/Components/Interfaces/ICategory";
 
-const Category = ({ path, name }: ICategoryProps) => {
+const Category = ({ id, picturePath, name }: ICategoryProps) => {
     const [editCategoryActive, setEditCategoryActive] = useState(false);
 
     const showModal = () => {
@@ -14,14 +14,15 @@ const Category = ({ path, name }: ICategoryProps) => {
     }
 
     const category : ICategory = {
+        id: id,
         name: name,
-        path: path
+        picturePath: picturePath
     }
 
     return (
         <>
             <div className="category" onClick={showModal}>
-                <img alt="" src={path} />
+                <img alt="" src={"/" + picturePath} />
                 <span className="category-tip">{name}</span>
             </div>
             <EditCategoryModal active={editCategoryActive} setActive={setEditCategoryActive} category={category}/>
@@ -30,7 +31,8 @@ const Category = ({ path, name }: ICategoryProps) => {
 }
 
 interface ICategoryProps {
-    path: string,
+    id: string,
+    picturePath: string,
     name: string
 }
 
