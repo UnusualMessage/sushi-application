@@ -1,9 +1,9 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
 import ICategory from "../Interfaces/ICategory";
-import IUpdateCategory from '../../../Admin/Components/Pages/Categories/Interfaces/IUpdateCategory';
-import ICreateCategory from '../../../Admin/Components/Pages/Categories/Interfaces/ICreateCategory';
-import CategoriesService from '../../../Services/CategoriesService';
+import ICreateCategory from "../Interfaces/ICreateCategory";
+import IUpdateCategory from "../Interfaces/IUpdateCategory";
+import CategoriesService from "../Services/CategoriesService";
 
 class CategoriesStore {
     categories : ICategory[] = [];

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import OrderForm from "./Components/OrderForm";
 import OrderUnits from "./Components/OrderUnits";
 import Title from "./Components/Title";
-import CartStore from "../../Store/CartStore";
+import CartStore from "../../../../Stores/CartStore";
 import { InitialRoute } from "../../Others/RouteNames";
 
 const ShoppingCart = () => {

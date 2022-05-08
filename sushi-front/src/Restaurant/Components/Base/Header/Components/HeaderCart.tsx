@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import { CartRoute, InitialRoute } from "../../../Others/RouteNames";
 
-import CartStore from "../../../Store/CartStore";
+import CartStore from "../../../../../Stores/CartStore";
 
 import '../Styles/HeaderCart.scss';
 

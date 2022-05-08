@@ -1,7 +1,7 @@
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
-import OrdersStore from "../../../Store/OrdersStore";
+import OrdersStore from "../../../../../Stores/OrdersStore";
 
 import "../Styles/OrderHeader.scss";
 

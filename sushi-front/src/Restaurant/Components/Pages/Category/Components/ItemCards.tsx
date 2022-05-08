@@ -4,8 +4,8 @@ import { observer } from "mobx-react-lite";
 
 import ShoppingData from "../../../Data/ShoppingData";
 import ItemCard from "./ItemCard";
-import CurrentSorting from "../../../Store/CurrentSorting";
-import IItem from "../../../Interfaces/IItem";
+import CurrentSorting from "../../../../../Stores/CurrentSorting";
+import IItem from "../../../../../Interfaces/IItem";
 
 import "../Styles/ItemCards.scss";
 

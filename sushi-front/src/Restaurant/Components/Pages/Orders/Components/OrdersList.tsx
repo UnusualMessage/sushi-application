@@ -1,4 +1,4 @@
-import IOrder from "../../../Interfaces/IOrder";
+import IOrder from "../../../../../Interfaces/IOrder";
 import Order from "./Order";
 
 import "../Styles/OrdersList.scss";

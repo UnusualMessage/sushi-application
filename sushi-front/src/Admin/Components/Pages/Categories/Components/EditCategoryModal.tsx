@@ -5,9 +5,9 @@ import { observer } from "mobx-react-lite";
 import Modal from "../../../../../Restaurant/Components/Others/Modal";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
-import ICategory from "../../../../../Restaurant/Components/Interfaces/ICategory";
-import IUpdateCategory from "../Interfaces/IUpdateCategory";
-import CategoriesStore from "../../../../../Restaurant/Components/Store/CategoriesStore";
+import ICategory from "../../../../../Interfaces/ICategory";
+import IUpdateCategory from "../../../../../Interfaces/IUpdateCategory";
+import CategoriesStore from "../../../../../Stores/CategoriesStore";
 
 import "../Styles/EditCategoryModal.scss";
 

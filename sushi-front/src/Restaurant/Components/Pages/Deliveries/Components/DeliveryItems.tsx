@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 
 import DeliveryItem from "./DeliveryItem";
-import IItem from "../../../Interfaces/IItem";
+import IItem from "../../../../../Interfaces/IItem";
 
 import "../Styles/DeliveryItems.scss";
 

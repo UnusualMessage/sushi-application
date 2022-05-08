@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { action } from "mobx";
 
 import { CategoryRoute } from "../../../Others/RouteNames";
-import CartStore from "../../../Store/CartStore";
-import Auth from "../../../Store/Auth";
+import CartStore from "../../../../../Stores/CartStore";
+import Auth from "../../../../../Stores/Auth";
 
 import "../Styles/ItemCard.scss";
 

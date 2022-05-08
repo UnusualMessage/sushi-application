@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite";
 
 import OrderItem from "./OrderItem";
-import OrdersStore from "../../../Store/OrdersStore";
-import IItem from "../../../Interfaces/IItem";
+import OrdersStore from "../../../../../Stores/OrdersStore";
+import IItem from "../../../../../Interfaces/IItem";
 
 import "../Styles/OrderItems.scss";
 

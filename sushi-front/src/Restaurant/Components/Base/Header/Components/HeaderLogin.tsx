@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { CourierRoute, OrdersRoute } from "../../../Others/RouteNames";
 import Modal from "../../../Others/Modal";
-import Auth from "../../../Store/Auth";
+import Auth from "../../../../../Stores/Auth";
 
 import "../Styles/HeaderLogin.scss";
 

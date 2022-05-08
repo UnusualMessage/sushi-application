@@ -4,7 +4,7 @@ import { useState } from "react";
 import EditCategoryModal from "./EditCategoryModal";
 
 import "../Styles/Category.scss";
-import ICategory from "../../../../../Restaurant/Components/Interfaces/ICategory";
+import ICategory from "../../../../../Interfaces/ICategory";
 
 const Category = ({ id, picturePath, name }: ICategoryProps) => {
     const [editCategoryActive, setEditCategoryActive] = useState(false);

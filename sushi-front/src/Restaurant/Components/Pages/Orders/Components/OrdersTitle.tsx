@@ -1,7 +1,7 @@
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
-import CurrentSorting from "../../../Store/CurrentSorting";
+import CurrentSorting from "../../../../../Stores/CurrentSorting";
 
 import "../Styles/OrdersTitle.scss";
 

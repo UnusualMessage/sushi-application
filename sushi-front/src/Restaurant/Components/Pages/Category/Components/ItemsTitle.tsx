@@ -2,7 +2,7 @@ import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
-import CurrentSorting from "../../../Store/CurrentSorting";
+import CurrentSorting from "../../../../../Stores/CurrentSorting";
 
 import "../Styles/ItemsTitle.scss";
 

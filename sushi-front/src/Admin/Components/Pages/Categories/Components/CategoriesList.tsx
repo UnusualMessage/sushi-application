@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 
 import Category from "./Category";
-import CategoriesStore from "../../../../../Restaurant/Components/Store/CategoriesStore";
+import CategoriesStore from "../../../../../Stores/CategoriesStore";
 
 import "../Styles/CategoriesList.scss";
 

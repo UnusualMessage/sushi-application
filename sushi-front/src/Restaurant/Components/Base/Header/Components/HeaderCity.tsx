@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 
-import CurrentCity from "../../../Store/CurrentCity";
+import CurrentCity from "../../../../../Stores/CurrentCity";
 
 const HeaderCity = ({ city, setActive }) => {
     const chooseCity = () => {

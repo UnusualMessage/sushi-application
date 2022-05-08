@@ -2,9 +2,9 @@ import { action } from "mobx";
 import { useParams } from "react-router-dom";
 
 import ShoppingData from "../../../Data/ShoppingData";
-import IItem from "../../../Interfaces/IItem";
-import Auth from "../../../Store/Auth";
-import CartStore from "../../../Store/CartStore";
+import IItem from "../../../../../Interfaces/IItem";
+import Auth from "../../../../../Stores/Auth";
+import CartStore from "../../../../../Stores/CartStore";
 
 import "../Styles/ItemPage.scss";
 

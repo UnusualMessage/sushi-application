@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import IItem from "../../../Interfaces/IItem";
+import IItem from "../../../../../Interfaces/IItem";
 import { CategoryRoute } from "../../../Others/RouteNames";
 
 import "../Styles/DeliveryItem.scss";

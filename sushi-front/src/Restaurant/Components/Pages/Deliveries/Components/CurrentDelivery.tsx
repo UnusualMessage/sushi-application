@@ -4,8 +4,8 @@ import { action } from "mobx";
 
 import DeliveryItems from "./DeliveryItems";
 import DeliveryHeader from "./DeliveryHeader";
-import OrdersStore from "../../../Store/OrdersStore";
-import CurrentOrder from "../../../Store/CurrentOrder";
+import OrdersStore from "../../../../../Stores/OrdersStore";
+import CurrentOrder from "../../../../../Stores/CurrentOrder";
 
 import "../Styles/Delivery.scss";
 

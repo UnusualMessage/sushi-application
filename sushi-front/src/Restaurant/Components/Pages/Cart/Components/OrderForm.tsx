@@ -5,14 +5,14 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 
 import HeaderCityChoice from "../../../Base/Header/Components/CityChoice";
-import CartStore from "../../../Store/CartStore";
-import CurrentCity from "../../../Store/CurrentCity";
-import CurrentShop from "../../../Store/CurrentShop";
-import OrdersStore from "../../../Store/OrdersStore";
+import CartStore from "../../../../../Stores/CartStore";
+import CurrentCity from "../../../../../Stores/CurrentCity";
+import CurrentShop from "../../../../../Stores/CurrentShop";
+import OrdersStore from "../../../../../Stores/OrdersStore";
 import ShopChoice from "./ShopChoice";
 import Input from "./Input";
-import ICustomerContacts from "../../../Interfaces/ICustomerContacts";
-import IAddress from "../../../Interfaces/IAddress";
+import ICustomerContacts from "../../../../../Interfaces/ICustomerContacts";
+import IAddress from "../../../../../Interfaces/IAddress";
 
 import "../Styles/OrderForm.scss";
 

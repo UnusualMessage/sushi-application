@@ -3,10 +3,10 @@ import { useState } from "react";
 import { observer } from "mobx-react-lite";
 
 import CityChoice from "./CityChoice";
-import CurrentCity from "../../../Store/CurrentCity";
+import CurrentCity from "../../../../../Stores/CurrentCity";
 import HeaderLogin from "./HeaderLogin";
-import Auth from "../../../Store/Auth";
-import CurrentOrder from "../../../Store/CurrentOrder";
+import Auth from "../../../../../Stores/Auth";
+import CurrentOrder from "../../../../../Stores/CurrentOrder";
 import { CourierRoute, InitialRoute, OrdersRoute } from "../../../Others/RouteNames";
 
 import '../Styles/HeaderInfo.scss';

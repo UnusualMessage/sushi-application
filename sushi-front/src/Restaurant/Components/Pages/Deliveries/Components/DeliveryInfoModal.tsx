@@ -1,5 +1,5 @@
-import IAddress from "../../../Interfaces/IAddress";
-import ICustomerContacts from "../../../Interfaces/ICustomerContacts";
+import IAddress from "../../../../../Interfaces/IAddress";
+import ICustomerContacts from "../../../../../Interfaces/ICustomerContacts";
 import Modal from "../../../Others/Modal";
 
 import "../Styles/DeliveryInfoModal.scss";

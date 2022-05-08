@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
 
-import IAddress from "../../../Interfaces/IAddress";
-import ICustomerContacts from "../../../Interfaces/ICustomerContacts";
+import IAddress from "../../../../../Interfaces/IAddress";
+import ICustomerContacts from "../../../../../Interfaces/ICustomerContacts";
 import DeliveryInfoModal from "./DeliveryInfoModal";
 
 import "../Styles/DeliveryHeader.scss";

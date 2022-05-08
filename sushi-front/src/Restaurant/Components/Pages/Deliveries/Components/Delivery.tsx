@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import DeliveryItems from "./DeliveryItems";
 import DeliveryHeader from "./DeliveryHeader";
-import OrdersStore from "../../../Store/OrdersStore";
-import CurrentOrder from "../../../Store/CurrentOrder";
+import OrdersStore from "../../../../../Stores/OrdersStore";
+import CurrentOrder from "../../../../../Stores/CurrentOrder";
 import { CourierRoute } from "../../../Others/RouteNames";
 
 import "../Styles/Delivery.scss";

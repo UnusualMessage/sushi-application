@@ -2,9 +2,9 @@ import { useFormik } from "formik";
 import { object, string } from "yup";
 import { observer } from "mobx-react-lite";
 
-import ICreateCategory from "../Interfaces/ICreateCategory";
+import ICreateCategory from "../../../../../Interfaces/ICreateCategory";
 import Modal from "../../../../../Restaurant/Components/Others/Modal";
-import CategoriesStore from "../../../../../Restaurant/Components/Store/CategoriesStore";
+import CategoriesStore from "../../../../../Stores/CategoriesStore";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
 

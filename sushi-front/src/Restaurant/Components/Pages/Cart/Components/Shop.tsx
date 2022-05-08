@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 
-import CurrentShop from "../../../Store/CurrentShop";
+import CurrentShop from "../../../../../Stores/CurrentShop";
 
 const Shop = ({ shop, setActive }) => {
     const chooseShop = () => {

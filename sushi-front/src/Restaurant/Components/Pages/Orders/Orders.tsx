@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite";
 
-import IOrder from "../../Interfaces/IOrder";
-import CurrentSorting from "../../Store/CurrentSorting";
-import OrdersStore from "../../Store/OrdersStore";
+import IOrder from "../../../../Interfaces/IOrder";
+import CurrentSorting from "../../../../Stores/CurrentSorting";
+import OrdersStore from "../../../../Stores/OrdersStore";
 import OrdersList from "./Components/OrdersList";
 import OrdersTitle from "./Components/OrdersTitle";
 

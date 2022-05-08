@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 
-import IItem from "../../../Interfaces/IItem";
-import CartStore from "../../../Store/CartStore";
+import IItem from "../../../../../Interfaces/IItem";
+import CartStore from "../../../../../Stores/CartStore";
 import OrderUnit from "./OrderUnit";
 
 import "../Styles/OrderUnits.scss";
