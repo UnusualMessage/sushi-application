@@ -25,5 +25,13 @@ namespace SushiSet.Core.Entities
 
         public Guid? CourierId { get; set; }
         public Courier Courier { get; set; }
+
+        public void Set(Order order)
+        {
+            Title = order.Title;
+            Status = order.Status;
+            Created = order.Created;
+            OrderUnits = order.OrderUnits;
+        }
     }
 }

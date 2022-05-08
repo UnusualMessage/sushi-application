@@ -14,6 +14,9 @@ namespace SushiSet.Application.Handlers.Extensions
 
             services.AddItemCommandHandlers();
             services.AddItemQueryHandlers();
+
+            services.AddOrderCommandHandlers();
+            services.AddOrderQueryHandlers();
         }
     }
 }
