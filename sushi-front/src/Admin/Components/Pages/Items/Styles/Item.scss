@@ -1,0 +1,182 @@
+@use '../../../Styles/Constants.scss'as *;
+
+.item {
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+    flex-basis: 21.5%;
+
+    .item-image {
+        width: 100%;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    .item-description {
+        @include flexible-column(stretch, space-between);
+
+        padding: 15px;
+        height: 100px;
+
+        .item-description-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: $title-color;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .item-description-order {
+            @include flexible-row(center, space-between);
+
+            .order-price {
+                font-size: 20px;
+                color: $title-color;
+                font-weight: 600;
+
+                &::after {
+                    margin-left: 2px;
+                    content: "\20BD";
+                }
+            }
+
+            .order-button {
+                cursor: pointer;
+
+                border: 1px solid $red-color;
+                border-radius: 20px;
+                padding: 10px 20px 10px 20px;
+                font-size: 12px;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $red-color;
+                    color: white;
+                }
+            }
+
+            .blocked {
+                background-color: $red-color;
+                color: white;
+                cursor: default;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $pre-big) and (max-width: $big) {
+    .item {
+        flex-basis: 21%;
+    }
+}
+
+@media screen and (max-width: $pre-big) and (min-width: $medium) {
+    .item {
+        flex-basis: 28%;
+    }
+}
+
+@media screen and (max-width: $medium) and (min-width: $pre-medium) {
+    .item {
+        flex-basis: 45%;
+
+        .item-description {
+            .item-description-order {
+                .order-button {
+                    &:hover {
+                        background-color: white;
+                        color: $title-color;
+                    }
+
+                    &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .blocked {
+                    background-color: $red-color;
+                    color: white;
+                    cursor: default;
+
+                    &:hover {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $pre-medium) {
+    .item {
+        @include flexible-row(center, flex-start);
+
+        border-radius: 5px 5px 5px 5px;
+
+        flex-basis: 100%;
+
+        .item-image {
+            margin-left: 5px;
+            width: 120px;
+            cursor: pointer;
+            border-radius: 5px 5px 5px 5px;
+
+            img {
+                width: 120px;
+                border-radius: 5px 5px 5px 5px;
+            }
+        }
+
+        .item-description {
+            @include flexible-column(stretch, space-between);
+
+            width: 100%;
+            padding: 10px;
+            height: 70px;
+
+            .item-description-title {
+                font-size: 12px;
+            }
+
+            .item-description-order {
+                .order-price {
+                    font-size: 16px;
+                }
+
+                .order-button {
+                    font-size: 10px;
+                    padding: 5px 10px 5px 10px;
+
+                    &:hover {
+                        background-color: white;
+                        color: $title-color;
+                    }
+
+                    &:active {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+
+                .blocked {
+                    background-color: $red-color;
+                    color: white;
+                    cursor: default;
+
+                    &:hover {
+                        background-color: $red-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
