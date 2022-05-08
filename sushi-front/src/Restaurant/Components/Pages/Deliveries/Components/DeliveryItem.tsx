@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import IItem from "../../../Interfaces/IItem";
+import { CategoryRoute } from "../../../Others/RouteNames";
 
 import "../Styles/DeliveryItem.scss";
 
@@ -9,7 +10,7 @@ const DeliveryItem = ({ item } : IDeliveryItemProps) => {
 
     return (
         <div className="delivery-item">
-            <Link className="delivery-item-image" to={"/category/" + category + "/" + id}>
+            <Link className="delivery-item-image" to={CategoryRoute + category + "/" + id}>
                 <img src={path} alt="" />
             </Link>
 

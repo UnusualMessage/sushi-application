@@ -25,7 +25,7 @@ const OrderUnit = ({ item } : IOrderUnitProps) => {
     
     return (
         <div className="cart-order-unit">
-            <Link className="order-unit-image" to={"/" + CategoryRoute + "/" + category + "/" + id}>
+            <Link className="order-unit-image" to={CategoryRoute + category + "/" + id}>
                 <img src={path} alt="" />
             </Link>
 

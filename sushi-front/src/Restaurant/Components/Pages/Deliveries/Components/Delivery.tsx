@@ -18,7 +18,7 @@ const Delivery = ({ id }) => {
     const acceptOrder = action(() => {
         const acceptedOrder = OrdersStore.accept(id);
         CurrentOrder.accept(acceptedOrder);
-        navigate("/" + CourierRoute + "/" + CurrentOrder.order.id);
+        navigate(CourierRoute + CurrentOrder.order.id);
     });
 
     return (

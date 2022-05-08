@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 
-import { CategoryRoute } from "../../../Others/RouteNames";
-
-const FooterLink = ({ to, title } : IFooterLinkProps) => {
+const FooterLink = ({ initial, to, title } : IFooterLinkProps) => {
     return (
-        <Link className='footer-link' to={"/" + CategoryRoute + "/" + to}>
+        <Link className='footer-link' to={initial + to}>
             {title}
         </Link>
     );
 }
 
 interface IFooterLinkProps {
+    initial: string,
     to: string,
     title: string
 }

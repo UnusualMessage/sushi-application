@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import IItem from "../../../Interfaces/IItem";
+import { CategoryRoute } from "../../../Others/RouteNames";
 
 import "../Styles/OrderItem.scss";
 
@@ -9,7 +10,7 @@ const OrderItem = ({ item } : IOrderItemProps) => {
     
     return (
         <div className="order-item">
-            <Link className="order-item-image" to={"/category/" + category + "/" + id}>
+            <Link className="order-item-image" to={CategoryRoute + category + "/" + id}>
                 <img src={path} alt="" />
             </Link>
 

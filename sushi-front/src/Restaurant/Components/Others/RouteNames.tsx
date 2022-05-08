@@ -1,5 +1,6 @@
-export const CategoryRoute : string = "category";
-export const CourierRoute : string = "courier/deliveries";
-export const OrdersRoute : string = "orders";
-export const CartRoute : string = "cart";
 export const InitialRoute : string = "/";
+
+export const CategoryRoute : string = InitialRoute + "category/";
+export const CourierRoute : string = InitialRoute + "courier/deliveries/";
+export const OrdersRoute : string = InitialRoute + "orders/";
+export const CartRoute : string = InitialRoute + "cart/";

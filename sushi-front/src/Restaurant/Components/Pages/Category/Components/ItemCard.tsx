@@ -23,7 +23,7 @@ const ItemCard = ({ id, category, path, title, text, price, count } : IItemCardP
 
     return (
         <div className='item-card'>
-            <Link className='card-image' to={"/" + CategoryRoute + "/" + category + "/" + id}>
+            <Link className='card-image' to={CategoryRoute + category + "/" + id}>
                 <img src={path} alt="" />
             </Link>
 

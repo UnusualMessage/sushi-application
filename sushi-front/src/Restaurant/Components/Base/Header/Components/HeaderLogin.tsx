@@ -39,10 +39,10 @@ const HeaderLogin = ({ active, setActive }) => {
     const onLoginClick = action(() => {
         if (isCustomer) {
             Auth.loginAsCustomer();
-            navigate("/" + OrdersRoute);
+            navigate(OrdersRoute);
         } else {
             Auth.loginAsCourier();
-            navigate("/" + CourierRoute);
+            navigate(CourierRoute);
         }
 
         setActive(false);
@@ -50,7 +50,7 @@ const HeaderLogin = ({ active, setActive }) => {
 
     const onRegistrationClick = action(() => {
         Auth.register();
-        navigate("/" + OrdersRoute);
+        navigate(OrdersRoute);
         setActive(false);
     });
 

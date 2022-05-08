@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 
-import { CategoryRoute } from "../../Others/RouteNames";
-
 import './NavLink.scss';
 
-const NavCategoryLink = ({ to, title } : INavCategoryLinkProps) => {
+const NavCategoryLink = ({ initial, to, title } : INavCategoryLinkProps) => {
     return (
-        <Link className="nav-link" to={"/" + CategoryRoute + to}>
+        <Link className="nav-link" to={initial + to}>
             {title}
         </Link>
     )
 }
 
 interface INavCategoryLinkProps {
+    initial: string,
     to: string,
     title: string
 }

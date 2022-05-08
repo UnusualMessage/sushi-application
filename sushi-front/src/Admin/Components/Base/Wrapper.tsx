@@ -1,19 +1,19 @@
 import { Outlet } from "react-router-dom";
 
 import AdminHeader from "./Header/AdminHeader";
-import AdminNav from "./Nav/AdminNav";
-import Main from "./Main/Main";
-import AdminFooter from "./Footer/AdminFooter";
+import Footer from "../../../Restaurant/Components/Base/Footer/Footer";
+import Main from "../../../Restaurant/Components/Base/Main/Main";
+import Nav from "../../../Restaurant/Components/Base/Nav/Nav";
 
 const Wrapper = () => {
     return(
         <>
             <AdminHeader />
-            <AdminNav />
+            <Nav />
             <Main>
                 <Outlet />
             </Main>
-            <AdminFooter />
+            <Footer />
         </>
     );
 }

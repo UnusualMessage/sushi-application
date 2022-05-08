@@ -9,7 +9,7 @@ import './Restaurant/Restaurant.scss';
 const App = () => {
     return (
         <Routes>
-            <Route path="/admin/*" element={<Admin />} />
+            <Route path="/admin/5051/*" element={<Admin />} />
             <Route path="/*" element={<Restaurant />} />
         </Routes>
     )

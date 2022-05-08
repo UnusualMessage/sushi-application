@@ -6,7 +6,7 @@ import "../Styles/HomeCategory.scss";
 
 const HomeCategory = ({ path, category } : IHomeCategoryProps) => {
     return(
-        <Link className="home-category" to={"/" + CategoryRoute + "/" + category.toLowerCase()}>
+        <Link className="home-category" to={CategoryRoute + category.toLowerCase()}>
             <img alt="" src={path}/>
             <span className="home-category-tip">{category}</span>
         </Link>

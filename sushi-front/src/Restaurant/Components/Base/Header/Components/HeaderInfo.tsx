@@ -7,7 +7,7 @@ import CurrentCity from "../../../Store/CurrentCity";
 import HeaderLogin from "./HeaderLogin";
 import Auth from "../../../Store/Auth";
 import CurrentOrder from "../../../Store/CurrentOrder";
-import { CourierRoute } from "../../../Others/RouteNames";
+import { CourierRoute, InitialRoute, OrdersRoute } from "../../../Others/RouteNames";
 
 import '../Styles/HeaderInfo.scss';
 
@@ -25,7 +25,7 @@ const HeaderInfo = () => {
 
     return (
         <div className='content-info-wrapper'>
-            <Link className="header-logo" to="/">
+            <Link className="header-logo" to={InitialRoute}>
                 <img src="/logo_big.png" alt="" />
             </Link>
 
@@ -81,22 +81,22 @@ const HeaderInfo = () => {
                     Auth.isCourier()
                         ?
                         <div className="header-login-menu">
-                            <Link to={"/" + CourierRoute}>Доступные заказы</Link>
+                            <Link to={CourierRoute}>Доступные заказы</Link>
 
                             {CurrentOrder.isEmpty() ?
                                 <></>
                                 :
-                                <Link to={"/" + CourierRoute + "/" + CurrentOrder.order.id}>Активный заказ</Link>
+                                <Link to={CourierRoute + CurrentOrder.order.id}>Активный заказ</Link>
                             }
 
-                            <Link to="/" onClick={() => { Auth.logout(); }}>Выход</Link>
+                            <Link to={InitialRoute} onClick={() => { Auth.logout(); }}>Выход</Link>
                         </div>
 
                         :
 
                         <div className="header-login-menu">
-                            <Link to="/orders">История заказов</Link>
-                            <Link to="/" onClick={() => { Auth.logout(); }}>Выход</Link>
+                            <Link to={OrdersRoute}>История заказов</Link>
+                            <Link to={InitialRoute} onClick={() => { Auth.logout(); }}>Выход</Link>
                         </div>
                     :
                     <></>
