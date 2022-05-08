@@ -15,6 +15,11 @@ namespace SushiSet.Infrastructure.Repositories
         {
         }
 
+        public async Task<Category> GetByNameAsync(string name)
+        {
+            return await _applicationContext.Set<Category>().FirstOrDefaultAsync(e => e.Name == name);
+        }
+
         public override async Task<Category> UpdateAsync(Category entity)
         {
             Category selectedCategory = await _applicationContext.Set<Category>().FirstOrDefaultAsync(e => e.Id == entity.Id);

@@ -7,6 +7,7 @@ namespace SushiSet.Application.MappingProfiles.Extensions
         public static void AddMappingProfiles(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(CategoryProfile));
+            services.AddAutoMapper(typeof(ItemProfile));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using SushiSet.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+
+using SushiSet.Core.Entities;
 using SushiSet.Core.Interfaces.Repositories;
 using SushiSet.Infrastructure.Context;
 using SushiSet.Infrastructure.Repositories.Base;
@@ -13,9 +15,15 @@ namespace SushiSet.Infrastructure.Repositories
         {
         }
 
-        public override Task<Item> UpdateAsync(Item entity)
+        public override async Task<Item> UpdateAsync(Item entity)
         {
-            throw new System.NotImplementedException();
+            Item selected = await _applicationContext.Set<Item>().FirstOrDefaultAsync(e => e.Id == entity.Id);
+
+            selected.Set(entity);
+
+            await _applicationContext.SaveChangesAsync();
+
+            return await GetByIdAsync(entity.Id);
         }
     }
 }

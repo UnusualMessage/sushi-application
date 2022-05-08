@@ -12,12 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\static\media\" />
+    <ProjectReference Include="..\SushiSet.Application\SushiSet.Application.csproj" />
+    <ProjectReference Include="..\SushiSet.Infrastructure\SushiSet.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SushiSet.Application\SushiSet.Application.csproj" />
-    <ProjectReference Include="..\SushiSet.Infrastructure\SushiSet.Infrastructure.csproj" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

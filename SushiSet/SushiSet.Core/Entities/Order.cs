@@ -11,12 +11,14 @@ namespace SushiSet.Core.Entities
         public string Title { get; set; }
         public string Status { get; set; }
         public DateTime Created { get; set; }
-        public bool InCart { get; set; }
+
+        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
 
         public Guid? ShopId { get; set; }
         public Shop Shop { get; set; }
 
-        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
+        public Guid? CityId { get; set; }
+        public City City { get; set; }
 
         public Guid? CustomerId { get; set; }
         public Customer Customer { get; set; }
