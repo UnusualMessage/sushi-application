@@ -8,6 +8,8 @@ using System;
 
 using SushiSet.Infrastructure.Extensions;
 using SushiSet.Application.Extensions;
+using SushiSet.Application.MappingProfiles.Extensions;
+using SushiSet.Application.Handlers.Extensions;
 
 namespace SushiSet.API.Extensions
 {
@@ -49,8 +51,8 @@ namespace SushiSet.API.Extensions
         public static void ConfigureApplicationLayer(this IServiceCollection services)
         {
             services.AddApplicationServices();
-/*            services.AddMappingProfiles();
-            services.AddHandlers();*/
+            services.AddMappingProfiles();
+            services.AddHandlers();
 
             services.AddScoped<ISieveProcessor, SieveProcessor>();
         }

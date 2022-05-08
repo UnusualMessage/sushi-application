@@ -1,11 +1,13 @@
-﻿using Sieve.Models;
-using MediatR;
+﻿using MediatR;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using System;
 using System.Threading.Tasks;
+
+using SushiSet.Application.Requests.Queries.CategoryQueries;
+using SushiSet.Application.Requests.Commands.CategoryCommands;
 
 namespace SushiSet.API.Controllers
 {
@@ -24,38 +26,30 @@ namespace SushiSet.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _mediator.Send(null));
-        }
-
-        [AllowAnonymous]
-        [Route("Sieved")]
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] SieveModel model)
-        {
-            return Ok(await _mediator.Send(model));
+            return Ok(await _mediator.Send(new GetCategories()));
         }
 
         [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
-            return Ok(await _mediator.Send(id));
+            return Ok(await _mediator.Send(new GetCategoryById(id)));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] string request)
+        public async Task<IActionResult> Post([FromBody] CreateCategory request)
         {
             return Ok(await _mediator.Send(request));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            return Ok(await _mediator.Send(id));
+            return Ok(await _mediator.Send(new DeleteCategory(id)));
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] string request)
+        public async Task<IActionResult> Put([FromBody] UpdateCategory request)
         {
             return Ok(await _mediator.Send(request));
         }
