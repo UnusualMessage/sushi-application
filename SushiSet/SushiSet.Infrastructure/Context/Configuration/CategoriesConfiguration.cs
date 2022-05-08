@@ -17,10 +17,8 @@ namespace SushiSet.Infrastructure.Context.Extensions
             builder.Property(p => p.Name)
                 .HasColumnName("CATEGORY_NAME");
 
-            builder.Property(p => p.TakesPartInSandbox)
-                .HasColumnName("CATEGORY_TAKES_PART_IN_SANDBOX")
-                .IsRequired()
-                .HasDefaultValue(true);
+            builder.Property(p => p.PicturePath)
+                .HasColumnName("CATEGORY_PICTURE_PATH");
         }
     }
 }
