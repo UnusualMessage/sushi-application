@@ -10,7 +10,7 @@ import Input from "../../../Others/Input";
 
 import "../Styles/AddCategoryModal.scss";
 
-const AddCategoryModal = ({ active, setActive } : IDeliveryInfoModalProps) => {
+const AddCategoryModal = ({ active, setActive } : IAddCategoryModalProps) => {
     const validationSchema = object({
         name: string().required("Введите название!"),
         file: string().nullable().required("Загрузите изображение!")
@@ -69,7 +69,7 @@ const AddCategoryModal = ({ active, setActive } : IDeliveryInfoModalProps) => {
     );
 }
 
-interface IDeliveryInfoModalProps {
+interface IAddCategoryModalProps {
     active: boolean,
     setActive: (arg: boolean) => void
 }

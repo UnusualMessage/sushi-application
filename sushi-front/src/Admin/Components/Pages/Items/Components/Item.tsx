@@ -1,23 +1,19 @@
 import { observer } from "mobx-react-lite";
-import { action } from "mobx";
+import { useState } from "react";
 
-import CartStore from "../../../../../Stores/CartStore";
-import Auth from "../../../../../Stores/Auth";
+import IItem from "../../../../../Interfaces/IItem";
+import EditItemModal from "./EditItemModal";
 
 import "../Styles/Item.scss";
 
-const Item = ({ id, category, path, title, text, price, count } : IItemProps) => {
-    const addToCart = action(() => {
-        CartStore.add({
-            id: id,
-            title: title,
-            path: path,
-            text: text,
-            price: price,
-            category: category,
-            count: count,
-        });
-    })
+const Item = ({ item } : IItemProps) => {
+    const { path, title, price } = item;
+
+    const [editItemActive, setEditItemActive] = useState(false);
+
+    const showModal = () => {
+        setEditItemActive(true);
+    }
 
     return (
         <div className='item'>
@@ -35,23 +31,19 @@ const Item = ({ id, category, path, title, text, price, count } : IItemProps) =>
                         {price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : addToCart}>
-                        Добавить
+                    <span className="item-edit-button" onClick={showModal}>
+                        Подробнее
                     </span>
                 </div>
             </div>
+
+            <EditItemModal active={editItemActive} setActive={setEditItemActive} item={item}/>
         </div>
     );
 }
 
 export interface IItemProps {
-    id: number,
-    category: string,
-    title: string,
-    text: string,
-    price: number,
-    count: number,
-    path: string
+    item: IItem,
 }
 
 export default observer(Item);

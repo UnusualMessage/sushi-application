@@ -13,14 +13,7 @@ const ItemsList= () => {
                 ShoppingData?.map((item : IItem) => {
                     return <Item
                         key={item.id}
-
-                        id={item.id} 
-                        category={item.category}
-                        price={item.price} 
-                        title={item.title} 
-                        path={item.path} 
-                        count={item.count}
-                        text={item.text}
+                        item={item}
                     />
                 })
             }
