@@ -1,10 +1,13 @@
 ﻿using MediatR;
+using Sieve.Models;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using SushiSet.Application.Requests.Commands.CourierCommands;
+using SushiSet.Application.Requests.Queries.CourierQueries;
 
+using System;
 using System.Threading.Tasks;
 
 namespace SushiSet.API.Controllers
@@ -18,6 +21,28 @@ namespace SushiSet.API.Controllers
         public CouriersController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await _mediator.Send(new GetCouriers()));
+        }
+
+        [AllowAnonymous]
+        [Route("sieved")]
+        [HttpGet]
+        public async Task<IActionResult> Get([FromQuery] SieveModel sieveModel)
+        {
+            return Ok(await _mediator.Send(new GetSievedCouriers(sieveModel)));
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get([FromRoute] Guid id)
+        {
+            return Ok(await _mediator.Send(new GetCourierById(id)));
         }
 
         [AllowAnonymous]

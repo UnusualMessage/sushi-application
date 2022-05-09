@@ -18,9 +18,14 @@ namespace SushiSet.Application.Handlers.Extensions
             services.AddOrderCommandHandlers();
             services.AddOrderQueryHandlers();
 
+            services.AddAdminCommandHandlers();
+            services.AddAdminQueryHandlers();
+
             services.AddCustomerCommandHandlers();
+            services.AddCustomerQueryHandlers();
 
             services.AddCourierCommandHandlers();
+            services.AddCourierQueryHandlers();
 
             services.AddCityCommandHandlers();
             services.AddCityQueryHandlers();

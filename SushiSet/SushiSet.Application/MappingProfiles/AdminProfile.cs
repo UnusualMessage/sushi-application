@@ -10,6 +10,7 @@ namespace SushiSet.Application.MappingProfiles
     {
         public AdminProfile()
         {
+            CreateMap<Administrator, AdminResponse>();
             CreateMap<AuthenticateAdmin, Administrator>();
             CreateMap<RegisterAdmin, Administrator>();
             CreateMap<Administrator, AuthenticateAdminResponse>();

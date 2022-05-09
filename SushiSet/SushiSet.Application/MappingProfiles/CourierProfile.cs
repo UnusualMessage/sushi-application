@@ -10,6 +10,7 @@ namespace SushiSet.Application.MappingProfiles
     {
         public CourierProfile()
         {
+            CreateMap<Courier, CourierResponse>();
             CreateMap<AuthenticateCourier, Courier>();
             CreateMap<RegisterCourier, Courier>();
             CreateMap<Courier, AuthenticateCourierResponse>();

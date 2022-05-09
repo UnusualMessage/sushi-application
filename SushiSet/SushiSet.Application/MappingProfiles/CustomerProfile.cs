@@ -10,6 +10,7 @@ namespace SushiSet.Application.MappingProfiles
     {
         public CustomerProfile()
         {
+            CreateMap<Customer, CustomerResponse>();
             CreateMap<AuthenticateCustomer, Customer>();
             CreateMap<RegisterCustomer, Customer>();
             CreateMap<Customer, AuthenticateCustomerResponse>();
