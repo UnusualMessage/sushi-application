@@ -8,11 +8,11 @@ namespace SushiSet.Core.Entities
 {
     public class Order : Entity
     {
-        public string Title { get; set; }
         public string Status { get; set; }
         public DateTime Created { get; set; }
+        public decimal TotalPrice { get; set; }
 
-        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
+        public ICollection<Item> Items { get; set; } = new List<Item>();
 
         public Guid? ShopId { get; set; }
         public Shop Shop { get; set; }
@@ -28,10 +28,8 @@ namespace SushiSet.Core.Entities
 
         public void Set(Order order)
         {
-            Title = order.Title;
             Status = order.Status;
             Created = order.Created;
-            OrderUnits = order.OrderUnits;
         }
     }
 }

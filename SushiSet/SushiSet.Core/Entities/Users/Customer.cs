@@ -8,7 +8,7 @@ namespace SushiSet.Core.Entities.Users
     {
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public ICollection<Item> Items { get; set; } = new List<Item>();
 
         public Customer()
         {

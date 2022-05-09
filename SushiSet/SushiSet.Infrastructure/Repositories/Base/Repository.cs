@@ -29,7 +29,7 @@ namespace SushiSet.Infrastructure.Repositories.Base
 
         public virtual async Task<T> DeleteByIdAsync(Guid id)
         {
-            T entity = await _applicationContext.Set<T>().FindAsync(id);
+            T entity = await GetByIdAsync(id);
             _applicationContext.Set<T>().Remove(entity);
             await _applicationContext.SaveChangesAsync();
 
@@ -39,6 +39,18 @@ namespace SushiSet.Infrastructure.Repositories.Base
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _applicationContext.Set<T>().ToListAsync();
+        }
+
+        public virtual async Task<ICollection<T>> GetAllByIdsAsync(IEnumerable<Guid> Ids)
+        {
+            ICollection<T> entities = new List<T>();
+
+            foreach (Guid i in Ids)
+            {
+                entities.Add(await GetByIdAsync(i));
+            }
+
+            return entities;
         }
 
         public virtual async Task<T> GetByIdAsync(Guid id)

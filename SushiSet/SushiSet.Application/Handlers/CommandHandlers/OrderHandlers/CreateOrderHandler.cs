@@ -14,17 +14,26 @@ namespace SushiSet.Application.Handlers.CommandHandlers.OrderHandlers
     public class CreateOrderHandler : IRequestHandler<CreateOrder, OrderResponse>
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IItemRepository _itemRepository;
         private readonly IMapper _mapper;
 
-        public CreateOrderHandler(IOrderRepository orderRepository, IMapper mapper)
+        public CreateOrderHandler(IOrderRepository orderRepository, IItemRepository itemRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
+            _itemRepository = itemRepository;
             _mapper = mapper;
         }
 
         public async Task<OrderResponse> Handle(CreateOrder request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<OrderResponse>(await _orderRepository.AddAsync(_mapper.Map<Order>(request)));
+            Order newOrder = new()
+            {
+                Status = "Оформлен",
+                Created = request.Created,
+                Items = await _itemRepository.GetAllByIdsAsync(request.ItemIds),
+            };
+
+            return _mapper.Map<OrderResponse>(await _orderRepository.AddAsync(newOrder));
         }
     }
 }

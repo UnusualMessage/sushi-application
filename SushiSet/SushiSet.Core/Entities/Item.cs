@@ -15,11 +15,9 @@ namespace SushiSet.Core.Entities
 
         public ICollection<Customer> Customers { get; set; } = new List<Customer>();
 
-        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
 
-        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
-
-        public Guid? CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
         public Category Category { get; set; }
 
         public void Set(Item item)
@@ -28,7 +26,7 @@ namespace SushiSet.Core.Entities
             Description = item.Description;
             Price = item.Price;
             PicturePath = item.PicturePath;
-            Category = item.Category;
+            CategoryId = item.CategoryId;
         }
     }
 }

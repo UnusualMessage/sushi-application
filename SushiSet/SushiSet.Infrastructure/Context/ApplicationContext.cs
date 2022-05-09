@@ -13,7 +13,6 @@ namespace SushiSet.Infrastructure.Context
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderUnit> OrderUnits { get; set; }
 
         public DbSet<About> Abouts { get; set; }
         public DbSet<City> Cities { get; set; }
@@ -45,7 +44,6 @@ namespace SushiSet.Infrastructure.Context
             modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
             modelBuilder.ApplyConfiguration(new ItemsConfiguration());
             modelBuilder.ApplyConfiguration(new OrdersConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderUnitsConfiguration());
         }
     }
 }

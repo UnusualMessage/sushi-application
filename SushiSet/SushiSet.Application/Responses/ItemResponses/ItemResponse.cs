@@ -1,4 +1,5 @@
 ﻿using SushiSet.Application.Responses.Base;
+using SushiSet.Application.Responses.CategoryResponses;
 
 namespace SushiSet.Application.Responses.ItemResponses
 {
@@ -8,6 +9,6 @@ namespace SushiSet.Application.Responses.ItemResponses
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string PicturePath { get; set; }
-        public string CategoryName { get; set; } 
+        public CategoryResponse Category { get; set; } 
     }
 }

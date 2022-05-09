@@ -10,17 +10,6 @@ namespace SushiSet.Infrastructure.Context.Extensions
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.ToTable("CATEGORIES");
-
-            builder.Property(k => k.Id)
-                .HasColumnName("CATEGORY_ID");
-
-            builder.Property(p => p.Name)
-                .HasColumnName("CATEGORY_NAME")
-                .IsRequired();
-
-            builder.Property(p => p.PicturePath)
-                .HasColumnName("CATEGORY_PICTURE_PATH")
-                .IsRequired();
         }
     }
 }

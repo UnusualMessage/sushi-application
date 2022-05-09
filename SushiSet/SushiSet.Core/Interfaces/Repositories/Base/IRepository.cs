@@ -10,6 +10,7 @@ namespace SushiSet.Core.Interfaces.Repositories.Base
     {
         public Task<IEnumerable<T>> GetAllAsync();
         public Task<T> GetByIdAsync(Guid id);
+        public Task<ICollection<T>> GetAllByIdsAsync(IEnumerable<Guid> ids);
         public Task<T> AddAsync(T entity);
         public Task<T> UpdateAsync(T entity);
         public Task<T> DeleteByIdAsync(Guid id);

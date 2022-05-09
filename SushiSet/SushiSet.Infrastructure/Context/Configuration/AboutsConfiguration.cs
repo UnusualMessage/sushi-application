@@ -10,12 +10,6 @@ namespace SushiSet.Infrastructure.Context.Extensions
         public void Configure(EntityTypeBuilder<About> builder)
         {
             builder.ToTable("ABOUTS");
-
-            builder.Property(k => k.Id)
-                .HasColumnName("ABOUT_ID");
-
-            builder.Property(p => p.Description)
-                .HasColumnName("ABOUT_DESCRIPTION");
         }
     }
 }

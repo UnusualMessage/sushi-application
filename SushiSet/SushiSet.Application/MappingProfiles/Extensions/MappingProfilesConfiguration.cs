@@ -8,6 +8,9 @@ namespace SushiSet.Application.MappingProfiles.Extensions
         {
             services.AddAutoMapper(typeof(CategoryProfile));
             services.AddAutoMapper(typeof(ItemProfile));
+            services.AddAutoMapper(typeof(OrderProfile));
+            services.AddAutoMapper(typeof(ShopProfile));
+            services.AddAutoMapper(typeof(CityProfile));
         }
     }
 }

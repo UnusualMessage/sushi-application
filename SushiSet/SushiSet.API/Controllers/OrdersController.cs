@@ -37,7 +37,7 @@ namespace SushiSet.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromForm] CreateOrder request)
+        public async Task<IActionResult> Post([FromBody] CreateOrder request)
         {
             return Ok(await _mediator.Send(request));
         }
@@ -49,7 +49,7 @@ namespace SushiSet.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromForm] UpdateOrder request)
+        public async Task<IActionResult> Put([FromBody] UpdateOrder request)
         {
             return Ok(await _mediator.Send(request));
         }
