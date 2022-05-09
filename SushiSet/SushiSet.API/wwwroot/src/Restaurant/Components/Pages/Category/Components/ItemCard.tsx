@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import { CategoryRoute } from "../../../Others/RouteNames";
 import Auth from "../../../../../Stores/Auth";
+import IItem from "../../../../../Interfaces/IItem";
 
 import "../Styles/ItemCard.scss";
-import IItem from "../../../../../Interfaces/IItem";
 
 const ItemCard = ({ item } : IItemCardProps) => {
     // const addToCart = action(() => {

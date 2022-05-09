@@ -35,7 +35,7 @@
     .edit-item-form {
         @include flexible-column(stretch, center);
 
-        gap: 40px;
+        gap: 20px;
 
         .edit-item-confirm {
             cursor: pointer;
@@ -49,8 +49,8 @@
             background-color: white;
     
             &:hover {
-                background-color: white;
-                color: $aux-color;
+                background-color: $red-color;
+                color: white;
             }
 
             &:active {

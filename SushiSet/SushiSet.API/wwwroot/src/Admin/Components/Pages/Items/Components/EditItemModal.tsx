@@ -6,6 +6,8 @@ import Modal from "../../../../../Restaurant/Components/Others/Modal";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
 import IItem from "../../../../../Interfaces/IItem";
+import BigInput from "../../../Others/BigInput";
+import SelectInput from "../../../Others/SelectInput";
 
 import "../Styles/EditItemModal.scss";
 
@@ -63,13 +65,10 @@ const EditItemModal = ({ active, setActive, item }: IAddItemModalProps) => {
                         name="price" placeholder="Цена" type="text" error={formik.errors.price}
                     />
 
-                    <Input value={formik.values.category} onChange={formik.handleChange}
-                        name="category" placeholder="Категория" type="text" error={formik.errors.category}
-                    />
+                    <SelectInput value={formik.values.category} onChange={formik.handleChange} name="category"/>
 
-                    <Input value={formik.values.description} onChange={formik.handleChange}
-                        name="description" placeholder="Описание" type="text" error={formik.errors.description}
-                    />
+                    <BigInput value={formik.values.description} onChange={formik.handleChange}
+                        name="description" placeholder="Описание" error={formik.errors.description}/>
 
                     <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])}
                         name="file" error={formik.errors.file}

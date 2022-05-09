@@ -1,0 +1,32 @@
+@use "../Styles/Constants.scss" as *;
+
+.input-container {
+    @include flexible-column(center, center);
+
+    gap: 5px;
+
+    .big-input {
+        box-sizing: border-box;
+        resize: none;
+        border-color: $red-color;
+        font-size: 18px;
+        color: $title-color;
+
+        &:focus {
+            outline: 1px solid $hover-color;
+        }
+
+        &::placeholder {
+            color: $title-color;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    }
+
+    .input-error {
+        font-size: 12px;
+        color: $hover-color;
+    }
+}
+
+

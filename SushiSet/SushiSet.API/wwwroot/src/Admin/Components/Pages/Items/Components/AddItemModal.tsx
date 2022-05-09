@@ -5,10 +5,12 @@ import { observer } from "mobx-react-lite";
 import Modal from "../../../../../Restaurant/Components/Others/Modal";
 import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
-
-import "../Styles/AddItemModal.scss";
 import ICreateItem from "../../../../../Interfaces/ICreateItem";
 import ItemsStore from "../../../../../Stores/ItemsStore";
+import BigInput from "../../../Others/BigInput";
+import SelectInput from "../../../Others/SelectInput";
+
+import "../Styles/AddItemModal.scss";
 
 const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
     const validationSchema = object({
@@ -44,7 +46,7 @@ const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
         validateOnChange: false,
 
         onSubmit: values => {
-            const item : ICreateItem = {
+            const item: ICreateItem = {
                 name: values.name,
                 description: values.description,
                 category: values.category,
@@ -75,13 +77,10 @@ const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
                         name="price" placeholder="Цена" type="text" error={formik.errors.price}
                     />
 
-                    <Input value={formik.values.category} onChange={formik.handleChange}
-                        name="category" placeholder="Категория" type="text" error={formik.errors.category}
-                    />
+                    <SelectInput name={"category"} value={formik.values.category} onChange={formik.handleChange}/>
 
-                    <Input value={formik.values.description} onChange={formik.handleChange}
-                        name="description" placeholder="Описание" type="text" error={formik.errors.description}
-                    />
+                    <BigInput value={formik.values.description} onChange={formik.handleChange}
+                            name="description" placeholder="Описание" error={formik.errors.description}/>
 
                     <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])}
                         name="file" error={formik.errors.file}

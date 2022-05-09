@@ -6,6 +6,7 @@ const Input = ({ value, onChange, placeholder, name, type, error }) => {
             <input className="input" name={name} type={type} placeholder={placeholder}
                 onChange={onChange}
                 value={value}
+                autoComplete="off"
             />
             <span className="input-error">{error}</span>
         </div>
