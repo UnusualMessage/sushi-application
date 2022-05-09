@@ -1,57 +1,45 @@
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-import { CourierRoute, OrdersRoute } from "../../../Others/RouteNames";
 import Modal from "../../../Others/Modal";
-import Auth from "../../../../../Stores/Auth";
+import CustomerForm from "./CustomerForm";
+import CourierForm from "./CourierForm";
 
 import "../Styles/HeaderLogin.scss";
 
 const HeaderLogin = ({ active, setActive }) => {
-    const navigate = useNavigate();
 
     const auth : string = "Авторизация";
-    const registration : string = "Регистрация";
+    const register : string = 'Регистрация';
     const courier : string = "Курьер";
 
-    const [isLogin, setIsLogin] = useState(true);
     const [mode, setMode] = useState(auth);
     const [isCustomer, setIsCustomer] = useState(true);
+    const [loginMode, setLoginMode] = useState(register);
 
     useEffect(() => {
-        if (isCustomer) {
-            setMode(isLogin ? auth : registration);
+        if (isCustomer && loginMode === register) {
+            setMode(auth);
+        } else if (isCustomer && loginMode === auth) {
+            setMode(register);
         } else {
             setMode(courier);
-        }
-    }, [isLogin, isCustomer])
 
-    const onModeChange = action(() => {
-        setIsLogin(!isLogin);
-    });
+        }
+
+    }, [isCustomer, loginMode])
 
     const onUserChange = action(() => {
         setIsCustomer(!isCustomer);
     });
 
-    const onLoginClick = action(() => {
-        if (isCustomer) {
-            Auth.loginAsCustomer();
-            navigate(OrdersRoute);
+    const changeLoginMode = action(() => {
+        if (loginMode === auth) {
+            setLoginMode(register);
         } else {
-            Auth.loginAsCourier();
-            navigate(CourierRoute);
+            setLoginMode(auth);
         }
-
-        setActive(false);
-    });
-
-    const onRegistrationClick = action(() => {
-        Auth.register();
-        navigate(OrdersRoute);
-        setActive(false);
     });
 
     return (
@@ -67,14 +55,13 @@ const HeaderLogin = ({ active, setActive }) => {
                     </span>
                 </div>
 
-                <input className="login-input" placeholder={ isCustomer ? "Почта" : "Логин"} />
-                <input className="password-input" placeholder="Пароль" />
-                <input className={isLogin || !isCustomer ? "second-password-input input-hidden" : "second-password-input"} placeholder="Подтвердите пароль" />
+                {
+                    isCustomer ? <CustomerForm mode={loginMode}/> : <CourierForm/>
+                }
 
-                <div className="login-buttons">
-                    <span className={isCustomer ? "mode-button" : "mode-button input-hidden"} onClick={onModeChange}>{isLogin ? registration : auth}</span>
-                    <button className="confirm-button" type="submit" onClick={isCustomer ? (isLogin ? onLoginClick : onRegistrationClick) : onLoginClick}>ПОДТВЕРДИТЬ</button>
-                </div>
+                <span className="change-mode" onClick={changeLoginMode}>
+                    {loginMode}
+                </span>
             </div>
         </Modal>
     );

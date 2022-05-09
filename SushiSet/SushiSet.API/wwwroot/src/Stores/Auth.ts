@@ -1,12 +1,74 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
+
+import ICourierAuthenticate from "../Interfaces/ICourierAuthenticate";
+import ICustomerAuthenticate from "../Interfaces/ICustomerAuthenticate";
+import AuthService from "../Services/AuthService";
 
 class Auth {
+    accessToken : string = null;
+
+    authService : AuthService = null;
+
     isAuth : boolean = localStorage.getItem("auth") ? localStorage.getItem("auth") === "true" : false;
     role : string = localStorage.getItem("role") ? localStorage.getItem("role") : "guest";
 
     constructor() {
         makeAutoObservable(this);
+
+        this.authService = new AuthService();
     }
+
+    registerCustomer = async (customer: ICustomerAuthenticate) => {
+        try {
+            const data = await this.authService.registerCustomer(customer);
+
+            runInAction(() => {
+                this.accessToken = data.accessToken;
+            });
+
+        } catch(error) {
+
+        }
+    } 
+
+    loginCustomer = async (customer: ICustomerAuthenticate) => {
+        try {
+            const data = await this.authService.loginCustomer(customer);
+
+            runInAction(() => {
+                this.accessToken = data.accessToken;
+            });
+
+        } catch(error) {
+
+        }
+    }
+
+    registerCourier = async (courier: ICourierAuthenticate) => {
+        try {
+            const data = await this.authService.registerCourier(courier);
+
+            runInAction(() => {
+                this.accessToken = data.accessToken;
+            });
+
+        } catch(error) {
+
+        }
+    } 
+
+    loginCourier = async (courier: ICourierAuthenticate) => {
+        try {
+            const data = await this.authService.loginCourier(courier);
+
+            runInAction(() => {
+                this.accessToken = data.accessToken;
+            });
+
+        } catch(error) {
+
+        }
+    } 
 
     saveToLocalStorage() {
         localStorage.setItem("auth", this.isAuth.toString());
