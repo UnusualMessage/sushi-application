@@ -13,5 +13,10 @@ namespace SushiSet.Core.Entities
         public City City { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+        
+        public void Set(Shop shop)
+        {
+            Address = shop.Address;
+        }
     }
 }
