@@ -7,7 +7,7 @@ import EditItemModal from "./EditItemModal";
 import "../Styles/Item.scss";
 
 const Item = ({ item } : IItemProps) => {
-    const { path, title, price } = item;
+    const { picturePath, name, price } = item;
 
     const [editItemActive, setEditItemActive] = useState(false);
 
@@ -18,12 +18,12 @@ const Item = ({ item } : IItemProps) => {
     return (
         <div className='item'>
             <div className='item-image'>
-                <img src={path} alt="" />
+                <img src={"/" + picturePath} alt="" />
             </div>
 
             <div className='item-description'>
                 <span className='item-description-title'>
-                    {title}
+                    {name}
                 </span>
 
                 <div className='item-description-order'>

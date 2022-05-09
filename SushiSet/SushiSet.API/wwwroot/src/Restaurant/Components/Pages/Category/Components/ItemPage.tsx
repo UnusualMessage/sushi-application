@@ -1,52 +1,48 @@
-import { action } from "mobx";
+import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import ShoppingData from "../../../Data/ShoppingData";
-import IItem from "../../../../../Interfaces/IItem";
 import Auth from "../../../../../Stores/Auth";
-import CartStore from "../../../../../Stores/CartStore";
+import ItemsStore from "../../../../../Stores/ItemsStore";
 
 import "../Styles/ItemPage.scss";
 
 const ItemPage = () => {
     const { category, id } = useParams();
-    let item : IItem = ShoppingData.find((i) => (i.id.toString() === id) && (i.category.toLowerCase() === category.toLowerCase()));
 
-    if (item) {
-        item.count = 1;
-    }
+    useEffect(() => {
+        ItemsStore.getItemById(id);
+    }, [id])
 
-    const addToCart = action(() => {
-        CartStore.add(item);
-    });
-
+    console.log(ItemsStore.item);
+    
     return (
         <section className="item-page">
             <div className="item-page-image">
-                <img src={item?.path} alt="" />
+                <img src={"/" + ItemsStore.item?.picturePath} alt="" />
             </div>
 
             <div className="item-page-description">
                 <h1 className="item-page-description-title">
-                    {item?.title}
+                    {ItemsStore.item?.name}
                 </h1>
 
                 <div className="item-page-description-order">
                     <span className="order-price">
-                        {item?.price}
+                        {ItemsStore.item?.price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : addToCart}>
+                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : () => {}}>
                         ДОБАВИТЬ
                     </span>
                 </div>
 
                 <div className="item-page-description-text">
-                    {item?.text}
+                    {ItemsStore.item?.description}
                 </div>
             </div>
         </section>
     );
 }
 
-export default ItemPage;
+export default observer(ItemPage);

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Sieve.Models;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,14 @@ namespace SushiSet.API.Controllers
         public async Task<IActionResult> Get()
         {
             return Ok(await _mediator.Send(new GetItems()));
+        }
+
+        [AllowAnonymous]
+        [Route("sieved")]
+        [HttpGet]
+        public async Task<IActionResult> Get([FromQuery] SieveModel sieveModel)
+        {
+            return Ok(await _mediator.Send(new GetSievedItems(sieveModel)));
         }
 
         [AllowAnonymous]

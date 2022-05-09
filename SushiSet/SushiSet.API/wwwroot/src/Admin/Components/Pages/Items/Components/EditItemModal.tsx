@@ -26,8 +26,8 @@ const EditItemModal = ({ active, setActive, item }: IAddItemModalProps) => {
     }
 
     const initialValues: IFormValues = {
-        name: item.title,
-        description: item.text,
+        name: item.name,
+        description: item.description,
         price: item.price.toString(),
         category: item.category,
         file: null

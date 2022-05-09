@@ -15,6 +15,7 @@ namespace SushiSet.Application.Handlers.QueryHandlers.Extensions
         {
             services.AddScoped<IRequestHandler<GetItems, IEnumerable<ItemResponse>>, GetItemsHandler>();
             services.AddScoped<IRequestHandler<GetItemById, ItemResponse>, GetItemByIdHandler>();
+            services.AddScoped<IRequestHandler<GetSievedItems, IEnumerable<ItemResponse>>, GetSievedItemsHandler>(); 
         }
     }
 }

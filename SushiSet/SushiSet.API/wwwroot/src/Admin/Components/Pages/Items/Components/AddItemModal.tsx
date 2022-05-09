@@ -7,6 +7,8 @@ import FileInput from "../../../Others/FileInput";
 import Input from "../../../Others/Input";
 
 import "../Styles/AddItemModal.scss";
+import ICreateItem from "../../../../../Interfaces/ICreateItem";
+import ItemsStore from "../../../../../Stores/ItemsStore";
 
 const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
     const validationSchema = object({
@@ -42,7 +44,17 @@ const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
         validateOnChange: false,
 
         onSubmit: values => {
-            console.log(values);
+            const item : ICreateItem = {
+                name: values.name,
+                description: values.description,
+                category: values.category,
+                picture: values.file,
+                price: Number(values.price)
+            }
+
+            ItemsStore.addItem(item);
+            formik.resetForm();
+            setActive(false);
         },
     });
 

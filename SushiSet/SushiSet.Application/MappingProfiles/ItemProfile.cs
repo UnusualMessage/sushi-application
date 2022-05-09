@@ -12,7 +12,9 @@ namespace SushiSet.Application.MappingProfiles
         {
             CreateMap<CreateItem, Item>();
             CreateMap<UpdateItem, Item>();
-            CreateMap<Item, ItemResponse>();
+
+            CreateMap<Item, ItemResponse>()
+                .ForMember(src => src.Category, opt => opt.MapFrom(src => src.Category.Name));
         }
     }
 }

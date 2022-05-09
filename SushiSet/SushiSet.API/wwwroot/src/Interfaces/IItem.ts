@@ -1,9 +1,8 @@
 export default interface IItem {
-    id: number,
-    title: string,
-    text: string,
+    id: string,
+    name: string,
+    description: string,
     price: number,
-    count: number,
-    path: string,
+    picturePath: string,
     category: string
 }

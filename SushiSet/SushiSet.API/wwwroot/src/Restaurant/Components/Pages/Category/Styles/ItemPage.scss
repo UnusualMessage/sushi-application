@@ -1,10 +1,11 @@
 @use "../../../Styles/Constants.scss" as *;
 
 .item-page {
-    @include flexible-row(stretch, flex-start);
+    @include flexible-row(stretch, space-between);
 
     gap: 30px;
     height: 180px;
+    width: 100%;
 
     .item-page-image {
         border-radius: 10px;
