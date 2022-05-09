@@ -8,5 +8,12 @@ namespace SushiSet.Core.Entities.Users
         {
             Role = nameof(Administrator);
         }
+
+        public void Set(Administrator administrator)
+        {
+            Name = administrator.Name;
+            Password = administrator.Password;
+            RefreshTokens = administrator.RefreshTokens;
+        }
     }
 }

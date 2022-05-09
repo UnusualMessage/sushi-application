@@ -9,7 +9,7 @@ namespace SushiSet.Infrastructure.Context.Extensions
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("USERS");
+
         }
     }
 }

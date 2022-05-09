@@ -13,5 +13,12 @@ namespace SushiSet.Core.Entities.Users
             Role = nameof(Courier);
         }
 
+        public void Set(Courier courier)
+        {
+            Name = courier.Name;
+            Password = courier.Password;
+            RefreshTokens = courier.RefreshTokens;
+        }
+
     }
 }

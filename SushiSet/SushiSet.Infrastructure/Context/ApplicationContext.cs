@@ -19,7 +19,7 @@ namespace SushiSet.Infrastructure.Context
         public DbSet<Shop> Shops { get; set; }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Customer> Customers{ get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Courier> Couriers { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }

@@ -14,5 +14,12 @@ namespace SushiSet.Core.Entities.Users
         {
             Role = nameof(Customer);
         }
+
+        public void Set(Customer customer)
+        {
+            Name = customer.Name;
+            Password = customer.Password;
+            RefreshTokens = customer.RefreshTokens;
+        }
     }
 }

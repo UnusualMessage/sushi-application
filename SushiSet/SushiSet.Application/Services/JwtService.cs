@@ -31,6 +31,7 @@ namespace SushiSet.Application.Services
             ClaimsIdentity claimsIdentity = new(new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.Role)
             });
 
             SigningCredentials signingCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature);
