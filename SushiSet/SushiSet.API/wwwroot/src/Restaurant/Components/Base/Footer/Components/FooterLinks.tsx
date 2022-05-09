@@ -1,15 +1,36 @@
+import { useEffect } from "react";
+
 import FooterLinksContainer from "./FooterLinkContainer";
+import CategoriesStore from "../../../../../Stores/CategoriesStore";
 
 import "../Styles/FooterLinks.scss";
+import { observer } from "mobx-react-lite";
 
 const FooterLinks = () => {
+    useEffect(() => {
+        CategoriesStore.getCategories();
+    }, []);
+
+    const linkContainersCount : number = Math.floor(CategoriesStore.categories.length / 5) + 1;
+    const startIndexes : number[] = [];
+
+    for(let i = 0; i < linkContainersCount; ++i) {
+        startIndexes.push(i);
+    }
+
     return (
         <div className='footer-links'>
-            <FooterLinksContainer />
-            <FooterLinksContainer />
-            <FooterLinksContainer />
+            {
+                startIndexes.map((startIndex) => {
+                    return <FooterLinksContainer 
+                        key={startIndex}
+                        startIndex={startIndex}
+                        categories={CategoriesStore.categories}
+                    />
+                })
+            }
         </div>
     );
 }
 
-export default FooterLinks;
+export default observer(FooterLinks);

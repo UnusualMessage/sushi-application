@@ -36,9 +36,6 @@
         .links-container {
             @include flexible-column(center, center);
 
-            &:nth-last-child(-n + 2) {
-                display: none;
-            }
         }
     }
 }
