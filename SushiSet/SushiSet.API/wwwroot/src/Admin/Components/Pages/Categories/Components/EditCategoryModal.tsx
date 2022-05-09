@@ -14,7 +14,7 @@ import "../Styles/EditCategoryModal.scss";
 const EditCategoryModal = ({ active, setActive, category } : IDeliveryInfoModalProps) => {
     const validationSchema = object({
         name: string().required("Введите название!"),
-        file: object().nullable().required("Загрузите изображение!"),
+        file: string().nullable().required("Загрузите изображение!")
     });
 
     interface IFormValues {
@@ -60,7 +60,7 @@ const EditCategoryModal = ({ active, setActive, category } : IDeliveryInfoModalP
                         name="name" placeholder="Название" type="text" error={formik.errors.name}
                     />
 
-                    <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])}
+                    <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])} id={category.id}
                         name="file" error={formik.errors.file}
                     />
 

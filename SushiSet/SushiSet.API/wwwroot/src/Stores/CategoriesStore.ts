@@ -7,6 +7,8 @@ import CategoriesService from "../Services/CategoriesService";
 
 class CategoriesStore {
     categories : ICategory[] = [];
+    category : ICategory = null;
+
     categoriesService : CategoriesService = null;
 
     constructor() {
@@ -21,6 +23,19 @@ class CategoriesStore {
 
             runInAction(() => {
                 this.categories = data;
+            });
+
+        } catch(error) {
+
+        }
+    }
+
+    getCategoryById = async (id : string) => {
+        try {
+            const data = await this.categoriesService.getById(id);
+            
+            runInAction(() => {
+                this.category = data;
             });
 
         } catch(error) {

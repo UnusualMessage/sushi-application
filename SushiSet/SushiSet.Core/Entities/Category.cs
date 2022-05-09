@@ -14,7 +14,11 @@ namespace SushiSet.Core.Entities
         public void Set(Category category)
         {
             Name = category.Name;
-            PicturePath = category.PicturePath;
+
+            if (category.PicturePath != null)
+            {
+                PicturePath = category.PicturePath;
+            }
         }
     }
 }

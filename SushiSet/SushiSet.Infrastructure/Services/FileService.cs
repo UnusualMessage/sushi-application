@@ -20,6 +20,11 @@ namespace SushiSet.Infrastructure.Services
 
         public async Task<string> UploadFile(IFormFile file, string destination)
         {
+            if (file == null)
+            {
+                return null;
+            }
+
             string fullPath = Path.Combine(destination, _storageSettings.Value.MediaFolderName, file.FileName);
 
             using FileStream fileStream = new(fullPath, FileMode.Create);

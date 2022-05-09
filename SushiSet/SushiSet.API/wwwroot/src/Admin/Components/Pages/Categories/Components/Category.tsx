@@ -2,9 +2,9 @@ import { observer } from "mobx-react-lite";
 import { useState } from "react";
 
 import EditCategoryModal from "./EditCategoryModal";
+import ICategory from "../../../../../Interfaces/ICategory";
 
 import "../Styles/Category.scss";
-import ICategory from "../../../../../Interfaces/ICategory";
 
 const Category = ({ id, picturePath, name }: ICategoryProps) => {
     const [editCategoryActive, setEditCategoryActive] = useState(false);
@@ -25,6 +25,7 @@ const Category = ({ id, picturePath, name }: ICategoryProps) => {
                 <img alt="" src={"/" + picturePath} />
                 <span className="category-tip">{name}</span>
             </div>
+            
             <EditCategoryModal active={editCategoryActive} setActive={setEditCategoryActive} category={category}/>
         </>
     );

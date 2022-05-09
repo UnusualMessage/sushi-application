@@ -12,6 +12,15 @@ class CategoriesService {
         const response = await fetch(api, options);
         return response.json();
     }
+    
+    getById = async (id : string) => {
+        const options = {
+            method: "GET",
+        }
+
+        const response = await fetch(api + id, options);
+        return response.json();
+    }
 
     create = async (newCategory : ICreateCategory) => {
         const form = new FormData();

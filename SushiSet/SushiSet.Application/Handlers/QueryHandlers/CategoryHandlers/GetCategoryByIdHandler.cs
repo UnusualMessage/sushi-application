@@ -23,7 +23,7 @@ namespace SushiSet.Application.Handlers.QueryHandlers.CategoryHandlers
 
         public async Task<CategoryResponse> Handle(GetCategoryById request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<CategoryResponse>(await _categoryRepository.GetAllAsync());
+            return _mapper.Map<CategoryResponse>(await _categoryRepository.GetByIdAsync(request.Id));
         }
     }
 }
