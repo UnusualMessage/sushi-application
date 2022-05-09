@@ -2,7 +2,6 @@
 {
     public class StorageSettings
     {
-        public string StaticFolderName { get; set; }
         public string MediaFolderName { get; set; }
     }
 }
