@@ -23,7 +23,7 @@ const CityChoice = ({ active, setActive }) => {
 
                 <div className="header-cities">
                     {
-                        CitiesStore.cities?.map((city : ICity) => {
+                        CitiesStore.get().map((city : ICity) => {
                             return <HeaderCity key={city.id} city={city.name} setActive={setActive}/>
                         })
                     }

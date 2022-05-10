@@ -17,6 +17,10 @@ class CategoriesStore {
         this.categoriesService = new CategoriesService();
     }
 
+    get = () => {
+        return this.categories;
+    }
+
     getCategories = async () => {
         try {
             const data = await this.categoriesService.get();

@@ -5,8 +5,11 @@ import AuthService from "../Services/AuthService";
 
 class AuthStore {
     accessToken : string = localStorage.getItem("access") ? localStorage.getItem("access") : null;
+    
     isAuthenticated : boolean = false;
     isAuthorized : boolean = false;
+
+    role : string = "Guest";
 
     authService : AuthService = null;
 
@@ -16,12 +19,22 @@ class AuthStore {
         this.authService = new AuthService();
     }
 
+    getIsAuthenticated = () => {
+        return this.isAuthenticated;
+    }
+
+    getIsAuthorized = () => {
+        return this.isAuthorized;
+    }
+
     registerUser = async (user: IUserAuthenticate) => {
         try {
             const data = await this.authService.register(user);
 
             runInAction(() => {
                 this.accessToken = data.accessToken;
+                this.isAuthenticated = true;
+                this.role = data.role;
             });
 
         } catch(error) {
@@ -34,8 +47,12 @@ class AuthStore {
             const data = await this.authService.authenticate(user);
 
             runInAction(() => {
-                this.accessToken = data.accessToken;
-                localStorage.setItem("access", this.accessToken);
+                if (data.successful) {
+                    this.accessToken = data.accessToken;
+                    localStorage.setItem("access", this.accessToken);
+                    this.isAuthenticated = true;
+                    this.role = data.role;
+                }
             });
 
         } catch(error) {
@@ -43,7 +60,7 @@ class AuthStore {
         }
     }
 
-    checkRole = async (role: string) => {
+    isUser = async (role : string) => {
         try {
             const data = await this.authService.refresh();
             console.log(data);
@@ -56,14 +73,18 @@ class AuthStore {
                     this.isAuthorized = false;
                     this.isAuthenticated = true;
                 } else {
-                    this.accessToken = data.accessToken;
                     this.isAuthorized = true;
+                    this.isAuthenticated = true;
                 }
             });
 
         } catch(error) {
 
         }
+    }
+
+    compareWithRole = (role : string) => {
+        return role === this.role;
     }
 
     checkAuth = async () => {

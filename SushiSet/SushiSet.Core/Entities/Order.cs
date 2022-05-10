@@ -11,7 +11,7 @@ namespace SushiSet.Core.Entities
         public DateTime Created { get; set; }
         public decimal TotalPrice { get; set; }
 
-        public ICollection<Item> Items { get; set; } = new List<Item>();
+        public ICollection<OrderUnit> OrderUnits { get; set; } = new List<OrderUnit>();
 
         public Guid? ShopId { get; set; }
         public Shop Shop { get; set; }

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 
 import NavLink from './NavLink';
 import NavCategoryLink from './NavCategoryLink';
@@ -6,7 +7,6 @@ import { CategoryRoute } from "../../Others/RouteNames";
 import CategoriesStore from '../../../../Stores/CategoriesStore';
 
 import './Nav.scss';
-import { observer } from 'mobx-react-lite';
 
 const Nav = () => {
     useEffect(() => {
@@ -18,7 +18,7 @@ const Nav = () => {
             <nav className="nav">
                 <div className="nav-content">
                     {
-                        CategoriesStore.categories.map((category) => {
+                        CategoriesStore.get().map((category) => {
                             return <NavCategoryLink
                                 key={category.id}
                                 initial={CategoryRoute}

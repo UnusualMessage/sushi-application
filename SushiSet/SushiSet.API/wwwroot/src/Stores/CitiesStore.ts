@@ -16,6 +16,14 @@ class CitiesStore {
         this.citiesService = new CitiesService();
     }
 
+    get = () => {
+        return this.cities;
+    }
+
+    getCity = () => {
+        return this.city;
+    }
+
     getCities = async () => {
         try {
             const data = await this.citiesService.get();

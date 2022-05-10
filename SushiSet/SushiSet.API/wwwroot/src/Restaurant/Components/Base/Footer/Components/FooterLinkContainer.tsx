@@ -1,5 +1,3 @@
-import { observer } from "mobx-react-lite";
-
 import ICategory from "../../../../../Interfaces/ICategory";
 import { CategoryRoute } from "../../../Others/RouteNames";
 
@@ -27,4 +25,4 @@ interface IFooterLinksContainerProps {
     categories: ICategory[]
 }
 
-export default observer(FooterLinksContainer);
+export default FooterLinksContainer;

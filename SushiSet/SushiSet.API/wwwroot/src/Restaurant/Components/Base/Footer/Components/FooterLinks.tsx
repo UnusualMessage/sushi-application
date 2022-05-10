@@ -1,10 +1,10 @@
 import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
 
 import FooterLinksContainer from "./FooterLinkContainer";
 import CategoriesStore from "../../../../../Stores/CategoriesStore";
 
 import "../Styles/FooterLinks.scss";
-import { observer } from "mobx-react-lite";
 
 const FooterLinks = () => {
     useEffect(() => {
