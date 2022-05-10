@@ -16,7 +16,7 @@ namespace SushiSet.Core.Entities
 
         public ICollection<Order> Deliveries { get; set; } = new List<Order>();
 
-        public ICollection<Item> Items { get; set; } = new List<Item>();
+        public ICollection<CartUnit> CartUnits { get; set; } = new List<CartUnit>();
 
         public void Set(User user)
         {

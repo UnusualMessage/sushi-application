@@ -5,11 +5,11 @@ using SushiSet.Core.Entities;
 
 namespace SushiSet.Infrastructure.Context.Configuration
 {
-    public class UsersConfiguration : IEntityTypeConfiguration<User>
+    public class OrderUnitsConfiguration : IEntityTypeConfiguration<OrderUnit>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<OrderUnit> builder)
         {
-            builder.ToTable("USERS");
+            builder.ToTable("ORDER_UNITS");
         }
     }
 }

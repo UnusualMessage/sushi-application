@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using SushiSet.Core.Entities;
-using SushiSet.Infrastructure.Context.Extensions;
+using SushiSet.Infrastructure.Context.Configuration;
 
 namespace SushiSet.Infrastructure.Context
 {
@@ -12,9 +12,11 @@ namespace SushiSet.Infrastructure.Context
 
         public DbSet<Order> Orders { get; set; }
 
-        public DbSet<About> Abouts { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Shop> Shops { get; set; }
+
+        public DbSet<CartUnit> CartUnits { get; set; }
+        public DbSet<OrderUnit> OrderUnits { get; set; }
 
         public DbSet<User> Users { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
@@ -26,7 +28,6 @@ namespace SushiSet.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new AboutsConfiguration());
             modelBuilder.ApplyConfiguration(new CitiesConfiguration());
             modelBuilder.ApplyConfiguration(new ShopsConfiguration());
                
@@ -36,6 +37,9 @@ namespace SushiSet.Infrastructure.Context
             modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
             modelBuilder.ApplyConfiguration(new ItemsConfiguration());
             modelBuilder.ApplyConfiguration(new OrdersConfiguration());
+
+            modelBuilder.ApplyConfiguration(new CartUnitsConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderUnitsConfiguration());
         }
     }
 }

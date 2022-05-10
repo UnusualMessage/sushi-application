@@ -12,7 +12,7 @@ namespace SushiSet.Core.Entities
         public decimal Price { get; set; }
         public string PicturePath { get; set; }
 
-        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public ICollection<CartUnit> Carts { get; set; } = new List<CartUnit>();
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 

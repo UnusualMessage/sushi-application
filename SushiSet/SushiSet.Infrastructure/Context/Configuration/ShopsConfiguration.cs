@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using SushiSet.Core.Entities;
 
-namespace SushiSet.Infrastructure.Context.Extensions
+namespace SushiSet.Infrastructure.Context.Configuration
 {
     public class ShopsConfiguration : IEntityTypeConfiguration<Shop>
     {

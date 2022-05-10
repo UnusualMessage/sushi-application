@@ -4,7 +4,7 @@ using System;
 
 namespace SushiSet.Core.Entities
 {
-    public class Cart : Entity
+    public class CartUnit : Entity
     {
         public Guid ItemId { get; set; }
         public Item Item { get; set; }
