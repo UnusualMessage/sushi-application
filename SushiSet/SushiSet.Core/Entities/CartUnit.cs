@@ -13,5 +13,10 @@ namespace SushiSet.Core.Entities
         public User User { get; set; }
 
         public int Count { get; set; }
+
+        public void Set(CartUnit entity)
+        {
+            Count = entity.Count;
+        }
     }
 }

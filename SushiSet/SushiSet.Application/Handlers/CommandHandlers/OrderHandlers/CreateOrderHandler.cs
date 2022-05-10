@@ -30,7 +30,6 @@ namespace SushiSet.Application.Handlers.CommandHandlers.OrderHandlers
             {
                 Status = "Оформлен",
                 Created = request.Created,
-                Items = await _itemRepository.GetAllByIdsAsync(request.ItemIds),
             };
 
             return _mapper.Map<OrderResponse>(await _orderRepository.AddAsync(newOrder));

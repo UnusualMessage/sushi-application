@@ -14,6 +14,8 @@ namespace SushiSet.Application.MappingProfiles.Extensions
             services.AddAutoMapper(typeof(CityProfile));
             
             services.AddAutoMapper(typeof(UserProfile));
+
+            services.AddAutoMapper(typeof(CartUnitProfile));
         }
     }
 }

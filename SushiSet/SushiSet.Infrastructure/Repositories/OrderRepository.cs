@@ -20,8 +20,9 @@ namespace SushiSet.Infrastructure.Repositories
         public override async Task<IEnumerable<Order>> GetAllAsync()
         {
             return await _applicationContext.Orders
-                .Include(e => e.Items)
-                    .ThenInclude(e => e.Category)
+                .Include(e => e.OrderUnits)
+                    .ThenInclude(e => e.Item)
+                        .ThenInclude(e => e.Category)
                 .Include(e => e.Shop)
                 .Include(e => e.Customer)
                 .Include(e => e.City)
@@ -32,8 +33,9 @@ namespace SushiSet.Infrastructure.Repositories
         public override async Task<Order> GetByIdAsync(Guid id)
         {
             return await _applicationContext.Orders
-                .Include(e => e.Items)
-                    .ThenInclude(e => e.Category)
+                .Include(e => e.OrderUnits)
+                    .ThenInclude(e => e.Item)
+                        .ThenInclude(e => e.Category)
                 .Include(e => e.Shop)
                 .Include(e => e.Customer)
                 .Include(e => e.City)
