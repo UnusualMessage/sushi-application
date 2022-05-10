@@ -22,12 +22,14 @@ namespace SushiSet.Infrastructure.Extensions
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
 
-            services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IShopRepository, ShopRepository>();
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
+            services.AddScoped<IOrderUnitRepository, OrderUnitRepository>();
+            services.AddScoped<ICartUnitRepository, CartUnitRepository>();
         }
     }
 }

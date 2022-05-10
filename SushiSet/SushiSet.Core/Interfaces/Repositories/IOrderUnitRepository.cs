@@ -3,7 +3,7 @@ using SushiSet.Core.Interfaces.Repositories.Base;
 
 namespace SushiSet.Core.Interfaces.Repositories
 {
-    public interface IAboutRepository : IRepository<About>
+    public interface IOrderUnitRepository : IRepository<OrderUnit>
     {
     }
 }

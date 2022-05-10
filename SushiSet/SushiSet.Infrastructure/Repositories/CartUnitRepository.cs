@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace SushiSet.Infrastructure.Repositories
 {
-    public class AboutRepository : Repository<About>, IAboutRepository
+    public class CartUnitRepository : Repository<CartUnit>, ICartUnitRepository
     {
-        public AboutRepository(ApplicationContext applicationContext) : base(applicationContext)
+        public CartUnitRepository(ApplicationContext applicationContext) : base(applicationContext)
         {
         }
 
-        public override Task<About> UpdateAsync(About entity)
+        public override Task<CartUnit> UpdateAsync(CartUnit entity)
         {
             throw new System.NotImplementedException();
         }
