@@ -10,6 +10,10 @@ namespace SushiSet.Infrastructure.Context.Extensions
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.ToTable("ORDERS");
+
+            builder.HasOne(e => e.Customer).WithMany(e => e.Orders);
+
+            builder.HasOne(e => e.Courier).WithMany(e => e.Deliveries);
         }
     }
 }

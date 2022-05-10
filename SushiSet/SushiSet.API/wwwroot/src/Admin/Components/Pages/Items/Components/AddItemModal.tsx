@@ -83,7 +83,7 @@ const AddItemModal = ({ active, setActive }: IAddItemModalProps) => {
                             name="description" placeholder="Описание" error={formik.errors.description}/>
 
                     <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])}
-                        name="file" error={formik.errors.file}
+                        name="file" error={formik.errors.file} id={""}
                     />
 
                     <button className="add-item-confirm" type="submit">Добавить</button>

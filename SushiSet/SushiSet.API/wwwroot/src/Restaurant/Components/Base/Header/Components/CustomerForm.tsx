@@ -2,8 +2,8 @@ import { useFormik } from "formik";
 import { string, object } from "yup";
 
 import Input from "../../../../../Admin/Components/Others/Input";
-import ICustomerAuthenticate from "../../../../../Interfaces/ICustomerAuthenticate";
-import Auth from "../../../../../Stores/Auth";
+import IUserAuthenticate from "../../../../../Interfaces/IUserAuthenticate";
+import AuthStore from "../../../../../Stores/AuthStore";
 
 import "../Styles/Form.scss";
 
@@ -50,12 +50,13 @@ const CustomerForm = ({ mode }) => {
         validateOnChange: false,
 
         onSubmit: values => {
-            const customer : ICustomerAuthenticate = {
+            const user : IUserAuthenticate  = {
+                role: "Customer",
                 name: values.name,
                 password: values.password
             }
 
-            Auth.loginCustomer(customer);
+            AuthStore.loginUser(user);
         },
     });
 
@@ -68,12 +69,13 @@ const CustomerForm = ({ mode }) => {
         validateOnChange: false,
 
         onSubmit: values => {
-            const customer : ICustomerAuthenticate = {
+            const user : IUserAuthenticate = {
+                role: "Customer",
                 name: values.name,
                 password: values.password
             }
 
-            Auth.registerCustomer(customer);
+            AuthStore.registerUser(user);
         },
     });
 

@@ -1,21 +1,18 @@
-import { action } from "mobx";
 import { observer } from "mobx-react-lite";
-
-import CurrentSorting from "../../../../../Stores/CurrentSorting";
 
 import "../Styles/OrdersTitle.scss";
 
 const OrdersTitle = () => {
-    const changeSorting = action(() => {
-        CurrentSorting.changeOrdersSorting();
-    });
+    // const changeSorting = action(() => {
+    //     CurrentSorting.changeOrdersSorting();
+    // });
 
     return (
         <section className="orders-title">
             <h1>История заказов</h1>
 
-            <span className="orders-sorting" onClick={changeSorting}>
-                {CurrentSorting.ordersAscending ? "По возрастанию цены" : "По убыванию цены"}
+            <span className="orders-sorting">
+                {true ? "По возрастанию цены" : "По убыванию цены"}
             </span>
         </section>
     );

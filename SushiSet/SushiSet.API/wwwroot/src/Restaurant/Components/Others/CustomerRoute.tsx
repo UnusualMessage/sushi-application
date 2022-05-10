@@ -1,10 +1,15 @@
 import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-import Auth from "../../../Stores/Auth";
+import AuthStore from "../../../Stores/AuthStore";
 
 const CustomerRoute = observer(() => {
-    return Auth.isCustomer() || Auth.isGuest() ? <Outlet /> : <></>
+    useEffect(() => {
+        AuthStore.checkRole("Customer");
+    }, []);
+
+    return AuthStore.isAuthorized ? <Outlet /> : <></>
 });
 
 export default CustomerRoute;

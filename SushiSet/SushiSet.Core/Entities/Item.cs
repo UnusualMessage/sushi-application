@@ -1,5 +1,4 @@
 ﻿using SushiSet.Core.Entities.Base;
-using SushiSet.Core.Entities.Users;
 
 using System;
 using System.Collections.Generic;
@@ -13,7 +12,7 @@ namespace SushiSet.Core.Entities
         public decimal Price { get; set; }
         public string PicturePath { get; set; }
 
-        public ICollection<Customer> Customers { get; set; } = new List<Customer>();
+        public ICollection<User> Users { get; set; } = new List<User>();
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 

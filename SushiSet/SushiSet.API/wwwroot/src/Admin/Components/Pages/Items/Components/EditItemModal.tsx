@@ -71,7 +71,7 @@ const EditItemModal = ({ active, setActive, item }: IAddItemModalProps) => {
                         name="description" placeholder="Описание" error={formik.errors.description}/>
 
                     <FileInput onChange={(e) => formik.setFieldValue("file", e.target.files[0])}
-                        name="file" error={formik.errors.file}
+                        name="file" error={formik.errors.file} id={""}
                     />
 
                     <button className="edit-item-confirm" type="submit">Изменить</button>

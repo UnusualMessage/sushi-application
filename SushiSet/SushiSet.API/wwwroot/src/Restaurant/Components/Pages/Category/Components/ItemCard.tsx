@@ -2,7 +2,6 @@ import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
 import { CategoryRoute } from "../../../Others/RouteNames";
-import Auth from "../../../../../Stores/Auth";
 import IItem from "../../../../../Interfaces/IItem";
 
 import "../Styles/ItemCard.scss";
@@ -38,7 +37,7 @@ const ItemCard = ({ item } : IItemCardProps) => {
                         {price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : () => {}}>
+                    <span className={true ? "order-button blocked" : "order-button"} onClick={true ? () => {} : () => {}}>
                         Добавить
                     </span>
                 </div>

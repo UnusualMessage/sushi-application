@@ -1,0 +1,8 @@
+@use "../../../Styles/Constants.scss" as *;
+
+.cities-list {
+    @include flexible-column(center, flex-start);
+
+    gap: 20px;
+    width: 100%;
+}

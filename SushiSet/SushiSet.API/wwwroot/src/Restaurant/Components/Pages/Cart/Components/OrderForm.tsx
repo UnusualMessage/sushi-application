@@ -6,9 +6,6 @@ import { object, string } from 'yup';
 
 import HeaderCityChoice from "../../../Base/Header/Components/CityChoice";
 import CartStore from "../../../../../Stores/CartStore";
-import CurrentCity from "../../../../../Stores/CurrentCity";
-import CurrentShop from "../../../../../Stores/CurrentShop";
-import OrdersStore from "../../../../../Stores/OrdersStore";
 import ShopChoice from "./ShopChoice";
 import Input from "./Input";
 import ICustomerContacts from "../../../../../Interfaces/ICustomerContacts";
@@ -82,7 +79,7 @@ const OrderForm = () => {
                 flat: values.flat
             }
 
-            isDelivery ? OrdersStore.makeOrder(customer, true, address) : OrdersStore.makeOrder(customer, false)
+            // isDelivery ? OrdersStore.makeOrder(customer, true, address) : OrdersStore.makeOrder(customer, false)
 
             CartStore.clear();
         },
@@ -118,7 +115,7 @@ const OrderForm = () => {
                 <>
                     <div className="cart-order-form-place">
                         <div className="cart-order-form-city">
-                            <span className="cart-current-city">{CurrentCity.city}</span>
+                            <span className="cart-current-city">{"МОСКВА"}</span>
                             <span className="cart-current-city-change" onClick={showCityChoice}>Сменить</span>
                         </div>
                     </div>
@@ -154,12 +151,12 @@ const OrderForm = () => {
 
                 <div className="cart-order-form-place">
                     <div className="cart-order-form-city">
-                        <span className="cart-current-city">{CurrentCity.city}</span>
+                        <span className="cart-current-city">{"МОСКВА"}</span>
                         <span className="cart-current-city-change" onClick={showCityChoice}>Сменить</span>
                     </div>
 
                     <div className="cart-order-form-shop">
-                        <span className="cart-current-shop">{CurrentShop.shop}</span>
+                        <span className="cart-current-shop">{"ТАМ ГДЕ-ТО"}</span>
                         <span className="cart-current-shop-change" onClick={showShopChoice}>Сменить</span>
                     </div>
                 </div>

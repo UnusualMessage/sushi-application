@@ -1,15 +1,13 @@
 import { observer } from "mobx-react-lite";
 
-import CurrentShop from "../../../../../Stores/CurrentShop";
-
 const Shop = ({ shop, setActive }) => {
-    const chooseShop = () => {
-        CurrentShop.set(shop);
-        setActive(false);
-    }
+    // const chooseShop = () => {
+    //     CurrentShop.set(shop);
+    //     setActive(false);
+    // }
 
     return (
-        <div className="shop" onClick={chooseShop}>
+        <div className="shop">
             {shop}
         </div>
     );

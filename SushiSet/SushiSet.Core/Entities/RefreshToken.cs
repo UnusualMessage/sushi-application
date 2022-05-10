@@ -17,6 +17,6 @@ namespace SushiSet.Core.Entities
         public bool IsActive => Revoked == null && !IsExpired;
 
         public User User { get; set; }
-        public Guid? UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

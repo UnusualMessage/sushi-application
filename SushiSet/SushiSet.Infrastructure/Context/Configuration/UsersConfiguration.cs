@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using SushiSet.Core.Entities.Base;
+using SushiSet.Core.Entities;
 
 namespace SushiSet.Infrastructure.Context.Extensions
 {
@@ -9,7 +9,7 @@ namespace SushiSet.Infrastructure.Context.Extensions
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-
+            builder.ToTable("USERS");
         }
     }
 }

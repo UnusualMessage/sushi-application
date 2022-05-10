@@ -1,5 +1,4 @@
 ﻿using SushiSet.Core.Entities.Base;
-using SushiSet.Core.Entities.Users;
 
 using System;
 using System.Collections.Generic;
@@ -21,10 +20,10 @@ namespace SushiSet.Core.Entities
         public City City { get; set; }
 
         public Guid? CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public User Customer { get; set; }
 
         public Guid? CourierId { get; set; }
-        public Courier Courier { get; set; }
+        public User Courier { get; set; }
 
         public void Set(Order order)
         {

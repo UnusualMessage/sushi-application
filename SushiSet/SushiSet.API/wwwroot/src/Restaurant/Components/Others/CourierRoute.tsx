@@ -1,10 +1,15 @@
 import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-import Auth from "../../../Stores/Auth";
+import AuthStore from "../../../Stores/AuthStore";
 
 const CourierRoute = observer(() => {
-    return Auth.isCourier() ? <Outlet /> : <></>
+    useEffect(() => {
+        AuthStore.checkRole("Courier");
+    }, []);
+
+    return AuthStore.isAuthorized ? <Outlet /> : <></>
 });
 
 export default CourierRoute;

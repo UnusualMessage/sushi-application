@@ -26,9 +26,7 @@ namespace SushiSet.Infrastructure.Extensions
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IShopRepository, ShopRepository>();
 
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<ICourierRepository, CourierRepository>();
-            services.AddScoped<IAdministratorRepository, AdministratorRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         }
     }

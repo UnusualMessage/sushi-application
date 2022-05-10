@@ -1,0 +1,40 @@
+@use '../../../Styles/Constants.scss' as *;
+
+.shops-title {
+    @include flexible-row(center, space-between);
+
+    width: 100%;
+
+    h1 {
+        color: $title-color;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .shops-add {
+        cursor: pointer;
+        color: $aux-color;
+        font-size: 12px;
+        text-transform: uppercase;
+        transition: color 0.5s;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .shops-title {    
+        .shops-add {    
+            &:hover {
+                color: $aux-color;
+            }
+
+            &:active {
+                color: $hover-color;
+            }
+        }
+    }
+}

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 
 import ItemCard from "./ItemCard";
-import CurrentSorting from "../../../../../Stores/CurrentSorting";
 import IItem from "../../../../../Interfaces/IItem";
 import ItemsStore from "../../../../../Stores/ItemsStore";
 
@@ -11,11 +10,11 @@ import "../Styles/ItemCards.scss";
 
 const ItemCards = () => {
     const params = useParams();
-    const isAscending : boolean = CurrentSorting.itemCardsAscending;
+    // const isAscending : boolean = CurrentSorting.itemCardsAscending;
 
     useEffect(() => {
         ItemsStore.getItemsInCategory(params.category);
-    }, [params, isAscending])
+    }, [params])
 
     return (
         <section className='main-cards'>

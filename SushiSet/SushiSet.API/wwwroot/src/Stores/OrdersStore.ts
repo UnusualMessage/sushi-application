@@ -1,9 +1,7 @@
 import { makeAutoObservable } from "mobx";
 
 import IOrder from "../Interfaces/IOrder";
-import CurrentCity from "./CurrentCity";
 import ICustomerContacts from "../Interfaces/ICustomerContacts";
-import CurrentShop from "./CurrentShop";
 import IAddress from "../Interfaces/IAddress";
 import CartStore from "./CartStore";
 
@@ -42,30 +40,30 @@ class OrdersStore {
         return correctDate + "." + correctMonth + "." + year.toString();
     }
 
-    makeOrder(customer : ICustomerContacts, isDelivery : boolean, address? : IAddress) {
-        let newOrder : IOrder = {
-            id: 1,
-            date: this.getCurrentDate(),
-            status: "Оформлен",
-            price: CartStore.getPrice(),
+    // makeOrder(customer : ICustomerContacts, isDelivery : boolean, address? : IAddress) {
+    //     let newOrder : IOrder = {
+    //         id: 1,
+    //         date: this.getCurrentDate(),
+    //         status: "Оформлен",
+    //         price: CartStore.getPrice(),
 
-            city: CurrentCity.city,
-            shop: CurrentShop.shop,
+    //         city: CurrentCity.city,
+    //         shop: CurrentShop.shop,
 
-            isDelivery: isDelivery,
+    //         isDelivery: isDelivery,
 
-            address: address,
-            customer: customer,
-            items: CartStore.get(),
-        };
+    //         address: address,
+    //         customer: customer,
+    //         items: CartStore.get(),
+    //     };
 
-        if (this.getOrdersCount() !== 0) {
-            newOrder.id = this.orders[this.getOrdersCount() - 1].id + 1;
-        }
+    //     if (this.getOrdersCount() !== 0) {
+    //         newOrder.id = this.orders[this.getOrdersCount() - 1].id + 1;
+    //     }
 
-        this.orders.push(newOrder);
-        this.saveToLocalStorage();
-    }
+    //     this.orders.push(newOrder);
+    //     this.saveToLocalStorage();
+    // }
 
     set(orders : IOrder[]) {
         this.orders = orders.slice(0);
@@ -95,7 +93,7 @@ class OrdersStore {
     }
 
     isEmpty() {
-        return this.getByCity().length === 0;
+        //TODO return this.getByCity().length === 0;
     }
 
     getSorted(ascending : boolean) {
@@ -117,7 +115,7 @@ class OrdersStore {
     }
     
     getByCity() {
-        return this.orders.filter((order : IOrder) => CurrentCity.city === order.city)
+        //TODO return this.orders.filter((order : IOrder) => CurrentCity.city === order.city)
     }
 
     getOrdersCount() {
@@ -125,11 +123,11 @@ class OrdersStore {
     }
 
     getOrdersCountInCity() {
-        return this.getByCity().length;
+        //TODO return this.getByCity().length;
     }
 
     getForCourier() {
-        return this.orders.filter((order : IOrder) => CurrentCity.city === order.city && order.isDelivery && order.status.toLowerCase() === "оформлен");
+        //TODO return this.orders.filter((order : IOrder) => CurrentCity.city === order.city && order.isDelivery && order.status.toLowerCase() === "оформлен");
     }
 }
 

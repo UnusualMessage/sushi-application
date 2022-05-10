@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import DeliveryItems from "./DeliveryItems";
 import DeliveryHeader from "./DeliveryHeader";
 import OrdersStore from "../../../../../Stores/OrdersStore";
-import CurrentOrder from "../../../../../Stores/CurrentOrder";
 import { CourierRoute } from "../../../Others/RouteNames";
 
 import "../Styles/Delivery.scss";
@@ -15,16 +14,16 @@ const Delivery = ({ id }) => {
     const order = OrdersStore.getById(id);
     const { date, status, price, address, customer, items } = order;
 
-    const acceptOrder = action(() => {
-        const acceptedOrder = OrdersStore.accept(id);
-        CurrentOrder.accept(acceptedOrder);
-        navigate(CourierRoute + CurrentOrder.order.id);
-    });
+    // const acceptOrder = action(() => {
+    //     const acceptedOrder = OrdersStore.accept(id);
+    //     CurrentOrder.accept(acceptedOrder);
+    //     navigate(CourierRoute + CurrentOrder.order.id);
+    // });
 
     return (
         <div className="delivery">
             <DeliveryHeader id={id} date={date} status={status} price={price} address={address} customer={customer}>
-                <span className="delivery-accept" onClick={acceptOrder}>Принять</span>
+                <span className="delivery-accept">Принять</span>
             </DeliveryHeader>
             
             <DeliveryItems items={items} />

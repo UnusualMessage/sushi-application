@@ -2,7 +2,6 @@ import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import Auth from "../../../../../Stores/Auth";
 import ItemsStore from "../../../../../Stores/ItemsStore";
 
 import "../Styles/ItemPage.scss";
@@ -32,7 +31,7 @@ const ItemPage = () => {
                         {ItemsStore.item?.price}
                     </span>
 
-                    <span className={Auth.isCourier() ? "order-button blocked" : "order-button"} onClick={Auth.isCourier() ? () => {} : () => {}}>
+                    <span className={true ? "order-button blocked" : "order-button"} onClick={true ? () => {} : () => {}}>
                         ДОБАВИТЬ
                     </span>
                 </div>

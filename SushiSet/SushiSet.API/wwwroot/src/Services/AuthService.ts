@@ -1,60 +1,44 @@
-import ICustomerAuthenticate from "../Interfaces/ICustomerAuthenticate";
-import ICourierAuthenticate from "../Interfaces/ICourierAuthenticate";
+import IUserAuthenticate from "../Interfaces/IUserAuthenticate";
 
-const customersApi = "https://localhost:44333/api/customers/";
-const couriersApi = "https://localhost:44333/api/couriers/";
-const adminsApi = "https://localhost:44333/api/admins/";
+const api = "https://localhost:44333/api/users/";
 
 class AuthService {
-    registerCustomer = async (customer: ICustomerAuthenticate) => {
+    register = async (user: IUserAuthenticate) => {
         const options = {
             method: "POST",
-            body: JSON.stringify(customer),
+            body: JSON.stringify(user),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
         }
 
-        const response = await fetch(customersApi + "register", options);
+        const response = await fetch(api + "register", options);
         return response.json();
     }
 
-    loginCustomer = async (customer: ICustomerAuthenticate) => {
+    authenticate = async (user: IUserAuthenticate) => {
         const options = {
             method: "POST",
-            body: JSON.stringify(customer),
+            body: JSON.stringify(user),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
         }
 
-        const response = await fetch(customersApi + "authenticate", options);
+        const response = await fetch(api + "authenticate", options);
         return response.json();
     }
 
-    registerCourier = async (courier: ICourierAuthenticate) => {
+    refresh = async () => {
         const options = {
             method: "POST",
-            body: JSON.stringify(courier),
+            body: JSON.stringify({}),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
         }
 
-        const response = await fetch(couriersApi + "register", options);
-        return response.json();
-    }
-
-    loginCourier = async (courier: ICourierAuthenticate) => {
-        const options = {
-            method: "POST",
-            body: JSON.stringify(courier),
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-        }
-
-        const response = await fetch(couriersApi + "authenticate", options);
+        const response = await fetch(api + "refresh", options);
         return response.json();
     }
 }

@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Handlers\CommandHandlers\AdminHandlers\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

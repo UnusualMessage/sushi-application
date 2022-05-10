@@ -2,6 +2,7 @@
 
 using SushiSet.Application.Responses.ShopResponses;
 
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SushiSet.Application.Requests.Commands.ShopCommands
@@ -10,5 +11,8 @@ namespace SushiSet.Application.Requests.Commands.ShopCommands
     {
         [Required]
         public string Address { get; set; }
+
+        [Required]
+        public Guid CityId { get; set; }
     }
 }
