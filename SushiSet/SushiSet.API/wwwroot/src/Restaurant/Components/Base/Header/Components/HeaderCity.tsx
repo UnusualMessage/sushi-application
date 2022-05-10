@@ -1,13 +1,15 @@
 import { observer } from "mobx-react-lite";
 
+import CitiesStore from "../../../../../Stores/CitiesStore";
+
 const HeaderCity = ({ city, setActive }) => {
-    // const chooseCity = () => {
-    //     CurrentCity.set(city);
-    //     setActive(false);
-    // }
+    const chooseCity = () => {
+        CitiesStore.set(city);
+        setActive(false);
+    }
 
     return (
-        <div className="city">
+        <div className="header-city" onClick={chooseCity}>
             {city}
         </div>
     );

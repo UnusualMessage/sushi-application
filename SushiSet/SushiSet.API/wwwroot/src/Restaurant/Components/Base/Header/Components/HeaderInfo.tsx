@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 import CityChoice from "./CityChoice";
 import HeaderLogin from "./HeaderLogin";
 import { CourierRoute, InitialRoute, OrdersRoute } from "../../../Others/RouteNames";
+import CitiesStore from "../../../../../Stores/CitiesStore";
+import AuthStore from "../../../../../Stores/AuthStore";
 
 import '../Styles/HeaderInfo.scss';
 
@@ -19,6 +21,10 @@ const HeaderInfo = () => {
     const showLoginModal = () => {
         setLoginModalActive(!loginModalActive);
     }
+
+    useEffect(() => {
+        AuthStore.checkRole("Courier");
+    }, []);
 
     return (
         <div className='content-info-wrapper'>
@@ -50,7 +56,7 @@ const HeaderInfo = () => {
                 </span>
 
                 <span className='city-choice' onClick={showCityModal}>Город доставки</span>
-                {/* <span className='city-name'>{CurrentCity.city}</span> */}
+                <span className='city-name'>{CitiesStore.city}</span>
             </div>
 
             <div className='header-contacts'>
@@ -73,27 +79,21 @@ const HeaderInfo = () => {
                     <path d="M340.9,280.5c-22.3-32.8-54.7-49.5-96.4-49.5s-74.1,16.6-96.4,49.5c-16.6,24.4-27.2,57.7-31.4,98.7 c-0.8,7.4,4.6,14.1,12,14.8c7.4,0.8,14.1-4.6,14.8-12c8.5-82.3,42.5-124,101-124s92.5,41.7,101,124c0.7,6.9,6.6,12.1,13.4,12.1 c0.5,0,0.9,0,1.4-0.1c7.4-0.8,12.8-7.4,12-14.8C368.1,338.1,357.5,304.9,340.9,280.5z" />
                 </svg>
 
-                {false
+                {AuthStore.isAuthenticated
                     ?
-                    true
+                        AuthStore.isAuthorized 
                         ?
+
                         <div className="header-login-menu">
                             <Link to={CourierRoute}>Доступные заказы</Link>
-
-                            {/* {CurrentOrder.isEmpty() ?
-                                <></>
-                                :
-                                <Link to={CourierRoute + CurrentOrder.order.id}>Активный заказ</Link>
-                            } */}
-
-                            {/* <Link to={InitialRoute} onClick={() => { Auth.logout(); }}>Выход</Link> */}
+                            <Link to={InitialRoute} onClick={() => { }}>Выход</Link>
                         </div>
 
                         :
 
                         <div className="header-login-menu">
                             <Link to={OrdersRoute}>История заказов</Link>
-                            {/* <Link to={InitialRoute} onClick={() => { Auth.logout(); }}>Выход</Link> */}
+                            <Link to={InitialRoute} onClick={() => { }}>Выход</Link>
                         </div>
                     :
                     <></>

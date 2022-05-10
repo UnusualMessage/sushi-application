@@ -56,7 +56,7 @@ const HeaderLogin = ({ active, setActive }) => {
                 </div>
 
                 {
-                    isCustomer ? <CustomerForm mode={loginMode}/> : <CourierForm/>
+                    isCustomer ? <CustomerForm mode={loginMode} setActive={setActive}/> : <CourierForm setActive={setActive}/>
                 }
 
                 <span className="change-mode" onClick={changeLoginMode}>

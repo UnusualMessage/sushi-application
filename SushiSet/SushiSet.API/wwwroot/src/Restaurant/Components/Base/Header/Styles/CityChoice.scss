@@ -23,7 +23,7 @@
         }
     }
 
-    .cities {
+    .header-cities {
         @include flexible-row(stretch, space-between);
         flex-wrap: wrap;
 
@@ -32,7 +32,7 @@
         overflow-y: auto;
 
         gap: 20px;
-        .city {
+        .header-city {
             cursor: pointer;
             flex-basis: 21.5%;
             font-size: 14px;
@@ -47,10 +47,10 @@
 
 @media screen and (max-width: $medium) and (min-width: $pre-medium) {
     .city-choice-container {
-        .cities {
+        .header-cities {
             @include flexible-row(stretch, space-between);
 
-            .city {
+            .header-city {
                 flex-basis: 30%;
             }
 
@@ -67,10 +67,10 @@
 
 @media screen and (max-width: $pre-medium) {
     .city-choice-container {
-        .cities {
+        .header-cities {
             @include flexible-row(stretch, space-between);
 
-            .city {
+            .header-city {
                 flex-basis: 40%;
             }
 

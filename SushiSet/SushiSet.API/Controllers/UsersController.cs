@@ -96,8 +96,12 @@ namespace SushiSet.API.Controllers
 
             AuthenticateUserResponse response = await _mediator.Send(request);
 
-            SetTokenCookie(response.RefreshToken);
+            if (response == null)
+            {
+                return Ok(response);
+            }
 
+            SetTokenCookie(response.RefreshToken);
             return Ok(response);
         }
 

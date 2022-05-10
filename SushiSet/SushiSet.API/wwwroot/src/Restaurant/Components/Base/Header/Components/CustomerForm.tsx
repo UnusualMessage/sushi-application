@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import { observer } from "mobx-react-lite";
 import { string, object } from "yup";
 
 import Input from "../../../../../Admin/Components/Others/Input";
@@ -7,7 +8,7 @@ import AuthStore from "../../../../../Stores/AuthStore";
 
 import "../Styles/Form.scss";
 
-const CustomerForm = ({ mode }) => {
+const CustomerForm = ({ mode, setActive }) => {
     const loginValidationSchema = object({
         name: string().required("Введите почту!"),
         password: string().required("Введите пароль!")
@@ -57,6 +58,7 @@ const CustomerForm = ({ mode }) => {
             }
 
             AuthStore.loginUser(user);
+            setActive(false);
         },
     });
 
@@ -76,6 +78,7 @@ const CustomerForm = ({ mode }) => {
             }
 
             AuthStore.registerUser(user);
+            setActive(false);
         },
     });
 
@@ -90,7 +93,7 @@ const CustomerForm = ({ mode }) => {
                         />
 
                         <Input value={loginFormik.values.password} onChange={loginFormik.handleChange}
-                            name="password" placeholder="Пароль" type="text" error={loginFormik.errors.password}
+                            name="password" placeholder="Пароль" type="password" error={loginFormik.errors.password}
                         />
                         <button className="customer-form-confirm confirm-button" type="submit">
                             Подтвердить
@@ -105,11 +108,11 @@ const CustomerForm = ({ mode }) => {
                             />
 
                             <Input value={registerFormik.values.password} onChange={registerFormik.handleChange}
-                                name="password" placeholder="Пароль" type="text" error={registerFormik.errors.password}
+                                name="password" placeholder="Пароль" type="password" error={registerFormik.errors.password}
                             />
 
                             <Input value={registerFormik.values.secondPassword} onChange={registerFormik.handleChange}
-                                name="secondPassword" placeholder="Еще раз пароль" type="text" error={registerFormik.errors.secondPassword}
+                                name="secondPassword" placeholder="Еще раз пароль" type="password" error={registerFormik.errors.secondPassword}
                             />
                             <button className="customer-form-confirm confirm-button" type="submit">
                                 Подтвердить
@@ -121,4 +124,4 @@ const CustomerForm = ({ mode }) => {
     );
 }
 
-export default CustomerForm
+export default observer(CustomerForm)

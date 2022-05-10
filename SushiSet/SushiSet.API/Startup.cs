@@ -55,7 +55,7 @@ namespace SushiSet.API
             services.AddCors();
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "wwwroot";
+                configuration.RootPath = "wwwroot/build";
             });
 
             services.AddControllers(options =>

@@ -6,7 +6,7 @@ import CitiesService from "../Services/CitiesService";
 
 class CitiesStore {
     cities : ICity[] = [];
-    city : ICity = null;
+    city : string = localStorage.getItem("city") ? localStorage.getItem("city") : "Калуга";
 
     citiesService : CitiesService = null;
 
@@ -53,6 +53,11 @@ class CitiesStore {
         } catch(error) {
 
         }
+    }
+
+    set = (city : string) => {
+        this.city = city;
+        localStorage.setItem("city", this.city);
     }
 }
 

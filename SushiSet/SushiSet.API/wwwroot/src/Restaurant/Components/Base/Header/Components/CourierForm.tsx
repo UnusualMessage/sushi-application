@@ -5,7 +5,7 @@ import Input from "../../../../../Admin/Components/Others/Input";
 
 import "../Styles/Form.scss";
 
-const CourierForm = () => {
+const CourierForm = ({ setActive }) => {
     const validationSchema = object({
         name: string().required("Введите логин!"),
         password: string().required("Введите пароль!")

@@ -35,6 +35,7 @@ class AuthStore {
 
             runInAction(() => {
                 this.accessToken = data.accessToken;
+                localStorage.setItem("access", this.accessToken);
             });
 
         } catch(error) {
@@ -45,14 +46,15 @@ class AuthStore {
     checkRole = async (role: string) => {
         try {
             const data = await this.authService.refresh();
+            console.log(data);
 
             runInAction(() => {
                 if (data === null) {
-                    alert("Вы не авторизованы!");
                     this.isAuthorized = false;
+                    this.isAuthenticated = false;
                 } else if (role.toLowerCase() !== data.role.toLowerCase()) {
-                    alert("Нет доступа!");
                     this.isAuthorized = false;
+                    this.isAuthenticated = true;
                 } else {
                     this.accessToken = data.accessToken;
                     this.isAuthorized = true;

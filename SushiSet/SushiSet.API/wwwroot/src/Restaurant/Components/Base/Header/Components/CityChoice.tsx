@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+import { observer } from "mobx-react-lite";
+
 import Modal from "../../../Others/Modal";
 import HeaderCity from "./HeaderCity";
+import CitiesStore from "../../../../../Stores/CitiesStore";
+import ICity from "../../../../../Interfaces/ICity";
 
 import "../Styles/CityChoice.scss";
 
 const CityChoice = ({ active, setActive }) => {
+    useEffect(() => {
+        CitiesStore.getCities();
+    }, []);
+
     return(
         <Modal active={active} setActive={setActive}>
             <div className="city-choice-container">
@@ -12,71 +21,16 @@ const CityChoice = ({ active, setActive }) => {
                     <span className="choice-close" onClick={() => {setActive(false)}}>Закрыть</span>
                 </div>
 
-                <div className="cities">
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Калуга" setActive={setActive}/>
-                    <HeaderCity city="Новомосковск" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Казань" setActive={setActive}/>
-                    <HeaderCity city="Самара" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Москва" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Владивосток" setActive={setActive}/>
-                    <HeaderCity city="Санкт-Петербург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
-                    <HeaderCity city="Тула" setActive={setActive}/>
-                    <HeaderCity city="Пермь" setActive={setActive}/>
-                    <HeaderCity city="Екатеринбург" setActive={setActive}/>
+                <div className="header-cities">
+                    {
+                        CitiesStore.cities?.map((city : ICity) => {
+                            return <HeaderCity key={city.id} city={city.name} setActive={setActive}/>
+                        })
+                    }
                 </div>
             </div>
         </Modal>
     );
 }
 
-export default CityChoice;
+export default observer(CityChoice);
