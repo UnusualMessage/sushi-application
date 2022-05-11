@@ -5,7 +5,6 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 
 import HeaderCityChoice from "../../../Base/Header/Components/CityChoice";
-import CartStore from "../../../../../Stores/CartStore";
 import ShopChoice from "./ShopChoice";
 import Input from "./Input";
 import ICustomerContacts from "../../../../../Interfaces/ICustomerContacts";
@@ -81,7 +80,7 @@ const OrderForm = () => {
 
             // isDelivery ? OrdersStore.makeOrder(customer, true, address) : OrdersStore.makeOrder(customer, false)
 
-            CartStore.clear();
+            // CartStore.clear();
         },
     });
 
@@ -89,7 +88,7 @@ const OrderForm = () => {
         <form className="cart-order-form" onSubmit={formik.handleSubmit}>
             <div className="cart-order-form-result">
                 <span className="cart-order-form-result-text">Итого:</span>
-                <span className="cart-order-form-result-price">{CartStore.getPrice()}</span>
+                <span className="cart-order-form-result-price">{444}</span>
             </div>
 
             <span className="cart-order-form-who-title">Кому доставить</span>

@@ -1,7 +1,10 @@
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import AuthStore from "../../../../../Stores/AuthStore";
+import CartUnitsStore from "../../../../../Stores/CartUnitsStore";
 import ItemsStore from "../../../../../Stores/ItemsStore";
 
 import "../Styles/ItemPage.scss";
@@ -11,10 +14,26 @@ const ItemPage = () => {
 
     useEffect(() => {
         ItemsStore.getItemById(id);
-    }, [id])
+        AuthStore.checkAuth();
+    }, [id]);
 
-    console.log(ItemsStore.item);
-    
+    const addToCart = action(() => {
+        const currentCount = CartUnitsStore.getNewCount(id);
+
+        if (currentCount) {
+            CartUnitsStore.editCartUnit({
+                id: CartUnitsStore.getIdByItemId(id),
+                count: currentCount + 1,
+            });
+        } else {
+            CartUnitsStore.createCartUnit({
+                itemId: id,
+                userId: AuthStore.getId(),
+                count: 1,
+            });
+        }
+    });
+
     return (
         <section className="item-page">
             <div className="item-page-image">
@@ -31,7 +50,7 @@ const ItemPage = () => {
                         {ItemsStore.item?.price}
                     </span>
 
-                    <span className={true ? "order-button blocked" : "order-button"} onClick={true ? () => {} : () => {}}>
+                    <span className={false ? "order-button blocked" : "order-button"} onClick={false ? () => {} : addToCart}>
                         ДОБАВИТЬ
                     </span>
                 </div>

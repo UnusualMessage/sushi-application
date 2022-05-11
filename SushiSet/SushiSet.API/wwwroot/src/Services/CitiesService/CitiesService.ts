@@ -1,5 +1,5 @@
-import ICreateCity from "../Interfaces/ICreateCity";
-import IUpdateCity from "../Interfaces/IUpdateCity";
+import ICreateCity from "./Interfaces/ICreateCity";
+import IUpdateCity from "./Interfaces/IUpdateCity";
 
 const api = "https://localhost:44333/api/cities/";
 

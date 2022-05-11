@@ -1,5 +1,5 @@
-import ICreateItem from "../Interfaces/ICreateItem";
-import IUpdateItem from "../Interfaces/IUpdateItem";
+import ICreateItem from "./Interfaces/ICreateItem";
+import IUpdateItem from "./Interfaces/IUpdateItem";
 
 const api = "https://localhost:44333/api/items/";
 

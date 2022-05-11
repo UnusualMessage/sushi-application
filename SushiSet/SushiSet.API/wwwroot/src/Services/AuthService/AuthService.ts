@@ -1,4 +1,4 @@
-import IUserAuthenticate from "../Interfaces/IUserAuthenticate";
+import IUserAuthenticate from "./Interfaces/IUserAuthenticate";
 
 const api = "https://localhost:44333/api/users/";
 

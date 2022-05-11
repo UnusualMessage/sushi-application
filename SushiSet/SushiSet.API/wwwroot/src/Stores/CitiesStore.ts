@@ -2,7 +2,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 
 import ICreateCity from "../Interfaces/ICreateCity";
 import ICity from "../Interfaces/ICity";
-import CitiesService from "../Services/CitiesService";
+import CitiesService from "../Services/CitiesService/CitiesService";
 
 class CitiesStore {
     cities : ICity[] = [];

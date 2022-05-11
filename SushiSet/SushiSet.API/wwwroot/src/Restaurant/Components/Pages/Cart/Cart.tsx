@@ -5,18 +5,11 @@ import { useEffect } from "react";
 import OrderForm from "./Components/OrderForm";
 import OrderUnits from "./Components/OrderUnits";
 import Title from "./Components/Title";
-import CartStore from "../../../../Stores/CartStore";
 import { InitialRoute } from "../../Others/RouteNames";
 
 const ShoppingCart = () => {
     const navigate = useNavigate();
-    const isCartEmpty : boolean = CartStore.isEmpty();
-
-    useEffect(() => {
-        if (isCartEmpty) {
-            navigate(InitialRoute);
-        }
-    }, [navigate, isCartEmpty])
+    // const isCartEmpty : boolean = CartStore.isEmpty();
 
     return (
         <>

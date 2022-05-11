@@ -1,23 +1,37 @@
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
+import { action } from "mobx";
+import { useEffect } from "react";
 
 import { CategoryRoute } from "../../../Others/RouteNames";
 import IItem from "../../../../../Interfaces/IItem";
+import CartUnitsStore from "../../../../../Stores/CartUnitsStore";
+import AuthStore from "../../../../../Stores/AuthStore";
 
 import "../Styles/ItemCard.scss";
 
 const ItemCard = ({ item } : IItemCardProps) => {
-    // const addToCart = action(() => {
-    //     CartStore.add({
-    //         id: id,
-    //         title: title,
-    //         path: path,
-    //         text: text,
-    //         price: price,
-    //         category: category,
-    //         count: count,
-    //     });
-    // })
+
+    useEffect(() => {
+        AuthStore.checkAuth();
+    }, []);
+
+    const addToCart = action(() => {
+        const currentCount = CartUnitsStore.getNewCount(item.id);
+
+        if (currentCount) {
+            CartUnitsStore.editCartUnit({
+                id: CartUnitsStore.getIdByItemId(item.id),
+                count: currentCount + 1,
+            });
+        } else {
+            CartUnitsStore.createCartUnit({
+                itemId: item.id,
+                userId: AuthStore.getId(),
+                count: 1,
+            });
+        }
+    });
 
     const { id, category, name, picturePath, price } = item;
 
@@ -37,7 +51,7 @@ const ItemCard = ({ item } : IItemCardProps) => {
                         {price}
                     </span>
 
-                    <span className={true ? "order-button blocked" : "order-button"} onClick={true ? () => {} : () => {}}>
+                    <span className={false ? "order-button blocked" : "order-button"} onClick={false ? () => {} : addToCart}>
                         Добавить
                     </span>
                 </div>

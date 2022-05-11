@@ -2,14 +2,12 @@ import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import { CartRoute, InitialRoute } from "../../../Others/RouteNames";
 
-import CartStore from "../../../../../Stores/CartStore";
-
 import '../Styles/HeaderCart.scss';
 
 const HeaderCart = () => {
     return (
-        <Link className={(CartStore.isEmpty()) ? 'header-cart' : "header-cart active"} to={(CartStore.isEmpty()) ? InitialRoute : CartRoute}>
-            <span className="cart-count">{CartStore.getTotalCount()}</span>
+        <Link className={false ? 'header-cart' : "header-cart active"} to={false ? InitialRoute : CartRoute}>
+            <span className="cart-count">{12}</span>
             <span className='cart-picture'>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512">
                     <path d="m464.5,301.1l36.5-178h-359.7l-12.5-59.2-108.4-52.9-9.4,18.7 99,47.8 50,238.8h289c0,0 28.5,17.9 17.5,40.5-4.9,7-12.5,15.6-26.1,15.6h-287.6v20.6h287.7c19.8,0 36.5-10.4 45.9-27 18.4-34.4-21.9-64.9-21.9-64.9zm-286.7-5.7l-32.3-151.6h330.5l-31.3,151.6h-266.9z" />
@@ -19,7 +17,7 @@ const HeaderCart = () => {
             </span>
 
             <span className='cart-price'>
-                {CartStore.getPrice()}
+                {444}
             </span>
         </Link>
     );

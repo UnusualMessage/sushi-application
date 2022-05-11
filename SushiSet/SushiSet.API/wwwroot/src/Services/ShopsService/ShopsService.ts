@@ -1,4 +1,4 @@
-import ICreateShop from "../Interfaces/ICreateShop";
+import ICreateShop from "./Interfaces/ICreateShop";
 
 const api = "https://localhost:44333/api/shops/";
 

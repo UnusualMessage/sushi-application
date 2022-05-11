@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
-import IUserAuthenticate from "../Interfaces/IUserAuthenticate";
-import AuthService from "../Services/AuthService";
+import IUserAuthenticate from "../Services/AuthService/Interfaces/IUserAuthenticate";
+import AuthService from "../Services/AuthService/AuthService";
 
 class AuthStore {
     accessToken : string = localStorage.getItem("access") ? localStorage.getItem("access") : null;
@@ -10,6 +10,7 @@ class AuthStore {
     isAuthorized : boolean = false;
 
     role : string = "Guest";
+    id : string = "";
 
     authService : AuthService = null;
 
@@ -63,7 +64,6 @@ class AuthStore {
     isUser = async (role : string) => {
         try {
             const data = await this.authService.refresh();
-            console.log(data);
 
             runInAction(() => {
                 if (data === null) {
@@ -95,6 +95,7 @@ class AuthStore {
                 if (data === null) {
                     this.isAuthenticated = false;
                 } else {
+                    this.id = data.id;
                     this.accessToken = data.accessToken;
                     this.isAuthenticated = true;
                 }
@@ -103,6 +104,10 @@ class AuthStore {
         } catch(error) {
 
         }
+    }
+
+    getId = () => {
+        return this.id;
     }
 }
 

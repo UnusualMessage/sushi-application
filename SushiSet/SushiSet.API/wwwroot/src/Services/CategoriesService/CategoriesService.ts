@@ -1,5 +1,5 @@
-import ICreateCategory from "../Interfaces/ICreateCategory";
-import IUpdateCategory from "../Interfaces/IUpdateCategory";
+import ICreateCategory from "./Interfaces/ICreateCategory";
+import IUpdateCategory from "./Interfaces/IUpdateCategory";
 
 const api = "https://localhost:44333/api/categories/";
 

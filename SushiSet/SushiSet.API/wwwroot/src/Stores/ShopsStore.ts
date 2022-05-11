@@ -1,8 +1,8 @@
 import { makeAutoObservable, runInAction } from "mobx";
 
-import ICreateShop from "../Interfaces/ICreateShop";
+import ICreateShop from "../Services/ShopsService/Interfaces/ICreateShop";
 import IShop from "../Interfaces/IShop";
-import ShopsService from "../Services/ShopsService";
+import ShopsService from "../Services/ShopsService/ShopsService";
 
 class ShopsStore {
     shops : IShop[] = [];

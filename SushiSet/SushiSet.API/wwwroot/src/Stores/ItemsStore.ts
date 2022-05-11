@@ -3,7 +3,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import ICreateItem from "../Interfaces/ICreateItem";
 import IItem from "../Interfaces/IItem";
 import IUpdateItem from "../Interfaces/IUpdateItem";
-import ItemsService from "../Services/ItemsService";
+import ItemsService from "../Services/ItemsService/ItemsService";
 
 class ItemsStore {
     items : IItem[] = [];
